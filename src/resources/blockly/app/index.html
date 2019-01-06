@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="google" value="notranslate" />
+		<title>BuddyBlock</title>
+		<style type="text/css" media="screen">
+			body 
+			{
+				overflow: hidden;
+			}
+
+			#editor 
+			{
+				margin: 0;
+				position: absolute;
+				top: 58px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			
+			
+			div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{
+				width:22px;height:16x;
+				float:left;
+				margin:3px;
+				margin-left:15px;
+				margin-right:10px;
+				background:url('') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			
+			#\:1>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/io_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:1>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/io_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:2>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/control_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:2>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/control_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:3>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/math_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:3>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/math_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:4>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/text_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:4>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/text_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:5>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/list_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:5>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/list_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:6>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/colour_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:6>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/colour_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:7>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/logic_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:7>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/logic_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:8>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/serial_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:8>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/serial_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:9>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/storage_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:9>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/storage_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:a>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/comm_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:a>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/comm_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:b>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/sensor_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:b>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/sensor_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:c>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/action_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:c>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/action_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:d>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/display_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:d>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/display_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:e>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/ether_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:e>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/ether_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:f>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/var_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:f>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/var_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+			#\:g>div>span.blocklyTreeIcon.blocklyTreeIconNone
+			{ 
+				background:url('img/func_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			#\:g>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
+				background:url('img/func_icon.png') no-repeat;
+				background-size: 100% auto; 
+			}
+			
+		</style>
+		<link rel="stylesheet" href="style.css" />
+		<script src="../appengine/storage.js"></script>
+		<script src="../blockly_compressed.js"></script>
+		<script src="../blocks_compressed.js"></script>
+		<script src="../javascript_compressed.js"></script>
+		<script src="../python_compressed.js"></script>
+		<script src="../php_compressed.js"></script>
+		<script src="../lua_compressed.js"></script>
+		<script src="../dart_compressed.js"></script>
+		<!-- BlocklyDuino specific, order is important -->
+		<script src="BlocklyDuino_code.js"></script>
+		<script src="BlocklyDuino_helper.js"></script>
+		<script src="Blob.js"></script>
+		<script src="spin.js"></script>
+		<script src="FileSaver.min.js"></script>
+		<!-- BlocklyDuino specific: block design -->
+		<script src="blocks/arduino_base.js"></script>
+		<script src="blocks/grove/grove.js"></script>
+		<script src="blocks/servo/servo.js"></script>
+		<script src="blocks/buddy/buddy.js"></script>
+		<!-- BlocklyDuino specific: common generator code -->
+		<script src="generators/arduino.js"></script>
+		<script src="generators/arduino/colour.js"></script>
+		<script src="generators/arduino/lists.js"></script>
+		<script src="generators/arduino/logic.js"></script>
+		<script src="generators/arduino/loops.js"></script>
+		<script src="generators/arduino/math.js"></script>
+		<script src="generators/arduino/procedures.js"></script>
+		<script src="generators/arduino/text.js"></script>
+		<script src="generators/arduino/variables.js"></script>
+		<script src="generators/arduino/variables_dynamic.js"></script>
+		<!-- BlocklyDuino specific: addon generator code -->
+		<script src="generators/arduino/arduino_base.js"></script>
+		<script src="generators/arduino/addon/grove.js"></script>
+		<script src="generators/arduino/addon/servo.js"></script>
+		<script src="generators/arduino/addon/buddy.js"></script>
+		<!-- BlocklyDuino specific -->
+		<script type="text/javascript" src="base64.js"></script>
+		<script type="text/javascript" src="Blob.js"></script>
+		<script type="text/javascript" src="spin.js"></script>
+		<script type="text/javascript" src="FileSaver.min.js"></script>
+		<script type="text/javascript" src="blockly_helper.js"></script>
+		<script type="text/javascript" src="BDB_helper.js"></script>
+		<!-- BuddyBlock specific -->
+		<!--<script src="blocks/bd_arduino/arduino.js"></script>-->
+		<script type="text/javascript" src="blocks/bd_arduino/view/bd_arduino_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/bd_arduino_code.js"></script>
+		<!-- View -->
+		<script type="text/javascript" src="blocks/bd_arduino/view/pins_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/io_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/control_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/scoop_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/math_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/text_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/lists_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/variables_view.js"></script>
+		<!-- <script type="text/javascript" src="blocks/bd_arduino/view/procedures_view.js"></script> -->
+		<script type="text/javascript" src="blocks/bd_arduino/view/logic_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/serial_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/storage_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/communicate_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/sensor_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/actuator_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/display_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/ethernet_view.js"></script>
+		
+		<!-- Code -->
+		<script type="text/javascript" src="blocks/bd_arduino/code/pins_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/io_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/control_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/scoop_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/math_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/text_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/lists_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/variables_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/procedures_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/logic_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/serial_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/storage_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/communicate_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/sensor_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/actuator_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/display_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/ethernet_code.js"></script>
+		<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="ace/src-noconflict/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table width="100%" height="100%">
+			<tbody>
+				<tr style="display:none">
+					<td>
+						<h1>
+							<a href="https://github.com/gasolin/BlocklyDuino/wiki">BlocklyDuino</a>
+							<span id="title2">...</span></h1>
+					</td>
+					<td class="farSide">
+						<select id="languageMenu"></select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table width="100%">
+							<tbody>
+								<tr id="tabRow" height="1em">
+									<td id="tab_blocks" class="tabon"><script>document.write(Blockly.Msg.CODE_BLOCKS);</script></td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<td id="tab_javascript" class="taboff" style="display:none">JavaScript</td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<td id="tab_python" class="taboff" style="display:none">Python</td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<td id="tab_php" class="taboff" style="display:none">PHP</td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<td id="tab_lua" class="taboff" style="display:none">Lua</td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<td id="tab_dart" class="taboff" style="display:none">Dart</td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<!-- BlocklyDuino specific -->
+									<td id="tab_arduino" class="taboff" style="display:none"><script>document.write(Blockly.Msg.CODE_ARDUINO);</script></td>
+									<td class="tabmin" style="display:none">&nbsp;</td>
+									<!-- BlocklyDuino specific -->
+									<td id="tab_arduino2" class="taboff"><script>document.write(Blockly.Msg.CODE_ARDUINO);</script></td>
+									<td id="tab_xml" class="taboff" style="display:none">XML</td>
+									<td id="tab_xml2" class="taboff" style="display:none">XML2</td>
+									
+									<!-- <td class="tabmin">&nbsp;</td>
+									<td id="TAB_PORT" class="tabmsg">COM:&nbsp;</td>
+									<td id="lbl_port" class="tabmsg" style="min-width:50px;">Disconnect</td>
+									<td class="tabmin">&nbsp;</td>
+									<td id="TAB_BOARD" class="tabmsg">&nbsp;BOARD:&nbsp;</td>
+									<td id="lbl_board" class="tabmsg" style="min-width:50px;">NoSelected</td> -->
+									<td class="tabmax" style="height:58px;">
+										<script>
+											(function() { [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+													new SelectFx(el);
+												});
+											})();
+										</script>
+										<select hidden="" id="languageMenu" style="width:150px;height:25px;"></select>
+										<span class="blockSpanBtn" id="BUTTON_OPEN" onclick="loadXML()"><script>document.write(Blockly.Msg.TAB_OPEN);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_SAVE" onclick="saveXML()"><script>document.write(Blockly.Msg.TAB_SAVE);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_SAVEAS" onclick="saveAs()"><script>document.write(Blockly.Msg.TAB_SAVEAS);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick="discard()"><script>document.write(Blockly.Msg.TAB_DISCARD);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick=""><script>document.write(Blockly.Msg.TAB_EXAMPLE);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick="serial()"><script>document.write(Blockly.Msg.TAB_COMM);</script></span>
+										<!-- <span class="blockSpanBtn" id="BUTTON_SETTING" onclick="setting()">Setting</span> -->
+										<span class="blockSpanBtn" id="BUTTON_COMPILE" onclick="compile()"><script>document.write(Blockly.Msg.TAB_UPLOAD);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_COMPILE" onclick="" style="pointer-events: none;"></span>
+										<input type="file" id="load" style="display: none;" /></td>
+									<td class="tabmax" style="display:none">
+										<button id="uploadButton">Upload</button>
+										<button id="resetButton">Reset card</button>
+										<button id="trashButton" class="notext" title="...">
+											<img src="../media/1x1.gif" class="trash icon21" /></button>
+										<button id="saveCodeButton">Save Arduino Code</button>
+										<button id="saveXMLButton">Save XML</button>
+										<button id="loadXMLfakeButton">Load XML</button>
+										<input type="file" id="loadXMLaction" style="display: none;" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="99%" colspan="2" id="content_area"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="content_blocks" class="content"></div>
+		<pre id="content_javascript" class="content"></pre>
+		<pre id="content_python" class="content"></pre>
+		<pre id="content_php" class="content"></pre>
+		<pre id="content_lua" class="content"></pre>
+		<pre id="content_dart" class="content"></pre>
+		<pre id="content_arduino" class="content"></pre>
+		<pre id="content_arduino2" class="content"></pre>
+		<pre id="editor" class="content"></pre>
+		<textarea id="content_xml2" class="content" wrap="off"></textarea>
+		<textarea id="content_xml" class="content" wrap="off"></textarea>
+		<xml id="toolbox" style="display: none">
+			<category name="%{BKY_CAT_INOUT}" id="catInOut" colour="20">
+				<block type="io_highlow"></block>
+				<block type="io_digital_write2">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="STAT">
+						<shadow type="io_highlow"></shadow>
+					</value>
+				</block>
+				<block type="io_digital_read2">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="io_analog_write">
+					<value name="PIN">
+						<shadow type="pins_analog"></shadow>
+					</value>
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="io_analog_read">
+					<value name="PIN">
+						<shadow type="pins_analog"></shadow>
+					</value>
+				</block>
+				<block type="io_pwm_write">
+					<value name="PIN">
+						<shadow type="pins_pwm"></shadow>
+					</value>
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="io_attachInterrupt"></block>
+				<block type="io_detachInterrupt"></block>
+				<block type="io_attachPinInterrupt">
+					<value name="PIN">
+						<shadow type="pins_interrupt"></shadow>
+					</value>
+				</block>
+				<block type="io_detachPinInterrupt">
+					<value name="PIN">
+						<shadow type="pins_interrupt"></shadow>
+					</value>
+				</block>
+				<block type="io_pulseIn">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="io_pulseIn2">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="TIMEOUT">
+						<shadow type="math_number">
+							<field name="NUM">1000000</field></shadow>
+					</value>
+				</block>
+				<block type="io_pinMode"></block>
+				<block type="io_shiftout">
+					<value name="PIN1">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="DATA">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CAT_CONTROL}" id="catControl" colour="120">
+				<block type="base_setup"></block>
+				<block type="controls_end_program"></block>
+				<block type="base_delay">
+					<value name="DELAY_TIME">
+						<shadow type="math_number">
+							<field name="NUM">1000</field></shadow>
+					</value>
+				</block>
+				<block type="controls_if"></block>
+				<block type="controls_switch_case"></block>
+				<block type="controls_for">
+					<value name="FROM">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="TO">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+					<value name="STEP">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+				</block>
+				<block type="controls_whileUntil"></block>
+				<block type="controls_flow_statements"></block>
+				<block type="controls_millis"></block>
+				<block type="controls_mstimer2">
+					<value name="TIME">
+						<shadow type="math_number">
+							<field name="NUM">500</field></shadow>
+					</value>
+				</block>
+				<block type="controls_mstimer2_start"></block>
+				<block type="controls_mstimer2_stop"></block>
+				<block type="controls_interrupts"></block>
+				<block type="controls_nointerrupts"></block>
+				<block type="SCoopTask"></block>
+				<block type="SCoop_yield"></block>
+				<block type="SCoop_sleep">
+					<value name="sleeplength">
+						<shadow type="math_number">
+							<field name="NUM">1000</field></shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+				<block type="math_number">
+					<field name="NUM">123</field></block>
+				<block type="math_arithmetic">
+					<value name="A">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="B">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+				</block>
+				<block type="math_single">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">9</field></shadow>
+					</value>
+				</block>
+				<block type="math_trig">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">45</field></shadow>
+					</value>
+				</block>
+				<block type="math_constant"></block>
+				<block type="math_number_property">
+					<value name="NUMBER_TO_CHECK">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="math_round">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">3.1</field></shadow>
+					</value>
+				</block>
+				<block type="math_max_min">
+					<value name="A">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="B">
+						<shadow type="math_number">
+							<field name="NUM">2</field></shadow>
+					</value>
+				</block>
+				<block type="math_on_list"></block>
+				<block type="math_modulo">
+					<value name="DIVIDEND">
+						<shadow type="math_number">
+							<field name="NUM">64</field></shadow>
+					</value>
+					<value name="DIVISOR">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+				</block>
+				<block type="math_constrain">
+					<value name="VALUE">
+						<shadow type="math_number">
+							<field name="NUM">50</field></shadow>
+					</value>
+					<value name="LOW">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="HIGH">
+						<shadow type="math_number">
+							<field name="NUM">100</field></shadow>
+					</value>
+				</block>
+				<block type="math_random_int">
+					<value name="FROM">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="TO">
+						<shadow type="math_number">
+							<field name="NUM">100</field></shadow>
+					</value>
+				</block>
+				<block type="math_random_float"></block>
+				<block type="arduino_base_map"></block>
+				<block type="arduino_base_angle"></block>
+			</category>
+			<category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+				<block type="text">
+					<field name="TEXT">hello</field></block>
+				<block type="text_char">
+					<field name="TEXT">a</field></block>
+				<block type="text">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_join">
+					<value name="A">
+						<shadow type="text">
+							<field name="TEXT">Hello</field></shadow>
+					</value>
+					<value name="B">
+						<shadow type="text">
+							<field name="TEXT">Buddy</field></shadow>
+					</value>
+				</block>
+				<block type="text_append">
+					<value name="TEXT">
+						<shadow type="text"></shadow>
+					</value>
+				</block>
+				<block type="text_length">
+					<value name="VAR">
+						<shadow type="text">
+							<field name="TEXT">hello</field></shadow>
+					</value>
+				</block>
+				<block type="text_isEmpty">
+					<value name="VALUE">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_indexOf">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field></block>
+					</value>
+					<value name="FIND">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_charAt">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field></block>
+					</value>
+				</block>
+				<block type="text_getSubstring">
+					<value name="STRING">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field></block>
+					</value>
+				</block>
+				<block type="text_changeCase">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_trim">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_print">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_prompt_ext">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field></shadow>
+					</value>
+				</block>
+				<block type="text_to_number">
+					<value name="VAR">
+						<shadow type="text">
+							<field name="TEXT">123</field></shadow>
+					</value>
+				</block>
+				<block type="ascii_to_char">
+					<value name="VAR">
+						<shadow type="math_number">
+							<field name="NUM">223</field></shadow>
+					</value>
+				</block>
+				<block type="char_to_ascii">
+					<field name="TEXT">a</field></block>
+				<block type="text_char_at">
+					<value name="VAR">
+						<shadow type="text">
+							<field name="TEXT">hello</field></shadow>
+					</value>
+					<value name="AT">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="number_to_text">
+					<value name="VAR">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="text_equals_starts_ends">
+					<value name="STR1">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="STR2">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_compareTo">
+					<value name="STR1">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="STR2">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+				<block type="lists_create_with">
+					<mutation items="0"></mutation>
+				</block>
+				<block type="lists_create_with"></block>
+				<block type="lists_create_with_text2"></block>
+				<block type="lists_length"></block>
+				<block type="lists_repeat">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">5</field></shadow>
+					</value>
+				</block>
+				<block type="lists_indexOf">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field></block>
+					</value>
+				</block>
+				<block type="lists_getIndex">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field></block>
+					</value>
+				</block>
+				<block type="lists_setIndex">
+					<value name="LIST">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field></block>
+					</value>
+				</block>
+				<block type="lists_getSublist">
+					<value name="LIST">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field></block>
+					</value>
+				</block>
+				<block type="lists_split">
+					<value name="DELIM">
+						<shadow type="text">
+							<field name="TEXT">,</field></shadow>
+					</value>
+				</block>
+				<block type="lists_sort"></block>
+				<block type="lists_isEmpty"></block>
+			</category>
+			<category name="%{BKY_CAT_COLOUR}" colour="%{BKY_COLOUR_HUE}">
+				<block type="colour_picker"></block>
+				<block type="colour_random"></block>
+				<block type="colour_rgb">
+					<value name="RED">
+						<shadow type="math_number">
+							<field name="NUM">100</field></shadow>
+					</value>
+					<value name="GREEN">
+						<shadow type="math_number">
+							<field name="NUM">50</field></shadow>
+					</value>
+					<value name="BLUE">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="colour_blend">
+					<value name="COLOUR1">
+						<shadow type="colour_picker">
+							<field name="COLOUR">#ff0000</field></shadow>
+					</value>
+					<value name="COLOUR2">
+						<shadow type="colour_picker">
+							<field name="COLOUR">#3333ff</field></shadow>
+					</value>
+					<value name="RATIO">
+						<shadow type="math_number">
+							<field name="NUM">0.5</field></shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CATLOGIC}" id="catLogic" colour="210">
+				<block type="logic_compare"></block>
+				<block type="logic_operation"></block>
+				<block type="logic_negate"></block>
+				<block type="logic_boolean"></block>
+				<block type="logic_null"></block>
+				<block type="logic_true_or_false"></block>
+			</category>
+			<!--<sep></sep>-->
+			<category name="%{BKY_CAT_SERIAL}" colour="65">
+				<block type="serial_begin">
+					<value name="CONTENT">
+						<shadow type="math_number">
+							<field name="NUM">9600</field></shadow>
+					</value>
+				</block>
+				<block type="serial_write"></block>
+				<block type="serial_print"></block>
+				<block type="serial_println"></block>
+				<block type="serial_print_hex"></block>
+				<block type="serial_available"></block>
+				<block type="serial_readstr"></block>
+				<block type="serial_readstr_until">
+					<value name="CONTENT">
+						<shadow type="text_char">
+							<field name="TEXT">a</field></shadow>
+					</value>
+				</block>
+				<block type="serial_parseInt_Float"></block>
+				<block type="serial_flush"></block>
+				<block type="serial_softserial">
+					<value name="TX">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="RX">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="serial_event"></block>
+			</category>
+			<category name="%{BKY_CAT_STORAGE}" colour="0">
+				<block type="store_sd_write">
+					<field name="FILE">file.txt</field>
+					<value name="DATA">
+						<shadow type="text">
+							<field name="TEXT">hello world</field></shadow>
+					</value>
+					<value name="NEWLINE">
+						<shadow type="logic_boolean">
+							<field name="BOOL">TRUE</field></shadow>
+					</value>
+				</block>
+				<block type="store_eeprom_write_byte">
+					<value name="ADDRESS">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="DATA">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="store_eeprom_read_byte">
+					<value name="ADDRESS">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="store_eeprom_write_long">
+					<value name="ADDRESS">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="DATA">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="store_eeprom_read_long">
+					<value name="ADDRESS">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CAT_COMMUNICATE}" colour="140">
+				<block type="ir_recv">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<statement name="DO">
+						<block type="serial_print_hex">
+							<value name="CONTENT">
+								<block type="variables_get">
+									<field name="VAR">ir_item</field></block>
+							</value>
+						</block>
+					</statement>
+				</block>
+				<block type="ir_send_nec">
+					<value name="data">
+						<shadow type="math_number">
+							<field name="NUM">0x89ABCDEF</field></shadow>
+					</value>
+					<value name="bits">
+						<shadow type="math_number">
+							<field name="NUM">32</field></shadow>
+					</value>
+				</block>
+				<block type="ir_recv_enable">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="ir_recv_raw">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="ir_send_raw">
+					<value name="length">
+						<shadow type="math_number">
+							<field name="NUM">3</field></shadow>
+					</value>
+					<value name="freq">
+						<shadow type="math_number">
+							<field name="NUM">38</field></shadow>
+					</value>
+				</block>
+				<block type="i2c_master_writer"></block>
+				<block type="i2c_master_reader"></block>
+				<block type="i2c_master_reader2"></block>
+				<block type="i2c_available"></block>
+				<block type="i2c_slave_onreceive">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="spi_transfer">
+					<value name="pin">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="value">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="RFID_init"></block>
+				<!--初始化-->
+				<block type="RFID_on"></block>
+				<!--如果侦测到信号那么执行XXX-->
+				<block type="RFID_readcardnum"></block>
+				<!--读取卡号-->
+				<block type="RFID_in"></block>
+				<!-- 如果卡号和XX一致，那么执行XXX--></category>
+			<category name="%{BKY_CAT_SENSOR}" colour="40">
+				<block type="chaoshengbo2">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">1</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+				</block>
+				<block type="dht11">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="LM35">
+					<value name="PIN">
+						<shadow type="pins_analog"></shadow>
+					</value>
+				</block>
+				<block type="ds18b20">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="ADXL345"></block>
+				<block type="DS1302_init">
+					<value name="RST">
+						<shadow type="pins_digital">
+							<field name="NUM">2</field></shadow>
+					</value>
+					<value name="DAT">
+						<shadow type="pins_digital">
+							<field name="NUM">3</field></shadow>
+					</value>
+					<value name="CLK">
+						<shadow type="pins_digital">
+							<field name="NUM">4</field></shadow>
+					</value>
+				</block>
+				<block type="DS1307_init">
+					<value name="SDA">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+					<value name="SCL">
+						<shadow type="pins_digital">
+							<field name="PIN">3</field></shadow>
+					</value>
+				</block>
+				<block type="RTC_get_time"></block>
+				<block type="RTC_set_time">
+					<value name="hour">
+						<shadow type="math_number">
+							<field name="NUM">8</field></shadow>
+					</value>
+					<value name="minute">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="second">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="RTC_set_date">
+					<value name="year">
+						<shadow type="math_number">
+							<field name="NUM">2000</field></shadow>
+					</value>
+					<value name="month">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="day">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+				</block>
+				<block type="gps_init">
+					<value name="RX">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="TX">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="CONTENT">
+						<shadow type="math_number">
+							<field name="NUM">4800</field></shadow>
+					</value>
+				</block>
+				<block type="controls_whileUntil">
+					<field name="MODE">WHILE</field>
+					<value name="BOOL">
+						<block type="gps_data_available"></block>
+					</value>
+					<statement name="DO">
+						<block type="controls_if">
+							<value name="IF0">
+								<block type="gps_data_encode"></block>
+							</value>
+							<statement name="DO0">
+								<block type="controls_if">
+									<value name="IF0">
+										<block type="gps_xxx_isValid">
+											<field name="WHAT">location</field></block>
+									</value>
+									<statement name="DO0">
+										<block type="serial_println">
+											<field name="serial_select">Serial</field>
+											<value name="CONTENT">
+												<block type="gps_getData_xxx">
+													<field name="WHAT">location.lat</field></block>
+											</value>
+											<next>
+												<block type="serial_println">
+													<field name="serial_select">Serial</field>
+													<value name="CONTENT">
+														<block type="gps_getData_xxx">
+															<field name="WHAT">location.lng</field></block>
+													</value>
+												</block>
+											</next>
+										</block>
+									</statement>
+								</block>
+							</statement>
+						</block>
+					</statement>
+				</block>
+			</category>
+			<category name="%{BKY_CAT_ACTUATOR}" colour="100">
+				<block type="servo_move">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="DEGREE">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="DELAY_TIME">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="servo_writeMicroseconds">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="DEGREE">
+						<shadow type="math_number">
+							<field name="NUM">1500</field></shadow>
+					</value>
+				</block>
+				<block type="servo_read_degrees">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="controls_tone">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="FREQUENCY">
+						<shadow type="tone_notes"></shadow>
+					</value>
+				</block>
+				<block type="controls_tone2">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+					<value name="FREQUENCY">
+						<shadow type="tone_notes"></shadow>
+					</value>
+					<value name="DURATION">
+						<shadow type="math_number">
+							<field name="NUM">1000</field></shadow>
+					</value>
+				</block>
+				<block type="controls_notone">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="group_stepper_setup">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">1</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+					<value name="steps">
+						<shadow type="math_number">
+							<field name="NUM">100</field></shadow>
+					</value>
+					<value name="speed">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+				</block>
+				<block type="group_stepper_setup2">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">1</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+					<value name="PIN3">
+						<shadow type="pins_digital">
+							<field name="PIN">3</field></shadow>
+					</value>
+					<value name="PIN4">
+						<shadow type="pins_digital">
+							<field name="PIN">4</field></shadow>
+					</value>
+					<value name="steps">
+						<shadow type="math_number">
+							<field name="NUM">100</field></shadow>
+					</value>
+					<value name="speed">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+				</block>
+				<block type="group_stepper_move">
+					<value name="step">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+				</block>
+			</category>
+			<category name="%{BKY_CAT_DISPLAY}" colour="180">
+				<block type="group_lcd_init">
+					<value name="device">
+						<shadow type="math_number">
+							<field name="NUM">0x27</field></shadow>
+					</value>
+				</block>
+				<block type="group_lcd_init2">
+					<value name="device">
+						<shadow type="math_number">
+							<field name="NUM">0x27</field></shadow>
+					</value>
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">A1</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">A2</field></shadow>
+					</value>
+				</block>
+				<block type="group_lcd_init3">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">7</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">8</field></shadow>
+					</value>
+					<value name="PIN3">
+						<shadow type="pins_digital">
+							<field name="PIN">9</field></shadow>
+					</value>
+					<value name="PIN4">
+						<shadow type="pins_digital">
+							<field name="PIN">10</field></shadow>
+					</value>
+					<value name="PIN5">
+						<shadow type="pins_digital">
+							<field name="PIN">11</field></shadow>
+					</value>
+					<value name="PIN6">
+						<shadow type="pins_digital">
+							<field name="PIN">12</field></shadow>
+					</value>
+				</block>
+				<block type="group_lcd_print">
+					<value name="TEXT">
+						<block type="text">
+							<field name="TEXT"></field>
+						</block>
+					</value>
+					<value name="TEXT2">
+						<block type="text">
+							<field name="TEXT"></field>
+						</block>
+					</value>
+				</block>
+				<block type="group_lcd_print2">
+					<value name="row">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="column">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="TEXT">
+						<block type="text">
+							<field name="TEXT"></field>
+						</block>
+					</value>
+				</block>
+				<block type="group_lcd_power">
+					<field name="STAT">clear</field></block>
+				<block type="lp2i_u8g_draw_4strings">
+					<value name="Text_line1">
+						<shadow type="text">
+							<field name="TEXT">Example line 1</field></shadow>
+					</value>
+					<value name="Text_line2">
+						<shadow type="text">
+							<field name="TEXT">Example line 2</field></shadow>
+					</value>
+					<value name="Text_line3">
+						<shadow type="text">
+							<field name="TEXT">Example line 3</field></shadow>
+					</value>
+					<value name="Text_line4">
+						<shadow type="text">
+							<field name="TEXT">Example line 4</field></shadow>
+					</value>
+				</block>
+				<block type="lp2i_u8g_print">
+					<value name="N">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="X">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="Y">
+						<shadow type="math_number">
+							<field name="NUM">12</field></shadow>
+					</value>
+				</block>
+				<block type="display_rgb_init">
+					<value name="PIN">
+						<shadow type="pins_digital" /></value>
+					<value name="LEDCOUNT">
+						<shadow type="math_number">
+							<field name="NUM">4</field></shadow>
+					</value>
+				</block>
+				<block type="display_rgb">
+					<value name="PIN">
+						<shadow type="pins_digital" /></value>
+					<value name="_LED_">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="RVALUE">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="GVALUE">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+					<value name="BVALUE">
+						<shadow type="math_number">
+							<field name="NUM">0</field></shadow>
+					</value>
+				</block>
+				<block type="display_rgb2">
+					<value name="PIN">
+						<shadow type="pins_digital" /></value>
+					<value name="_LED_">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+				</block>
+				<block type="display_4digitdisplay_power">
+					<field name="STAT">clear</field></block>
+				<block type="display_4digitdisplay_displayString">
+					<value name="VALUE">
+						<shadow type="text">
+							<field name="TEXT">abcd</field></shadow>
+					</value>
+				</block>
+				<block type="display_4digitdisplay_showDot"></block>
+				<block type="display_TM1637_init">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">3</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+				</block>
+				<block type="display_TM1637_Brightness">
+					<value name="bit"></value>
+				</block>
+				<block type="display_TM1637_displayString">
+					<value name="VALUE">
+						<shadow type="text">
+							<field name="TEXT">012345</field></shadow>
+					</value>
+					<value name="Speed">
+						<shadow type="math_number">
+							<field name="NUM">300</field></shadow>
+					</value>
+				</block>
+				<block type="display_TM1637_displayTime">
+					<value name="hour">
+						<shadow type="math_number">
+							<field name="NUM">12</field></shadow>
+					</value>
+					<value name="minute">
+						<shadow type="math_number">
+							<field name="NUM">30</field></shadow>
+					</value>
+				</block>
+				<block type="display_TM1637_Stopwatch"></block>
+				<block type="display_Matrix_Init">
+					<value name="PIN1">
+						<shadow type="pins_digital">
+							<field name="PIN">2</field></shadow>
+					</value>
+					<value name="PIN2">
+						<shadow type="pins_digital">
+							<field name="PIN">3</field></shadow>
+					</value>
+				</block>
+				<block type="display_Matrix_POS">
+					<value name="XVALUE">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+					<value name="YVALUE">
+						<shadow type="math_number">
+							<field name="NUM">1</field></shadow>
+					</value>
+				</block>
+				<block type="display_Matrix_Rotation"></block>
+				<block type="display_Matrix_TEXT">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">Buddy</field></shadow>
+					</value>
+				</block>
+				<block type="display_Matrix_DisplayChar">
+					<value name="LEDArray">
+						<block type="display_Matrix_LedArray"></block>
+					</value>
+				</block>
+				<block type="display_Matrix_CLEAR"></block>
+			</category>
+			<category name="%{BKY_CAT_ETHERNET}" colour="0">
+				<block type="ethernet_init_begin">
+					<value name="MAC">
+						<block type="ethernet_mac_address"></block>
+					</value>
+				</block>
+				<block type="ethernet_init_local_ip"></block>
+				<block type="ethernet_client_connect_server">
+					<value name="PORT">
+						<shadow type="math_number">
+							<field name="NUM">80</field></shadow>
+					</value>
+				</block>
+				<block type="ethernet_client_connected"></block>
+				<block type="ethernet_client_available"></block>
+				<block type="ethernet_client_read"></block>
+				<block type="ethernet_client_stop"></block>
+				<block type="ethernet_client_print">
+					<value name="TEXT">
+						<block type="text">
+							<field name="TEXT"></field>
+						</block>
+					</value>
+				</block>
+				<block type="ethernet_client_println">
+					<value name="TEXT">
+						<block type="text">
+							<field name="TEXT"></field>
+						</block>
+					</value>
+				</block>
+				<block type="ethernet_client_get_request"></block>
+			</category>
+			<!--<sep></sep>-->
+			<category name="%{BKY_CAT_VAR}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+			<category name="%{BKY_CAT_FUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+			<!--<sep></sep>-->
+			<category name="%{BKY_CAT_BUDDY}" colour="%{BKY_GROVE_HUE}">
+				<block type="bd_arduino_inout_pinmode"></block>
+				<block type="bd_arduino_inout_attachInterrupt"></block>
+				<block type="bd_arduino_inout_detachInterrupt"></block>
+				<block type="bd_arduino_inout_detachInterrupt2"></block>
+				<block type="bd_arduino_inout_pulseIn"></block>
+				<block type="inout_pulseIn2"></block>
+				<block type="buddy_led"></block>
+				<block type="buddy_rgb_led"></block>
+				<block type="buddy_led_breathing">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">10</field></shadow>
+					</value>
+					<value name="DELAY">
+						<shadow type="math_number">
+							<field name="NUM">300</field></shadow>
+					</value>
+				</block>
+			</category>
+			<!--<sep></sep>-->
+		</xml>
+		<script>
+		
+			var editor = ace.edit("editor");
+			
+			ace.require("ace/ext/language_tools");
+			
+			editor.setOptions(
+			{  
+				enableBasicAutocompletion: true,  
+				enableSnippets: true,  
+				enableLiveAutocompletion: true, // 智能补全  
+			});
+			
+			// 自动换行,设置为off关闭
+			//editor.setOption("wrap", "free")  
+			editor.setTheme("ace/theme/xcode");
+			editor.getSession().setTabSize(2);
+			
+			editor.getSession().setUseSoftTabs(true);
+			
+			// 打印边距不可见（中间的竖线）
+			editor.setShowPrintMargin(false);
+
+			//editor.session.setMode("ace/mode/c_cpp");
+			editor.session.setMode("ace/mode/arduino");
+
+			editor.setFontSize(20);
+			
+		</script>
+		<pre id="arduino2"></pre>
+	</body>
+</html>
