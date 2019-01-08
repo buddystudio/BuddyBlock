@@ -8,8 +8,9 @@ Blockly.Arduino['io_highlow'] = function () {
 
 Blockly.Arduino['io_pinMode'] = function () 
 {
-    var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
-    var dropdown_mode = this.getFieldValue('MODE');
+    //var dropdown_pin = Blockly.Arduino.valueToCode(this, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+	var dropdown_pin = this.getFieldValue('PIN');
+    var dropdown_mode = this.getFieldValue('STAT');
     var code = 'pinMode(' + dropdown_pin + ', ' + dropdown_mode + ');\n';
 	
     return code;
@@ -99,6 +100,7 @@ Blockly.Arduino['io_buildin_led'] = function ()
     return code;
 };
 
+
 Blockly.Arduino['io_attachInterrupt'] = function (block) 
 {
     var dropdown_pin = block.getFieldValue('PIN');
@@ -115,14 +117,16 @@ Blockly.Arduino['io_attachInterrupt'] = function (block)
     return code;
 };
 
+
 Blockly.Arduino['io_detachInterrupt'] = function(block) 
 {
-	var dropdown_pin = block.getFieldValue('PIN');
+	var dropdown_pin = this.getFieldValue("PIN");
 	var code = 'detachInterrupt(digitalPinToInterrupt(' + dropdown_pin +'));\n'
   
 	return code;
 };
 
+/*
 Blockly.Arduino['io_attachInterrupt'] = function () 
 {
     var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
@@ -138,7 +142,9 @@ Blockly.Arduino['io_attachInterrupt'] = function ()
 	
     return code;
 };
+*/
 
+/*
 Blockly.Arduino['io_detachInterrupt'] = function () 
 {
     var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
@@ -149,8 +155,9 @@ Blockly.Arduino['io_detachInterrupt'] = function ()
 	
     return code;
 };
+*/
 
-Blockly.Arduino['controls_attachPinInterrupt'] = function () 
+Blockly.Arduino['io_attachPinInterrupt'] = function () 
 {
     var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
     var dropdown_mode = this.getFieldValue('mode');
@@ -166,7 +173,7 @@ Blockly.Arduino['controls_attachPinInterrupt'] = function ()
     return code;
 };
 
-Blockly.Arduino['controls_detachPinInterrupt'] = function () 
+Blockly.Arduino['io_detachPinInterrupt'] = function () 
 {
     var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
     Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';

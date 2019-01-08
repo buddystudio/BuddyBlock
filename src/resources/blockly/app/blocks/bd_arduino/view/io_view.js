@@ -100,7 +100,7 @@ Blockly.Blocks['io_attachInterrupt'] =
 		this.setColour(20);
 		this.appendDummyInput()
 			.appendField(Blockly.BUDDY_ATTACHINTERRUPT_PIN + " PIN#")
-			.appendField(new Blockly.FieldDropdown(profile.default.dropdownInterrupt), "PIN")
+			.appendField(new Blockly.FieldDropdown(profile.default.dropdownInterrupt), 'PIN');
 		this.appendDummyInput("")
 			.appendField(Blockly.BUDDY_MODE)
 			.appendField(new Blockly.FieldDropdown([[Blockly.BUDDY_RISING, "RISING"], [Blockly.BUDDY_FALLING, "FALLING"], [Blockly.BUDDY_CHANGE, "CHANGE"]]), "mode");
@@ -201,7 +201,7 @@ Blockly.Blocks['io_pinMode'] =
 	{
 		this.appendDummyInput()
 			.appendField(Blockly.BUDDY_PINMODE + " PIN#")
-			.appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "PIN")
+			.appendField(new Blockly.FieldDropdown(profile.default.dropdownAll), "PIN")
 			.appendField(Blockly.BUDDY_STAT)
 			.appendField(new Blockly.FieldDropdown([[Blockly.BUDDY_PINMODEIN, "INPUT"], [Blockly.BUDDY_PINMODEOUT, "OUTPUT"], [Blockly.BUDDY_PINMODEPULLUP, "INPUT_PULLUP"]]), "STAT");
 		this.setPreviousStatement(true, null);
