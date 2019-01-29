@@ -8,6 +8,10 @@ package controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+
+import util.debug.BDInoCode;
 
 /*import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;*/
@@ -24,6 +28,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import model.BDBParameters;
 import model.BDCodeModel;
 import view.BDExampleWindow;
 
@@ -52,8 +57,8 @@ public class BDExampleWindowCtrl
         
         File[] exRootList = file.listFiles();
 
-        Image icon = new Image(getClass().getResourceAsStream("resources/images/iconDoc.png"));
-        Image icon2 = new Image(getClass().getResourceAsStream("resources/images/iconDoc2.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/resources/images/iconDoc.png"));
+        Image icon2 = new Image(getClass().getResourceAsStream("/resources/images/iconDoc2.png"));
 
         ImageView iv = new ImageView(icon);
 
@@ -127,7 +132,14 @@ public class BDExampleWindowCtrl
                     if(mouseEvent.getClickCount() == 2)
                     {
                     	// Open the source code file.
-                        openFile();
+                        try
+						{
+							openFile();
+						} catch (IOException e)
+						{
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
                     }
                 }
             }
@@ -136,7 +148,9 @@ public class BDExampleWindowCtrl
         exampleWindow.contain.getChildren().add(exampleWindow.tree);
         exampleWindow.contain.getChildren().add(exampleWindow.importBtn);
         
-        exampleWindow.tree.getStyleClass().add("mylistview"); 
+        exampleWindow.tree.getStyleClass().add("mylistview");
+        
+        exampleWindow.tree.setMinHeight(530);
         
         // Click import button and import the source code file.
         exampleWindow.importBtn.setOnAction(new EventHandler<ActionEvent>() 
@@ -145,12 +159,19 @@ public class BDExampleWindowCtrl
             public void handle(ActionEvent event) 
             {
 	        	// Open the source code file.
-	            openFile();
+	            try
+				{
+					openFile();
+				} catch (IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
     }
     
-    public void openFile()
+    public void openFile() throws UnsupportedEncodingException, FileNotFoundException, IOException
     {
         String path = "";
         String name = "";
@@ -168,28 +189,20 @@ public class BDExampleWindowCtrl
         // If the file exist.
         if(path != null)
         {
-            // Create new code object.
-            BDCodeModel code = new BDCodeModel();
+        	path = path + File.separator + name + ".xml";
+        	
+        	File file = new File(path);
 
-            try 
-            {
-            	code.setName(name);
-            	//code.setCodeText (BDCodeReader.readFileByLines2(path + File.separator + name + File.separator + name + ".ino"));
-            	code.setCodeText (BDCodeReader.readFileByLines(path + File.separator + name + File.separator + name + ".ino"));
-
-                // Get the file's path.
-                code.path = path + File.separator + name + ".ino";
-            } 
-            catch (FileNotFoundException ex) 
-            {
-            	//logger.error("",ex);
-                //Logger.getLogger(BDMenuCtrl.class.getName()).log(Level.SEVERE, null, ex);
-            } 
-            catch (IOException ex) 
-            {
-            	//logger.error("",ex);
-                //Logger.getLogger(BDMenuCtrl.class.getName()).log(Level.SEVERE, null, ex);
-            }
+			String xml = BDCodeReader.readFileByLines(file.getPath());
+			//System.out.println("updateXML(\'" + xml + "\')");
+			// Base64 encode.
+			xml = Base64.getEncoder().encodeToString(xml.getBytes());
+			
+			
+			
+			BDBParameters.webView.getEngine().executeScript("updateXML(\"" + xml + "\")");
+			BDBParameters.code.setInoCode(new BDInoCode(
+					BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
 
             // 关闭窗口
             // Close the window.

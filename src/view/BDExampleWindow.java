@@ -21,9 +21,9 @@ import javafx.stage.StageStyle;
  */
 public final class BDExampleWindow extends BDWindow
 {
-    public ObservableList<String> strList = FXCollections.observableArrayList();
+	public ObservableList<String> strList = FXCollections.observableArrayList();
 
-    public Button importBtn = new Button("打开例程");
+    public Button importBtn = new Button("打开文件");
     
     public TreeItem<String> rootItem;
     public TreeView<String> tree = new TreeView<String> ();
@@ -33,9 +33,9 @@ public final class BDExampleWindow extends BDWindow
     public BDExampleWindow()
     {
         // 窗口初始化
-        super.init(400, 400);
+        super.init(525, 550 + 30);
         
-        scene.getStylesheets().add("resources/style/listViewStyle.css");
+        //scene.getStylesheets().add("resources/style/listViewStyle.css");
         
         // 总在最前方
         this.setAlwaysOnTop(true);
@@ -44,19 +44,22 @@ public final class BDExampleWindow extends BDWindow
         this.initStyle(StageStyle.UTILITY);
         this.setResizable(false);
        
-        this.setTitle("  请选择例程");
+        this.setTitle("  " + "请选择示例");
         this.setScene(scene);
         
         importBtn.setStyle("-fx-background-radius: 0, 0;");
        
-        contain.setPadding(new Insets(0, 0, 5, 0));  	// 设置边距
-        contain.setSpacing(5);                    		// 设置间距
+        contain.setPadding(new Insets(0, 0, 10, 0));  	// 设置边距
+        contain.setSpacing(10);                    		// 设置间距
         contain.setAlignment(Pos.CENTER);
 
-        tree.setPrefSize(400, 300);
+        //tree.setPrefSize(400, 1000);
+        tree.setPrefHeight(800);
        
-        importBtn.setPrefSize(100, 70);
+        importBtn.setPrefSize(100, 30);
        
         rootPanel.getChildren().add(contain);
+        
+        rootPanel.getStylesheets().add("resources/style/modena_dark.css");
     }
 }

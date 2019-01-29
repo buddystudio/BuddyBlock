@@ -104,6 +104,8 @@ public class BDSettingWindow extends BDWindow
         settingPane.setPadding(new Insets(0, 0, 15, 0));  // 设置边距
 
         rootPanel.getChildren().add(settingPane);
+        
+        rootPanel.getStylesheets().add("resources/style/modena_dark.css");
     }
     
     private VBox getBaseContent()

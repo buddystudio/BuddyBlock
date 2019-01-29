@@ -337,8 +337,8 @@
 										<span class="blockSpanBtn" id="BUTTON_SAVE" onclick="saveXML()"><script>document.write(Blockly.Msg.TAB_SAVE);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_SAVEAS" onclick="saveAs()"><script>document.write(Blockly.Msg.TAB_SAVEAS);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick="discard()"><script>document.write(Blockly.Msg.TAB_DISCARD);</script></span>
-										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick=""><script>document.write(Blockly.Msg.TAB_EXAMPLE);</script></span>
-										<span class="blockSpanBtn" id="BUTTON_DISCARD" onclick="serial()"><script>document.write(Blockly.Msg.TAB_COMM);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_EXAMPLE" onclick="example()"><script>document.write(Blockly.Msg.TAB_EXAMPLE);</script></span>
+										<span class="blockSpanBtn" id="BUTTON_SERIAL" onclick="serial()"><script>document.write(Blockly.Msg.TAB_COMM);</script></span>
 										<!-- <span class="blockSpanBtn" id="BUTTON_SETTING" onclick="setting()">Setting</span> -->
 										<span class="blockSpanBtn" id="BUTTON_COMPILE" onclick="compile()"><script>document.write(Blockly.Msg.TAB_UPLOAD);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_COMPILE" onclick="" style="pointer-events: none;"></span>
@@ -1453,6 +1453,8 @@
 			<category name="%{BKY_CAT_VAR}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
 			<category name="%{BKY_CAT_FUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 			<!--<sep></sep>-->
+			<!-- 展示隐藏模块目录 -->
+			<div style="display:none">
 			<category name="%{BKY_CAT_BUDDY}" colour="%{BKY_GROVE_HUE}">
 				<block type="bd_arduino_inout_pinmode"></block>
 				<block type="bd_arduino_inout_attachInterrupt"></block>
@@ -1473,6 +1475,7 @@
 					</value>
 				</block>
 			</category>
+			</div>
 			<!--<sep></sep>-->
 		</xml>
 		<script>

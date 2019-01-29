@@ -40,7 +40,7 @@ public class BDBDialogWindow extends BDBWindow
     	
     	if(txtEnable == true)
     	{
-    		this.setHeight(188);
+    		this.setHeight(218);
     	}
         
         // 总在最前方
@@ -72,12 +72,12 @@ public class BDBDialogWindow extends BDBWindow
        
         contain.setAlignment(Pos.CENTER);
        
-        HBox topPanel = new HBox();
+        VBox topPanel = new VBox();
         HBox bottomPanel = new HBox();
        
-        topPanel.setPadding(new Insets(25,0,25,0));      // 设置边距
-        //topPanel.setSpacing(5);                        // 设置间距
-        bottomPanel.setPadding(new Insets(15,0,15,0));   // 设置边距
+        topPanel.setPadding(new Insets(25,0,15,0));      // 设置边距
+        topPanel.setSpacing(15);                         // 设置间距
+        bottomPanel.setPadding(new Insets(15,0,20,0));   // 设置边距
         bottomPanel.setSpacing(7);                       // 设置间距
        
         topPanel.setAlignment(Pos.CENTER);
@@ -118,13 +118,15 @@ public class BDBDialogWindow extends BDBWindow
         	bottomPanel.getChildren().add(cancleBtn);
         }
         
-        txt.setMinHeight(30);
+        txt.setMinHeight(40);
+        txt.setMaxWidth(350);
 
         contain.getChildren().add(topPanel);
         
         if(txtEnable == true)
         {
-        	contain.getChildren().add(txt);
+        	//contain.getChildren().add(txt);
+        	topPanel.getChildren().add(txt);
         }
         
         contain.getChildren().add(bottomPanel);

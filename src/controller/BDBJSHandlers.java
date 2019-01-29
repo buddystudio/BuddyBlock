@@ -18,6 +18,7 @@ import view.BDBPreSettingWindow;
 import view.BDComWindow;
 import view.BDCompileAndUploadWindow;
 import view.BDConsoleWindow;
+import view.BDExampleWindow;
 import view.BDHintDialogWindow;
 import controller.BDBConsoleWindowCtrl;
 
@@ -130,6 +131,10 @@ public class BDBJSHandlers
 				case "serial":
 					serial();
 					return null;
+					
+				case "example":
+					example();
+					return null;
 			}
 
 			/*
@@ -147,6 +152,8 @@ public class BDBJSHandlers
 			BDBDialogWindow dialog = new BDBDialogWindow(" 输入", pData.getMessage(), true, false, true, true);
 			
 			dialog.okBtn.setOnAction(e -> dialog.close());
+			dialog.cancleBtn.setOnAction(e -> dialog.close());
+			
 			dialog.txt.setText(pData.getDefaultValue());
 			dialog.showAndWait();
 			
@@ -156,6 +163,15 @@ public class BDBJSHandlers
 		};
 
 		return handler;
+	}
+	
+	private static void example()
+	{
+		BDExampleWindow exampleWindow = new BDExampleWindow();
+		new BDExampleWindowCtrl(exampleWindow);
+		
+		System.out.println("Example");
+		exampleWindow.show();
 	}
 	
 	public static BDHintDialogWindow hintDialogWindow = new BDHintDialogWindow("  提示", "请先确定计算机已经连接开发板！");

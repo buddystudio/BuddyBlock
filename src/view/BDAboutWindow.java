@@ -31,7 +31,8 @@ public final class BDAboutWindow extends BDWindow
     public BDAboutWindow()
     {
         // 窗口初始化
-        super.init(500, 365);
+        //super.init(500, 365);
+    	super.init(500, 400);
 
         scene.getStylesheets().add("resources/style/settingStyle.css");
        
@@ -122,6 +123,8 @@ public final class BDAboutWindow extends BDWindow
         contain.getChildren().add(linkTxt);
        
         rootPanel.getChildren().add(contain);
+        
+        rootPanel.getStylesheets().add("resources/style/modena_dark.css");
     }
     
     public void browserUrl(String url)

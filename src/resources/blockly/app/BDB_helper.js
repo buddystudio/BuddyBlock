@@ -6,6 +6,13 @@ function compile(){
 	window.prompt("compile", Blockly.Arduino.workspaceToCode())
 }
 
+/**BDB
+ *  example
+ */
+function example(){
+	window.prompt("example", null)
+}
+
 
 /**BDB
  *  get XML base the blockly

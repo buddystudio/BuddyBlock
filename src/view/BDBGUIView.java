@@ -2,6 +2,7 @@ package view;
 
 import java.net.URL;
 
+import controller.BDExampleWindowCtrl;
 import controller.BDSettingWindowCtrl;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -18,9 +19,10 @@ public class BDBGUIView
 {
 	public BorderPane root  		= new BorderPane();
 	public BDTitleView  titlePanel  = new BDTitleView();
-	public BDAboutWindow aboutWindow = new BDAboutWindow();	// 关于我们窗口
 	
+	public BDAboutWindow aboutWindow 		= new BDAboutWindow();
 	public BDSettingWindow settingWindow	= new BDSettingWindow();
+	
     public BDSettingWindowCtrl settingWindowCtrl = new BDSettingWindowCtrl(settingWindow);
 	
 	public Rectangle2D visualBounds;
