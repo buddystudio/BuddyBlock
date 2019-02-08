@@ -6,6 +6,7 @@ import controller.BDExampleWindowCtrl;
 import controller.BDSettingWindowCtrl;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
@@ -44,6 +45,9 @@ public class BDBGUIView
 
 		root.setTop(titlePanel);
 		root.setCenter(workspace);
+		
+		// Set application icon.
+        this.primaryStage.getIcons().add(new Image("resources/images/icon_64.png"));
 		
 		// Set main panel style
         String panelStyle = "";
