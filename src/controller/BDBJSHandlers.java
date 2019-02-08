@@ -115,6 +115,7 @@ public class BDBJSHandlers
 				case "saveAs":
 					saveAsXML(content);
 					return null;
+					
 				case "saveXml":
 					// Save XML
 					saveXML(content);

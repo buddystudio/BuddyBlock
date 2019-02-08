@@ -4,7 +4,8 @@ import util.debug.BDInoCode;
 /*
  *  author bonizlee
  */
-public class BDBCode {
+public class BDBCode 
+{
 	BDInoCode inoCode;
 	String xmlCode;
 	String codePath;

@@ -36,7 +36,7 @@ public class BDBDialogWindow extends BDBWindow
     {
         // 窗口初始化
     	//super.init(360, 132);
-    	super.init(400, 132);
+    	super.init(500, 132);
     	
     	if(txtEnable == true)
     	{

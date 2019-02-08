@@ -50,6 +50,10 @@ public class BDBGUICtrl
 					public void handle(ActionEvent event) 
 					{
 						dialog.close();
+						
+						// 保存参数
+			        	BDBParameters.writeProfile();
+			        	
 						BDBParameters.webView.getEngine().executeScript("saveXML()");
 						view.primaryStage.close();
 					}
@@ -61,6 +65,9 @@ public class BDBGUICtrl
 					@Override
 					public void handle(ActionEvent event) 
 					{
+						// 保存参数
+			        	BDBParameters.writeProfile();
+			        	
 						view.primaryStage.close();
 						dialog.close();
 					}
@@ -74,8 +81,6 @@ public class BDBGUICtrl
 				}
 			}
 		});
-		
-		
 		
 		// Load complete.
 		BDBParameters.webView.getEngine().getLoadWorker().stateProperty().addListener(  
@@ -143,6 +148,9 @@ public class BDBGUICtrl
 					@Override
 					public void handle(ActionEvent event) 
 					{
+						// 保存参数
+			        	BDBParameters.writeProfile();
+			        	
 						dialog.close();
 						BDBParameters.webView.getEngine().executeScript("saveXML()");
 						
@@ -157,6 +165,9 @@ public class BDBGUICtrl
 					@Override
 					public void handle(ActionEvent event) 
 					{
+						// 保存参数
+			        	BDBParameters.writeProfile();
+			        	
 						// 关闭窗口
 			            System.exit(0);
 						dialog.close();
