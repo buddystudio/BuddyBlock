@@ -20,9 +20,11 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
+
 import model.BDMessage;
 import model.BDBParameters;
 import model.BDSerialManager2;
+
 import view.BDCompileAndUploadWindow;
 
 public class BDCompileAndUploadCtrl
@@ -298,13 +300,16 @@ public class BDCompileAndUploadCtrl
 					// Stop all threads.
 					stopAllThreads();
 					
-					compileAndUploadWindow.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
+					/*compileAndUploadWindow.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
     	            compileAndUploadWindow.getSerialListCombox().getSelectionModel().select(0);
     	            
     	            bd_com = compileAndUploadWindow.getSerialListCombox().getSelectionModel().getSelectedItem();
     	            
 					compileAndUploadWindow.getAcvCtrl().setLineCount(1);
-	            	compileAndUploadWindow.getAcvCtrl().clear();
+	            	compileAndUploadWindow.getAcvCtrl().clear();*/
+	            	
+	            	// 更新串口状态
+                	updateSerialPorts();
 	            	
 					compileMode = CompileMode.UPLOAD;
 					
@@ -321,13 +326,16 @@ public class BDCompileAndUploadCtrl
 					// Stop all threads.
 					stopAllThreads();
 					
-					compileAndUploadWindow.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
+					/*compileAndUploadWindow.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
     	            compileAndUploadWindow.getSerialListCombox().getSelectionModel().select(0);
     	            
     	            bd_com = compileAndUploadWindow.getSerialListCombox().getSelectionModel().getSelectedItem();
     	            
 					compileAndUploadWindow.getAcvCtrl().setLineCount(1);
-					compileAndUploadWindow.getAcvCtrl().clear();
+					compileAndUploadWindow.getAcvCtrl().clear();*/
+					
+					// 更新串口状态
+                	updateSerialPorts();
 					
 					compileMode = CompileMode.COMPILE_AND_UPLOAD;
 					
@@ -933,27 +941,31 @@ public class BDCompileAndUploadCtrl
                 	   boardName.equals("Arduino Yún") ||
                 	   boardName.equals("Arduino Yún Mini"))
                 	{
-                		uploadMessage.setMessage("msg_" + "");
-                		uploadMessage.setMessage("msg_" + ">>>>>>> BuddyBlock：" + "准备重置串口" + "...");
+                		//uploadMessage.setMessage("msg_" + "");
+                		uploadMessage.setMessage("msg_" + "<b>>>>>>>> BuddyBlock：" + "准备重置串口" + "...</b>");
                 		
                 		// Reboot Arduino Leonardo.
                     	BDSerialManager2 serialmangeer = new BDSerialManager2();
                     	
                     	serialmangeer.serialPortOpen(bd_com);
-                    	Thread.sleep(1000);
-                    	uploadMessage.setMessage("msg_" + ">>>>>>> BuddyBlock：" + "正在重置串口" + "...");
+                    	Thread.sleep(4000);
+                    	uploadMessage.setMessage("msg_" + "<b>>>>>>>> BuddyBlock：" + "正在重置串口" + "...</b>");
                     	serialmangeer.serialPortClose();
-                    	Thread.sleep(1000);
+                    	Thread.sleep(4000);
                     	
                     	serialmangeer = new BDSerialManager2();
                     	
+                    	String preCom = bd_com;
+                    	
                     	ObservableList<String> list = serialmangeer.getPortList();
                     	
-                    	uploadMessage.setMessage("msg_" + ">>>>>>> BuddyBlock：" + "串口从" + " <b>" + bd_com + "</b> " + "重置为" + " <b>" + list.get(0) + "</b>");
-                    	uploadMessage.setMessage("msg_" + ">>>>>>> ===================================================================");
-                    	uploadMessage.setMessage("msg_" + "");
+                    	// 寻觅新的串口（不能是COM1/COM2/COM3）
+                    	bd_com = list.get(list.size() - 1);
                     	
-                    	bd_com = list.get(0);
+                    	uploadMessage.setMessage("msg_" + "<b>>>>>>>> BuddyBlock：" + "串口从" + " " + preCom + " " + "重置为" + " " + bd_com + "</b>");
+                    	uploadMessage.setMessage("msg_" + "<b>>>>>>>> ===================================================================</b>");
+                    	uploadMessage.setMessage("msg_" + "");
+
                     	
                     	compileAndUploadWindow.getProgressBar().setProgress(0.1);
                     	
@@ -1161,7 +1173,7 @@ public class BDCompileAndUploadCtrl
 				    		compileAndUploadWindow.getAcvCtrl().updateMessageByLine("");
 		                	compileAndUploadWindow.getAcvCtrl().updateMessageByLine("<b>" + ">>>>>>> BuddyBlock：" + "初始化操作已结束" + "！" + "</b>");
 		                	compileAndUploadWindow.getAcvCtrl().updateMessageByLine("<b>>>>>>>> ===================================================================</b>");
-		                	compileAndUploadWindow.getAcvCtrl().updateMessageByLine("");
+		                	//compileAndUploadWindow.getAcvCtrl().updateMessageByLine("");
 		                	
 		                	compileThread.start();
 		                	
@@ -1343,8 +1355,12 @@ public class BDCompileAndUploadCtrl
 	
 	public void updateSerialPorts()
 	{
+		String curSelected = compileAndUploadWindow.getSerialListCombox().getSelectionModel().getSelectedItem();
+		
 		compileAndUploadWindow.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
-        compileAndUploadWindow.getSerialListCombox().getSelectionModel().select(0);
+        //compileAndUploadWindow.getSerialListCombox().getSelectionModel().select(0);
+		// 更新后选中此前的选项
+        compileAndUploadWindow.getSerialListCombox().getSelectionModel().select(curSelected);
         
         BDBParameters.connectCom = this.compileAndUploadWindow.getSerialListCombox().getSelectionModel().getSelectedItem().toString();
         
