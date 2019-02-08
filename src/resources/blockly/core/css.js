@@ -760,7 +760,7 @@ Blockly.Css.CONTENT = [
     'border-style: solid;',
     'border-width: 1px;',
     'cursor: default;',
-    'font: normal 13px Arial, sans-serif;',
+    'font: normal 20px Arial, sans-serif;',
     'margin: 0;',
     'outline: none;',
     'padding: 4px 0;',
@@ -802,7 +802,7 @@ Blockly.Css.CONTENT = [
    */
   '.blocklyWidgetDiv .goog-menuitem {',
     'color: #000;',
-    'font: normal 13px Arial, sans-serif;',
+    'font: normal 20px Arial, sans-serif;',
     'list-style: none;',
     'margin: 0;',
      /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
@@ -834,7 +834,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyWidgetDiv .goog-menuitem-content {',
     'color: #000;',
-    'font: normal 13px Arial, sans-serif;',
+    'font: normal 20px Arial, sans-serif;',
   '}',
 
   /* State: disabled. */
@@ -917,7 +917,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyWidgetDiv .goog-menuitem-mnemonic-separator {',
     'color: #999;',
-    'font-size: 12px;',
+    'font-size: 20px;',
     'padding-left: 4px;',
   '}',
 
