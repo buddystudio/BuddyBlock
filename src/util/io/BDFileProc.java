@@ -94,7 +94,7 @@ public class BDFileProc
 				if(!temp.delete())
 				{
 					//直接删除文件
-					System.err.println("Failed to delete " + name);
+					//System.err.println("Failed to delete " + name);
 				}
 			}
 		}

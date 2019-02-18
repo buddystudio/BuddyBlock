@@ -39,6 +39,13 @@ function saveAs(){
 }
 
 /**BDB
+ *  create XML from file
+ */
+function createXML() {
+	var fileName = window.prompt('createXml');
+}
+
+/**BDB
  *  road XML from file
  */
 function loadXML() {

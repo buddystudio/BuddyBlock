@@ -55,6 +55,7 @@ Blockly.Msg.CAT_COLOUR = "颜色";
 Blockly.Msg.CODE_BLOCKS = "积木";
 Blockly.Msg.CODE_ARDUINO = "代码";
 
+Blockly.Msg.TAB_NEW = "新建";
 Blockly.Msg.TAB_OPEN = "打开";
 Blockly.Msg.TAB_SAVE = "保存";
 Blockly.Msg.TAB_SAVEAS = "另存为";

@@ -36,6 +36,7 @@ Blockly.Msg.CAT_COLOUR = "Colour";
 Blockly.Msg.CODE_BLOCKS = "Blocks";
 Blockly.Msg.CODE_ARDUINO = "Code";
 
+Blockly.Msg.TAB_OPEN = "NEW";
 Blockly.Msg.TAB_OPEN = "Open";
 Blockly.Msg.TAB_SAVE = "Save";
 Blockly.Msg.TAB_SAVEAS = "SaveAs";

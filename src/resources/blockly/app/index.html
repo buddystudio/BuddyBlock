@@ -333,6 +333,7 @@
 											})();
 										</script>
 										<select hidden="" id="languageMenu" style="width:150px;height:25px;"></select>
+										<span class="blockSpanBtn" id="BUTTON_NEW" onclick="createXML()"><script>document.write(Blockly.Msg.TAB_NEW);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_OPEN" onclick="loadXML()"><script>document.write(Blockly.Msg.TAB_OPEN);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_SAVE" onclick="saveXML()"><script>document.write(Blockly.Msg.TAB_SAVE);</script></span>
 										<span class="blockSpanBtn" id="BUTTON_SAVEAS" onclick="saveAs()"><script>document.write(Blockly.Msg.TAB_SAVEAS);</script></span>
@@ -1115,6 +1116,11 @@
 					</value>
 				</block>
 				<block type="servo_read_degrees">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="controls_tone">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
 					</value>

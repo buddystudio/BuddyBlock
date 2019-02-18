@@ -29,10 +29,12 @@ public class BDBGUIView
 	public Rectangle2D visualBounds;
     
     public BDGUIModel guiModel = new BDGUIModel();
+
+	public Stage primaryStage;
+	
+	public BDBWorkspace workspace;
 	
 	private final String DEFAULT_HOME_PAGE = getDefultUrl();
-	
-	public Stage primaryStage;
 	
 	public BDBGUIView(Stage primaryStage)
     {
@@ -41,7 +43,7 @@ public class BDBGUIView
 		// 获取屏幕尺寸（不包含任务栏）
         this.visualBounds = Screen.getPrimary().getVisualBounds();
         
-		BDBWorkspace workspace = new BDBWorkspace(DEFAULT_HOME_PAGE, primaryStage);
+		this.workspace = new BDBWorkspace(DEFAULT_HOME_PAGE, primaryStage);
 
 		root.setTop(titlePanel);
 		root.setCenter(workspace);

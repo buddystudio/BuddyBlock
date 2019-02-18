@@ -19,7 +19,8 @@ public class BDBWorkspace extends BorderPane {
 		this(null, ownerWindow);
 	}
 
-	public BDBWorkspace(String homePageUrl, Window ownerWindow) {
+	public BDBWorkspace(String homePageUrl, Window ownerWindow) 
+	{
 		this(homePageUrl, true, true, true, ownerWindow);
 	}
 

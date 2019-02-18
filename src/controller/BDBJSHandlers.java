@@ -12,9 +12,11 @@ import util.io.BDCodeWriter;
 import util.io.BDFileProc;
 import model.BDBParameters;
 import model.BDCodeModel;
+import model.BDSerialManager2;
 import view.BDBConsoleWindow;
 import view.BDBDialogWindow;
 import view.BDBPreSettingWindow;
+import view.BDBWorkspace;
 import view.BDComWindow;
 import view.BDCompileAndUploadWindow;
 import view.BDConsoleWindow;
@@ -26,6 +28,7 @@ import util.debug.*;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -112,6 +115,10 @@ public class BDBJSHandlers
 					compileAndUpload(content);
 					return null;
 	
+				case "createXml":
+					createXML();
+					return null;
+					
 				case "saveAs":
 					saveAsXML(content);
 					return null;
@@ -164,6 +171,80 @@ public class BDBJSHandlers
 		};
 
 		return handler;
+	}
+	
+	private static void createXML()
+	{
+		BDBDialogWindow dialog = new BDBDialogWindow(" 新建", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
+		
+		// Dialog cancle button on click.
+		dialog.cancleBtn.setOnAction(new EventHandler<ActionEvent>() 
+		{
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				dialog.close();
+			}
+		});
+
+		// Dialog OK button on click.
+		dialog.okBtn.setOnAction(new EventHandler<ActionEvent>() 
+		{
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				// 关闭窗口
+				dialog.close();
+				
+				// 保存参数
+	        	BDBParameters.writeProfile();
+				BDBParameters.webView.getEngine().executeScript("saveXML()");
+				
+				// Create new XML file.
+				BDBParameters.webView.getEngine().executeScript("location.reload()");
+			}
+		});
+
+		// Dialog giveup button on click.
+		dialog.giveupBtn.setOnAction(new EventHandler<ActionEvent>() 
+		{
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				// 保存参数
+	        	BDBParameters.writeProfile();
+	        	
+				// 关闭窗口
+				dialog.close();
+				
+				// Create new XML file.
+				BDBParameters.webView.getEngine().executeScript("location.reload()");
+			}
+		});
+		
+		if (isCodeChange()) 
+		{
+			dialog.show();
+		}
+		else
+		{
+			// Create new XML file.
+			BDBParameters.webView.getEngine().executeScript("location.reload()");
+		}
+	}
+	
+	private static boolean isCodeChange() 
+	{
+		String newXMLCode = BDBParameters.webView.getEngine().executeScript("getXML()").toString();
+		String xmlCode = BDBParameters.code.getXmlCode();
+		
+		if (newXMLCode.equals("<xml></xml>") || newXMLCode.equals("<xml xmlns=\"http://www.w3.org/1999/xhtml\"></xml>"))
+			return false;
+		
+		if (!newXMLCode.equals(xmlCode))
+			return true;
+		
+		return false;
 	}
 	
 	private static void example()
@@ -526,6 +607,17 @@ public class BDBJSHandlers
 		
 		// 显示编译功能窗口
 		cauwView.show();
+
+		cauwView.getSerialListCombox().setItems(new BDSerialManager2().getPortList());
+		
+		if(cauwView.getSerialListCombox().getItems().get(0).equals("未连接"))
+		{
+			cauwView.getSerialListCombox().getSelectionModel().select(0);
+		}
+		else
+		{
+			cauwView.getSerialListCombox().getSelectionModel().select(cauwView.getSerialListCombox().getItems().size() - 1);
+		}
 		
 		// 更新串口号
 		cauwCtrl.updateSerialPorts();
