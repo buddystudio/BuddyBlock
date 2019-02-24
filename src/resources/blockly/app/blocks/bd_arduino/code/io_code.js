@@ -49,12 +49,18 @@ Blockly.Arduino['io_digital_write2'] = function ()
     return code;
 };
 
-Blockly.Arduino['io_digital_read'] = function () 
+Blockly.Arduino['io_digital_read2'] = function () 
 {
-    var dropdown_pin = this.getFieldValue('PIN');
+    /*var dropdown_pin = this.getFieldValue('PIN');
 	
     Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
 	
+    var code = 'digitalRead(' + dropdown_pin + ')';
+	
+    return [code, Blockly.Arduino.ORDER_ATOMIC];*/
+	
+	var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+    //Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
     var code = 'digitalRead(' + dropdown_pin + ')';
 	
     return [code, Blockly.Arduino.ORDER_ATOMIC];
