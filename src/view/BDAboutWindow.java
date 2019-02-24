@@ -12,9 +12,9 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.StageStyle;
 import model.BDBParameters;
 
 import java.awt.Desktop;
@@ -26,13 +26,13 @@ import java.net.URISyntaxException;
  *
  * @author gsh
  */
-public final class BDAboutWindow extends BDWindow
+public final class BDAboutWindow extends BDSubWindow
 {
     public BDAboutWindow()
     {
         // 窗口初始化
         //super.init(500, 365);
-    	super.init(500, 400);
+    	super.init(500, 450);
 
         scene.getStylesheets().add("resources/style/settingStyle.css");
        
@@ -43,8 +43,8 @@ public final class BDAboutWindow extends BDWindow
         this.setAlwaysOnTop(true);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
-        this.setResizable(false);
+        //this.initStyle(StageStyle.UTILITY);
+        //this.setResizable(false);
         
         String bitTxt = "";
 
@@ -59,6 +59,9 @@ public final class BDAboutWindow extends BDWindow
        
         this.setTitle("  关于");
         this.setScene(scene);
+        
+        // Set sub window title.
+        this.setNewTitle("关于");
        
         VBox contain  = new VBox();
        
@@ -79,15 +82,23 @@ public final class BDAboutWindow extends BDWindow
         Label line02Txt = new Label();
         Label line03Txt = new Label();
         
-        Hyperlink linkTxt = new Hyperlink();  
+        Hyperlink linkTxt = new Hyperlink();
+        Hyperlink linkTxt2 = new Hyperlink();
         
-        linkTxt.setText("http://buddy.studio"); 
+        linkTxt.setText("http://buddy.studio");
+        linkTxt2.setText("http://buddy.org.cn");
         
         linkTxt.setOnAction((ActionEvent e) -> 
         {  
         	// Visit buddyStudio webSite.
         	this.browserUrl("http://buddy.studio");
-        });  
+        });
+        
+        linkTxt2.setOnAction((ActionEvent e) -> 
+        {  
+        	// Visit buddyStudio webSite.
+        	this.browserUrl("http://buddy.org.cn");
+        }); 
        
         //copyrightTxt.setTextFill(Color.web("#ff0000"));  
         copyrightTxt.setTextFill(Color.web("#333333"));  
@@ -120,7 +131,16 @@ public final class BDAboutWindow extends BDWindow
         //contain.getChildren().add(authorTxt);
         contain.getChildren().add(line02Txt);
         contain.getChildren().add(line03Txt);
-        contain.getChildren().add(linkTxt);
+        //contain.getChildren().add(linkTxt);
+        contain.setPadding(new Insets(0, 0, 300, 0));  // 设置边距
+        
+        HBox links = new HBox();
+        
+        links.setAlignment(Pos.CENTER);
+        links.setSpacing(10);
+        links.getChildren().addAll(linkTxt, linkTxt2);
+        
+        contain.getChildren().add(links);
        
         rootPanel.getChildren().add(contain);
         

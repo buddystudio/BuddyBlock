@@ -21,7 +21,7 @@ import javafx.stage.StageStyle;
  *
  * @author gsh
  */
-public class BDBDialogWindow extends BDBWindow
+public class BDBDialogWindow extends BDSubWindow
 {
     public Image image;
     public Label msgLbl;
@@ -36,7 +36,9 @@ public class BDBDialogWindow extends BDBWindow
     {
         // 窗口初始化
     	//super.init(360, 132);
-    	super.init(500, 132);
+    	super.init(500, 132 + 52);
+    	
+    	rootPanel.getStylesheets().clear();
     	
     	if(txtEnable == true)
     	{
@@ -47,12 +49,13 @@ public class BDBDialogWindow extends BDBWindow
         this.setAlwaysOnTop(true);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
-       
-        this.setResizable(false);
+        //this.initStyle(StageStyle.UTILITY);
+        //this.setResizable(false);
        
         this.setTitle(title);
         this.setScene(scene);
+        
+        this.setNewTitle(title);
        
         okBtn.setPrefWidth(105);
         okBtn.setPrefHeight(20);
@@ -61,9 +64,9 @@ public class BDBDialogWindow extends BDBWindow
         cancleBtn.setPrefWidth(105);
         cancleBtn.setPrefHeight(20);
        
-        okBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
-        giveupBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
-        cancleBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
+        //okBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
+        //giveupBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
+        //cancleBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
 
         VBox contain  = new VBox();
        
@@ -75,17 +78,14 @@ public class BDBDialogWindow extends BDBWindow
         VBox topPanel = new VBox();
         HBox bottomPanel = new HBox();
        
-        topPanel.setPadding(new Insets(25,0,15,0));      // 设置边距
-        topPanel.setSpacing(15);                         // 设置间距
-        bottomPanel.setPadding(new Insets(15,0,20,0));   // 设置边距
-        bottomPanel.setSpacing(7);                       // 设置间距
+        contain.setPadding(new Insets(0, 0, 10, 0));      	// 设置边距
+        topPanel.setPadding(new Insets(25, 0, 25, 0));      // 设置边距
+        topPanel.setSpacing(15);                         	// 设置间距
+        bottomPanel.setPadding(new Insets(15,0,20,0));   	// 设置边距
+        bottomPanel.setSpacing(10);                       	// 设置间距
        
         topPanel.setAlignment(Pos.CENTER);
         bottomPanel.setAlignment(Pos.CENTER);
-       
-        //image = new Image("images/iconIsSave.png");
-       
-        //ImageView iv = new ImageView(image);
        
         msgLbl = new Label(msg);
        

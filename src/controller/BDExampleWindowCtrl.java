@@ -150,7 +150,7 @@ public class BDExampleWindowCtrl
         
         exampleWindow.tree.getStyleClass().add("mylistview");
         
-        exampleWindow.tree.setMinHeight(530);
+        exampleWindow.tree.setMinHeight(500);
         
         // Click import button and import the source code file.
         exampleWindow.importBtn.setOnAction(new EventHandler<ActionEvent>() 

@@ -12,13 +12,14 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.StageStyle;
 //import jfxtras.styles.jmetro8.JMetro;
 import model.BDBoardManager;
 import model.BDBParameters;
 import model.BDSerialManager2;
 
-public class BDCompileAndUploadWindow extends BDWindow
+public class BDCompileAndUploadWindow extends BDSubWindow
 {
 	private MenuBar menuBar = new MenuBar();
 	
@@ -61,29 +62,34 @@ public class BDCompileAndUploadWindow extends BDWindow
 	public BDCompileAndUploadWindow()
 	{
 		// 窗口初始化
-        //super.init(750, 760);
-		// 隐藏菜单栏后的尺寸
-		//super.init(750, 720);
-		
+		// 获取屏幕高度
+		double dh = 750;
+		double h = Screen.getPrimary().getVisualBounds().getHeight();
+				
+		if(dh > h)
+		{
+			dh = h;
+		}
+				
 		if(BDBParameters.langues.equals("English"))
-    	{
+		{
 			winWidth = 870;
-			
-    		super.init(winWidth, 750);
-    	}
-    	else
-    	{
-    		//winWidth = 750;
-    		winWidth = 810;
-    		
-    		super.init(winWidth, 750);
-    	}
+					
+		    super.init(winWidth, dh);
+		}
+		else
+		{
+			//winWidth = 750;
+		    winWidth = 810;
+		    		
+		    super.init(winWidth, dh);
+		}
         
         // 总在最前方
         //this.setAlwaysOnTop(true);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
+        //this.initStyle(StageStyle.UTILITY);
         //this.setResizable(false);
         this.setMaxWidth(winWidth);
         this.setMinWidth(winWidth);
@@ -94,6 +100,8 @@ public class BDCompileAndUploadWindow extends BDWindow
        
         this.setTitle("  " + "编译与上传");
         this.setScene(scene);
+        
+        this.setNewTitle("编译与上传");
 
         BorderPane root = new BorderPane();
         
@@ -171,7 +179,7 @@ public class BDCompileAndUploadWindow extends BDWindow
 											 );
 		
 			//this.acvView.setPrefHeight(610);
-			this.progressBar.setPrefSize(winWidth, 40);
+			this.progressBar.setPrefSize(winWidth, 50);
 			
 			// 隐藏菜单栏
 			//topPanel.getChildren().add(this.menuBar);

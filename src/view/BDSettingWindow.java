@@ -28,7 +28,7 @@ import model.BDBParameters;
  *
  * @author gsh
  */
-public class BDSettingWindow extends BDWindow
+public class BDSettingWindow extends BDSubWindow
 { 
     public ObservableList<String> strList = FXCollections.observableArrayList();
     public ObservableList<String> strList2 = FXCollections.observableArrayList();
@@ -46,7 +46,7 @@ public class BDSettingWindow extends BDWindow
     public BDSettingWindow()
     {
         // 窗口初始化
-        super.init(500, 500 + 30);
+    	super.init(500, 500 + 30);
         
         //scene.getStylesheets().add("resources/style/listViewStyle.css");
         
@@ -54,11 +54,13 @@ public class BDSettingWindow extends BDWindow
         this.setAlwaysOnTop(true);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
-        this.setResizable(false);
+        //this.initStyle(StageStyle.UTILITY);
+        //this.setResizable(false);
        
         this.setTitle("  " + "设置");
         this.setScene(scene);
+        
+        this.setNewTitle("设置");
         
         TabPane tabPane = new TabPane();
         

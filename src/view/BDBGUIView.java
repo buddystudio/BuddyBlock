@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.BDBParameters;
 import model.BDGUIModel;
-import util.base.DrawUtil;
+import util.base.BDDrawUtil;
 
 public class BDBGUIView 
 {
@@ -84,7 +84,7 @@ public class BDBGUIView
 		primaryStage.show();
 		
 		// 添加窗体拉伸效果
-        DrawUtil.addDrawFunc(this.primaryStage, root);
+        BDDrawUtil.addDrawFunc(this.primaryStage, root);
 		
 		scene.getStylesheets().add("resources/style/titleStyle.css"); 
     }

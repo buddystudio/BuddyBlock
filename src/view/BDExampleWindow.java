@@ -13,13 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.VBox;
-import javafx.stage.StageStyle;
 
 /**
  *
  * @author gsh
  */
-public final class BDExampleWindow extends BDWindow
+public final class BDExampleWindow extends BDSubWindow
 {
 	public ObservableList<String> strList = FXCollections.observableArrayList();
 
@@ -32,8 +31,8 @@ public final class BDExampleWindow extends BDWindow
     
     public BDExampleWindow()
     {
-        // 窗口初始化
-        super.init(525, 550 + 30);
+    	// 窗口初始化
+        super.init(480, 550 + 40);
         
         //scene.getStylesheets().add("resources/style/listViewStyle.css");
         
@@ -41,11 +40,13 @@ public final class BDExampleWindow extends BDWindow
         this.setAlwaysOnTop(true);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
+        //this.initStyle(StageStyle.UTILITY);
         this.setResizable(false);
        
-        this.setTitle("  " + "请选择示例");
+        //this.setTitle("  " + BDLang.rb.getString("请选择示例"));
         this.setScene(scene);
+        
+        this.setNewTitle("请选择示例");
         
         importBtn.setStyle("-fx-background-radius: 0, 0;");
        
@@ -59,7 +60,5 @@ public final class BDExampleWindow extends BDWindow
         importBtn.setPrefSize(100, 30);
        
         rootPanel.getChildren().add(contain);
-        
-        rootPanel.getStylesheets().add("resources/style/modena_dark.css");
     }
 }

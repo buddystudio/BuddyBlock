@@ -20,7 +20,7 @@ import javafx.stage.StageStyle;
  *
  * @author gsh
  */
-public class BDComWindow extends BDWindow
+public class BDComWindow extends BDSubWindow
 {
     public BorderPane rootContain = new BorderPane();
     
@@ -38,7 +38,7 @@ public class BDComWindow extends BDWindow
     public BDComWindow() 
     {
         // 窗口初始化
-        super.init(550, 600);
+    	super.init(550, 600 + 40);
         
         //scene.getStylesheets().add("resources/style/listViewStyle.css");
 
@@ -48,11 +48,13 @@ public class BDComWindow extends BDWindow
         this.setAlwaysOnTop(true);
 
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
-        this.setResizable(false);
+        //this.initStyle(StageStyle.UTILITY);
+        //this.setResizable(false);
 
         this.setTitle("  " + "串口通讯工具");
         this.setScene(scene);
+        
+        this.setNewTitle("串口通讯工具");
 
         HBox topPanel = new HBox();
         HBox bottomPanel = new HBox();
@@ -110,12 +112,13 @@ public class BDComWindow extends BDWindow
         recMsgtxt.setStyle("-fx-font-size: 20;");
         
         recMsgtxt.setEditable(false);
+        recMsgtxt.setMinHeight(490);
 
         //TextArea recMsgtxt = new TextArea();
         /*rootContain.setTop(topPanel);
         rootContain.setCenter(recMsgtxt);
         rootContain.setBottom(bottomPanel);*/
-        
+        rootContain.setPadding(new Insets(0, 0, 10, 0));
         rootContain.setTop(bottomPanel);
         rootContain.setCenter(recMsgtxt);
         rootContain.setBottom(topPanel);
