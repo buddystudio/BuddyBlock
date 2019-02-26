@@ -24,7 +24,7 @@ import javafx.stage.StageStyle;
  *
  * @author gsh
  */
-public class BDHintDialogWindow extends BDWindow
+public class BDHintDialogWindow extends BDSubWindow
 {
     public Image image;
     public Label msgLbl;
@@ -36,25 +36,29 @@ public class BDHintDialogWindow extends BDWindow
     public BDHintDialogWindow(String title, String msg)
     {
         // 窗口初始化
-        super.init(360, 132);
+        super.init(360, 132 + 50);
+        
+        rootPanel.getStylesheets().clear();
         
         // 总在最前方
-        this.setAlwaysOnTop(true);
+        //this.setAlwaysOnTop(true);
         
         // 模态窗口
         this.initModality(Modality.APPLICATION_MODAL);
        
         // 只有关闭按钮的窗口
-        this.initStyle(StageStyle.UTILITY);
-        this.setResizable(false);
+        //this.initStyle(StageStyle.UTILITY);
+        //this.setResizable(false);
        
         this.setTitle(title);
         this.setScene(scene);
+        
+        this.setNewTitle(title);
        
         okBtn.setPrefWidth(105);
         okBtn.setPrefHeight(20);
        
-        okBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
+        //okBtn.setFont(Font.font(null, FontWeight.NORMAL, 14));
 
         VBox contain  = new VBox();
        

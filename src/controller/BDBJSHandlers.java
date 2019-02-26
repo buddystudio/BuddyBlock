@@ -14,7 +14,7 @@ import model.BDBParameters;
 import model.BDCodeModel;
 import model.BDSerialManager2;
 import view.BDBConsoleWindow;
-import view.BDBDialogWindow;
+import view.BDialogWindow;
 import view.BDBPreSettingWindow;
 import view.BDBWorkspace;
 import view.BDComWindow;
@@ -157,7 +157,7 @@ public class BDBJSHandlers
 			 */
 
 			// Show a popup in a new window.
-			BDBDialogWindow dialog = new BDBDialogWindow(" 输入", pData.getMessage(), true, false, true, true);
+			BDialogWindow dialog = new BDialogWindow(" 输入", pData.getMessage(), true, false, true, true);
 			
 			dialog.okBtn.setOnAction(e -> dialog.close());
 			dialog.cancleBtn.setOnAction(e -> dialog.close());
@@ -175,7 +175,7 @@ public class BDBJSHandlers
 	
 	private static void createXML()
 	{
-		BDBDialogWindow dialog = new BDBDialogWindow(" 新建", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
+		BDialogWindow dialog = new BDialogWindow(" 新建", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
 		
 		// Dialog cancle button on click.
 		dialog.cancleBtn.setOnAction(new EventHandler<ActionEvent>() 
@@ -773,7 +773,7 @@ public class BDBJSHandlers
 		{
 
 			// Show a popup in a new window.
-			BDBDialogWindow dialog = new BDBDialogWindow(" 提示", msg, true, false, true, false);
+			BDialogWindow dialog = new BDialogWindow(" 提示", msg, true, false, true, false);
 
 			dialog.okBtn.setOnAction(e -> 
 			{

@@ -79,6 +79,24 @@ Blockly.Blocks['io_pwm_write'] =
 	}
 };
 
+Blockly.Blocks['io_pwm_write2'] = 
+{
+	init: function() 
+	{
+		this.setColour(20);
+		this.appendValueInput("PIN", Number)
+			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
+			.setCheck(Number);
+		this.appendValueInput("NUM", "Number")
+			.appendField(Blockly.BUDDY_VALUE2)
+			.setCheck("Number");
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setTooltip(Blockly.BUDDY_TOOLTIP_INOUT_ANALOG_WRITE);
+	}
+};
+
 Blockly.Blocks['io_analog_read'] = 
 {
 	init: function() 

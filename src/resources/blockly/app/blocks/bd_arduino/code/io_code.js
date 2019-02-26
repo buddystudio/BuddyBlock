@@ -88,6 +88,17 @@ Blockly.Arduino['io_pwm_write'] = function ()
     return code;
 };
 
+Blockly.Arduino['io_pwm_write2'] = function () 
+{
+    var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+    //var dropdown_stat = this.getFieldValue('STAT');
+    var value_num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
+    //Blockly.Arduino.setups_['setup_output'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
+    var code = 'analogWrite(' + dropdown_pin + ',' + value_num + ');\n';
+	
+    return code;
+};
+
 Blockly.Arduino['io_analog_read'] = function () 
 {
     var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);

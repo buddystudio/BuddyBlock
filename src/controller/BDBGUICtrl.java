@@ -3,7 +3,7 @@ package controller;
 import util.base.Preferences;
 
 import model.BDBParameters;
-import view.BDBDialogWindow;
+import view.BDialogWindow;
 import view.BDBGUIView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -31,7 +31,7 @@ public class BDBGUICtrl
 			@Override
 			public void handle(final WindowEvent event) 
 			{
-				BDBDialogWindow dialog = new BDBDialogWindow(" 关闭", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
+				BDialogWindow dialog = new BDialogWindow(" 关闭", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
 				
 				// Dialog cancle button on click.
 				dialog.cancleBtn.setOnAction(new EventHandler<ActionEvent>() 
@@ -130,7 +130,7 @@ public class BDBGUICtrl
             @Override
             public void handle(ActionEvent event) 
             {
-            	BDBDialogWindow dialog = new BDBDialogWindow(" 关闭", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
+            	BDialogWindow dialog = new BDialogWindow(" 关闭", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
 				
 				// Dialog cancle button on click.
 				dialog.cancleBtn.setOnAction(new EventHandler<ActionEvent>() 

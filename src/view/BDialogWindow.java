@@ -21,7 +21,7 @@ import javafx.stage.StageStyle;
  *
  * @author gsh
  */
-public class BDBDialogWindow extends BDSubWindow
+public class BDialogWindow extends BDSubWindow
 {
     public Image image;
     public Label msgLbl;
@@ -32,7 +32,7 @@ public class BDBDialogWindow extends BDSubWindow
     
     public TextField txt  = new TextField();
     
-    public BDBDialogWindow(String title, String msg, boolean okBtnEnable, boolean giveupBtnEnable, boolean cancleBtnEnable, boolean txtEnable)
+    public BDialogWindow(String title, String msg, boolean okBtnEnable, boolean giveupBtnEnable, boolean cancleBtnEnable, boolean txtEnable)
     {
         // 窗口初始化
     	//super.init(360, 132);
@@ -42,7 +42,7 @@ public class BDBDialogWindow extends BDSubWindow
     	
     	if(txtEnable == true)
     	{
-    		this.setHeight(218);
+    		this.setHeight(218 + 20);
     	}
         
         // 总在最前方
