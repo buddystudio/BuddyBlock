@@ -202,6 +202,7 @@ public class BDBJSHandlers
 				
 				// Create new XML file.
 				BDBParameters.webView.getEngine().executeScript("location.reload()");
+				BDBParameters.filepath = null;
 			}
 		});
 
@@ -219,6 +220,7 @@ public class BDBJSHandlers
 				
 				// Create new XML file.
 				BDBParameters.webView.getEngine().executeScript("location.reload()");
+				BDBParameters.filepath = null;
 			}
 		});
 		
@@ -230,6 +232,7 @@ public class BDBJSHandlers
 		{
 			// Create new XML file.
 			BDBParameters.webView.getEngine().executeScript("location.reload()");
+			BDBParameters.filepath = null;
 		}
 	}
 	
@@ -326,7 +329,7 @@ public class BDBJSHandlers
 			}
 			
 			BDBParameters.code.setInoCode(new BDInoCode(
-					BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
+			BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
 			
 			BDBParameters.code.setXmlCode(BDBParameters.webView.getEngine().executeScript("getXML()").toString());
 		}
@@ -353,10 +356,13 @@ public class BDBJSHandlers
 			
 			BDBParameters.webView.getEngine().executeScript("updateXML(\"" + xml + "\")");
 			BDBParameters.code.setInoCode(new BDInoCode(
-					BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
+			BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
 			
 			BDBParameters.code.setXmlCode(BDBParameters.webView.getEngine().executeScript("getXML()").toString());
 			BDBParameters.filepath = file.getPath();
+			
+			// 打开文件后更新文件名称
+			BDBParameters.webView.getEngine().executeScript("updateFileName('"+file.getName()+"')");
 		} 
 		catch (IOException e1) 
 		{
@@ -378,9 +384,12 @@ public class BDBJSHandlers
 				return;
 			BDCodeWriter.fileWriter(file.getPath(), content);
 			BDBParameters.code.setInoCode(new BDInoCode(
-					BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
+			BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
 			BDBParameters.code.setXmlCode(BDBParameters.webView.getEngine().executeScript("getXML()").toString());
 			BDBParameters.filepath = file.getPath();
+			
+			// 保存文件后更新文件名称
+			BDBParameters.webView.getEngine().executeScript("updateFileName('"+file.getName()+"')");
 		} 
 		catch (IOException e1) 
 		{

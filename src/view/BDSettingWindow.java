@@ -83,6 +83,9 @@ public class BDSettingWindow extends BDSubWindow
         tabNetwork.setDisable(true);
         tabUser.setDisable(true);
         
+        // Alpha版暂时不开放编辑器的设置
+        tabEditor.setDisable(true);
+        
         tabBase.setContent(getBaseContent());
         tabEditor.setContent(getEditorContent());
         tabHotKey.setContent(getHotKeyContent());
@@ -140,6 +143,9 @@ public class BDSettingWindow extends BDSubWindow
     	{
     		langList.getSelectionModel().select(0);
     	}
+    	
+    	// Alpha版暂时屏蔽多国语言功能的设置
+    	langList.setDisable(true);
     	
     	Label lbl_lan = new Label("重启后生效");
     	
