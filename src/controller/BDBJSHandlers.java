@@ -203,6 +203,7 @@ public class BDBJSHandlers
 				// Create new XML file.
 				BDBParameters.webView.getEngine().executeScript("location.reload()");
 				BDBParameters.filepath = null;
+				BDBParameters.filename = "";
 			}
 		});
 
@@ -221,6 +222,7 @@ public class BDBJSHandlers
 				// Create new XML file.
 				BDBParameters.webView.getEngine().executeScript("location.reload()");
 				BDBParameters.filepath = null;
+				BDBParameters.filename = "";
 			}
 		});
 		
@@ -233,6 +235,7 @@ public class BDBJSHandlers
 			// Create new XML file.
 			BDBParameters.webView.getEngine().executeScript("location.reload()");
 			BDBParameters.filepath = null;
+			BDBParameters.filename = "";
 		}
 	}
 	
@@ -362,7 +365,9 @@ public class BDBJSHandlers
 			BDBParameters.filepath = file.getPath();
 			
 			// 打开文件后更新文件名称
-			BDBParameters.webView.getEngine().executeScript("updateFileName('"+file.getName()+"')");
+			BDBParameters.webView.getEngine().executeScript("updateFileName('" + file.getName() + "')");
+			
+			BDBParameters.filename = file.getName();
 		} 
 		catch (IOException e1) 
 		{
@@ -378,6 +383,10 @@ public class BDBJSHandlers
 			// Set extension filter
 			FileChooser.ExtensionFilter extFilterXML = new FileChooser.ExtensionFilter("源代码  (*.xml)", "*.xml");
 			fileChooser.getExtensionFilters().add(extFilterXML);
+			
+			// 初始化文件名称
+			fileChooser.setInitialFileName(BDBParameters.filename);
+			
 			// Show open file dialog
 			File file = fileChooser.showSaveDialog(null);
 			if (file == null)

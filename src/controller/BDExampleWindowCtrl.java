@@ -197,13 +197,15 @@ public class BDExampleWindowCtrl
 			//System.out.println("updateXML(\'" + xml + "\')");
 			// Base64 encode.
 			xml = Base64.getEncoder().encodeToString(xml.getBytes());
-			
-			
-			
+
 			BDBParameters.webView.getEngine().executeScript("updateXML(\"" + xml + "\")");
 			BDBParameters.code.setInoCode(new BDInoCode(
-					BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
-
+			BDBParameters.webView.getEngine().executeScript("Blockly.Arduino.workspaceToCode()").toString()));
+			
+			// 更新文件名
+			BDBParameters.webView.getEngine().executeScript("updateFileName('" + name + ".xml" +"')");
+			BDBParameters.filename = name + ".xml";
+			
             // 关闭窗口
             // Close the window.
             this.rootWindow.close();

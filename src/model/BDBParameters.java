@@ -40,6 +40,7 @@ public class BDBParameters
 	static public String sketchpath 	= System.getProperty("java.io.tmpdir") + sketchName;
 	static public BDBCode code;
 	static public String filepath		= "";
+	static public String filename		= "";
 	
 	static public double defWidth		= 1280;
     static public double defHeight	    = 825;
