@@ -378,6 +378,8 @@
 		<xml id="toolbox" style="display: none">
 			<category name="%{BKY_CAT_INOUT}" id="catInOut" colour="20">
 				<block type="io_highlow"></block>
+				<block type="io_pinMode"></block>
+				<block type="io_pinMode2"></block>
 				<block type="io_digital_write2">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -391,6 +393,7 @@
 						<shadow type="pins_digital"></shadow>
 					</value>
 				</block>
+				<block type="io_digital_write3"></block>
 				<block type="io_digital_read2">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -410,6 +413,7 @@
 						<shadow type="pins_analog"></shadow>
 					</value>
 				</block>
+				<block type="io_analog_write2"></block>
 				<block type="io_analog_read">
 					<value name="PIN">
 						<shadow type="pins_analog"></shadow>
@@ -456,7 +460,6 @@
 							<field name="NUM">1000000</field></shadow>
 					</value>
 				</block>
-				<block type="io_pinMode"></block>
 				<block type="io_shiftout">
 					<value name="PIN1">
 						<shadow type="pins_digital"></shadow>
@@ -478,9 +481,6 @@
 						<shadow type="math_number">
 							<field name="NUM">1000</field></shadow>
 					</value>
-				</block>
-				<block type="base_delay">
-					<value name="DELAY_TIME"></value>
 				</block>
 				<block type="controls_if"></block>
 				<block type="controls_switch_case"></block>

@@ -29,6 +29,24 @@ Blockly.Blocks['io_digital_write2'] =
 	}
 };
 
+Blockly.Blocks['io_digital_write3'] = 
+{
+	init: function() 
+	{
+		this.setColour(20);
+		this.appendValueInput("PIN", Number)
+			.appendField(Blockly.BUDDY_DIGITALWRITE_PIN)
+			.setCheck("Number");
+		this.appendValueInput("STAT")
+			.appendField(Blockly.BUDDY_STAT)
+			.setCheck([Number,Boolean]);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setInputsInline(true);
+		this.setTooltip(Blockly.LANG_INOUT_DIGITAL_WRITE_TOOLTIP);
+	}
+};
+
 Blockly.Blocks['io_digital_read2'] = 
 {
 	init: function() 
@@ -51,6 +69,24 @@ Blockly.Blocks['io_analog_write'] =
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
 			.setCheck(Number);
+		this.appendValueInput("NUM", "Number")
+			.appendField(Blockly.BUDDY_VALUE2)
+			.setCheck("Number");
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setTooltip(Blockly.BUDDY_TOOLTIP_INOUT_ANALOG_WRITE);
+  }
+};
+
+Blockly.Blocks['io_analog_write2'] = 
+{
+	init: function() 
+	{
+		this.setColour(20);
+		this.appendValueInput("PIN", Number)
+			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
+			.setCheck("Number");
 		this.appendValueInput("NUM", "Number")
 			.appendField(Blockly.BUDDY_VALUE2)
 			.setCheck("Number");
@@ -220,6 +256,24 @@ Blockly.Blocks['io_pinMode'] =
 		this.appendDummyInput()
 			.appendField(Blockly.BUDDY_PINMODE + " PIN#")
 			.appendField(new Blockly.FieldDropdown(profile.default.dropdownAll), "PIN")
+			.appendField(Blockly.BUDDY_STAT)
+			.appendField(new Blockly.FieldDropdown([[Blockly.BUDDY_PINMODEIN, "INPUT"], [Blockly.BUDDY_PINMODEOUT, "OUTPUT"], [Blockly.BUDDY_PINMODEPULLUP, "INPUT_PULLUP"]]), "STAT");
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setTooltip('Write digital value to a specific Port');
+		this.setHelpUrl('https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/');
+		this.setColour(20);
+	}
+};
+
+Blockly.Blocks['io_pinMode2'] = 
+{
+	init: function() 
+	{
+		this.appendValueInput("PIN", Number)
+			.appendField(Blockly.BUDDY_PINMODE + " PIN#")
+			.setCheck("Number");
+		this.appendDummyInput()
 			.appendField(Blockly.BUDDY_STAT)
 			.appendField(new Blockly.FieldDropdown([[Blockly.BUDDY_PINMODEIN, "INPUT"], [Blockly.BUDDY_PINMODEOUT, "OUTPUT"], [Blockly.BUDDY_PINMODEPULLUP, "INPUT_PULLUP"]]), "STAT");
 		this.setPreviousStatement(true, null);

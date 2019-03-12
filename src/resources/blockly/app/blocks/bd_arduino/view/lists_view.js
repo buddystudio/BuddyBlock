@@ -363,7 +363,7 @@ Blockly.Blocks.lists_getIndex = {
     this.setColour(Blockly.Blocks.lists.HUE);
     this.setOutput(true, Number);
     this.appendValueInput('AT')
-        .setCheck(Number)
+        .setCheck("Number")
 		.appendField(new Blockly.FieldTextInput('mylist'), 'VAR')
         .appendField(Blockly.LANG_LISTS_GET_INDEX1);
     this.appendDummyInput("")
@@ -377,7 +377,7 @@ Blockly.Blocks.lists_setIndex = {
   init: function() {
     this.setColour(Blockly.Blocks.lists.HUE);
     this.appendValueInput('AT')
-        .setCheck(Number)
+        .setCheck("Number")
 		.appendField(new Blockly.FieldTextInput('mylist'), 'VAR')
         .appendField(Blockly.LANG_LISTS_SET_INDEX1);
     this.appendValueInput('TO')
