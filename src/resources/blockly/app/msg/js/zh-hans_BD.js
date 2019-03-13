@@ -23,6 +23,8 @@ var MSG = {
   badXml: "XML解析错误：\n%1\n\n选择“确定”以取消您对XML的修改，或选择“取消”以继续编辑XML。"
 };
 
+Blockly.BUDDY_CAPREAD_PIN = "触摸信号读取"
+
 // color definition
 Blockly.Msg.ARDUINO_BASE_HUE = 180;
 Blockly.Msg.GROVE_HUE = 120;

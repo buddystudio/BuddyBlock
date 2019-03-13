@@ -61,6 +61,20 @@ Blockly.Blocks['io_digital_read2'] =
   }
 };
 
+Blockly.Blocks['io_cap_read'] = 
+{
+	init: function() 
+	{
+		this.setColour(20);
+		this.appendValueInput("PIN", Number)
+			.appendField(Blockly.BUDDY_CAPREAD_PIN)
+			.setCheck(Number);
+		this.setInputsInline(true);
+		this.setOutput(true, [Boolean,Number]);
+		this.setTooltip(Blockly.BUDDY_TOOLTIP_INOUT_DIGITAL_READ);
+  }
+};
+
 Blockly.Blocks['io_analog_write'] = 
 {
 	init: function() 

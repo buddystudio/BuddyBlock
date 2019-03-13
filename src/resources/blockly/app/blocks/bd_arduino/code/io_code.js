@@ -140,6 +140,17 @@ Blockly.Arduino['io_analog_read'] = function ()
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['io_cap_read'] = function () 
+{
+
+	var dropdown_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'touch.readCapacitivePin(' + dropdown_pin + ')';
+	
+	Blockly.Arduino.definitions_['cap'] = '#include <BD_Touch.h>\n\nBD_Touch touch;\n';
+	
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['io_buildin_led'] = function () 
 {
     var dropdown_stat = this.getFieldValue('STAT');

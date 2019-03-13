@@ -4,6 +4,8 @@ goog.provide('Blockly.Msg.en_BD');
 
 goog.require('Blockly.Msg');
 
+Blockly.BUDDY_CAPREAD_PIN = "Capacitive Read"
+
 // color definition
 Blockly.Msg.ARDUINO_BASE_HUE = 180;
 Blockly.Msg.GROVE_HUE = 120;
