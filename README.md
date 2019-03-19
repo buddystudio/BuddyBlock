@@ -1,6 +1,6 @@
 # BuddyBlock
 
-BuddyBlock is A simple graphical IDE for Arduino developers.
+BuddyBlock is an IDE for Arduino graphical programming. Developers can build code logic by dragging and dropping building blocks. The interface by BuddyBlock is simple and easy to use. It provides developers with a wealth of classifying function building blocks module. Building block logic can be translated into corresponding code in real time. Developers can easily control the development of Arduino application through simple drag-and-drop splicing and settings.
 
 --------------------------------------
 
