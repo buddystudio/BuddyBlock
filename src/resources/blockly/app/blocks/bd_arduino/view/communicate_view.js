@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.communicate');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.communicate.HUE = 140;
+Blockly.Blocks.communicate.HUE = "#e3008c";
 
 //红外接收模块
 Blockly.Blocks.ir_recv = {

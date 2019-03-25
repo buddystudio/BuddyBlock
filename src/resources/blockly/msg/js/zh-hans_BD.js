@@ -421,12 +421,12 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
 Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
 
-Blockly.Msg["MATH_HUE"] = "230";
+Blockly.Msg["MATH_HUE"] = "#9966ff";
 Blockly.Msg["LOOPS_HUE"] = "120";
-Blockly.Msg["LISTS_HUE"] = "260";
+Blockly.Msg["LISTS_HUE"] = "#8a1c7c";
 Blockly.Msg["LOGIC_HUE"] = "210";
-Blockly.Msg["VARIABLES_HUE"] = "330";
-Blockly.Msg["TEXTS_HUE"] = "160";
-Blockly.Msg["PROCEDURES_HUE"] = "290";
+Blockly.Msg["VARIABLES_HUE"] = "#ff6680";
+Blockly.Msg["TEXTS_HUE"] = "#ffab19";
+Blockly.Msg["PROCEDURES_HUE"] = "#005a9e";
 Blockly.Msg["COLOUR_HUE"] = "20";
 Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310";

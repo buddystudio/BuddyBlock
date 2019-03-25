@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.math');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.math.HUE = 230;
+Blockly.Blocks.math.HUE = "#9966ff";
 
 // 最大最小值
 Blockly.Blocks['math_max_min']= 

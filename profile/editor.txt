@@ -5,6 +5,6 @@ posX=185.0
 posY=56.0
 width=1480.0
 height=825.0
-board=Arduino Leonardo
+board=Arduino/Genuino Uno
 tempPath=C:\Users\gsh\AppData\Local\Temp\
 lang=zh-CN

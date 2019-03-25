@@ -133,7 +133,7 @@ Blockly.Blocks['arduino_base_angle'] = {
     this.setOutput(true, 'Number');
     this.setTooltip('Angle degrees number');
     this.setHelpUrl('');
-    this.setColour('%{BKY_ARDUINO_BASE_HUE}');
+    this.setColour('#9966ff');
   }
 };
 
@@ -163,7 +163,7 @@ Blockly.Blocks['arduino_base_map'] = {
     this.setOutput(true);
     this.setTooltip('Re-maps a number from [0-1024] to another.');
     this.setHelpUrl('https://www.arduino.cc/reference/en/language/functions/math/map/');
-    this.setColour('%{BKY_ARDUINO_BASE_HUE}');
+    this.setColour('#9966ff');
   }
 };
 

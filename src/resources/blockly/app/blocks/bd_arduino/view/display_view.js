@@ -5,7 +5,7 @@ goog.provide('Blockly.Blocks.display');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.display.HUE = 180;
+Blockly.Blocks.display.HUE = "#4c97ff";
 
 Blockly.Blocks.group_lcd_init = {
   init: function() {

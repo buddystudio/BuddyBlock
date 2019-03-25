@@ -376,7 +376,7 @@
 		<textarea id="content_xml2" class="content" wrap="off"></textarea>
 		<textarea id="content_xml" class="content" wrap="off"></textarea>
 		<xml id="toolbox" style="display: none">
-			<category name="%{BKY_CAT_INOUT}" id="catInOut" colour="20">
+			<category name="%{BKY_CAT_INOUT}" id="catInOut" colour="#ef2d56">
 				<block type="io_highlow"></block>
 				<block type="io_pinMode"></block>
 				<block type="io_pinMode2"></block>
@@ -478,7 +478,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_CONTROL}" id="catControl" colour="120">
+			<category name="%{BKY_CAT_CONTROL}" id="catControl" colour="#40bf4a">
 				<block type="base_setup"></block>
 				<block type="controls_end_program"></block>
 				<block type="base_delay">
@@ -525,7 +525,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+			<category name="%{BKY_CATMATH}" colour="#9966ff">
 				<block type="math_number">
 					<field name="NUM">123</field></block>
 				<block type="math_arithmetic">
@@ -612,7 +612,7 @@
 				<block type="arduino_base_map"></block>
 				<block type="arduino_base_angle"></block>
 			</category>
-			<category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+			<category name="%{BKY_CATTEXT}" colour="#ffab19">
 				<block type="text">
 					<field name="TEXT">hello</field></block>
 				<block type="text_char">
@@ -753,7 +753,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+			<category name="%{BKY_CATLISTS}" colour="#8a1c7c">
 				<block type="lists_create_with">
 					<mutation items="0"></mutation>
 				</block>
@@ -831,7 +831,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CATLOGIC}" id="catLogic" colour="210">
+			<category name="%{BKY_CATLOGIC}" id="catLogic" colour="#4cbfe6">
 				<block type="logic_compare"></block>
 				<block type="logic_operation"></block>
 				<block type="logic_negate"></block>
@@ -840,7 +840,7 @@
 				<block type="logic_true_or_false"></block>
 			</category>
 			<!--<sep></sep>-->
-			<category name="%{BKY_CAT_SERIAL}" colour="65">
+			<category name="%{BKY_CAT_SERIAL}" colour="#006e90">
 				<block type="serial_begin">
 					<value name="CONTENT">
 						<shadow type="math_number">
@@ -916,7 +916,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_COMMUNICATE}" colour="140">
+			<category name="%{BKY_CAT_COMMUNICATE}" colour="#e3008c">
 				<block type="ir_recv">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -986,7 +986,7 @@
 				<!--读取卡号-->
 				<block type="RFID_in"></block>
 				<!-- 如果卡号和XX一致，那么执行XXX--></category>
-			<category name="%{BKY_CAT_SENSOR}" colour="40">
+			<category name="%{BKY_CAT_SENSOR}" colour="#1b998b">
 				<block type="chaoshengbo2">
 					<value name="PIN1">
 						<shadow type="pins_digital">
@@ -1118,7 +1118,7 @@
 					</statement>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_ACTUATOR}" colour="100">
+			<category name="%{BKY_CAT_ACTUATOR}" colour="#f55d3e">
 				<block type="servo_move">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -1227,7 +1227,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_DISPLAY}" colour="180">
+			<category name="%{BKY_CAT_DISPLAY}" colour="#4c97ff">
 				<block type="group_lcd_init">
 					<value name="device">
 						<shadow type="math_number">
@@ -1448,7 +1448,7 @@
 				</block>
 				<block type="display_Matrix_CLEAR"></block>
 			</category>
-			<category name="%{BKY_CAT_ETHERNET}" colour="0">
+			<category name="%{BKY_CAT_ETHERNET}" colour="#e3008c">
 				<block type="ethernet_init_begin">
 					<value name="MAC">
 						<block type="ethernet_mac_address"></block>
@@ -1482,8 +1482,8 @@
 				<block type="ethernet_client_get_request"></block>
 			</category>
 			<!--<sep></sep>-->
-			<category name="%{BKY_CAT_VAR}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-			<category name="%{BKY_CAT_FUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+			<category name="%{BKY_CAT_VAR}" colour="#ff6680" custom="VARIABLE"></category>
+			<category name="%{BKY_CAT_FUNCTIONS}" colour="#005a9e" custom="PROCEDURE"></category>
 			<!--<sep></sep>-->
 			<!-- 展示隐藏模块目录 -->
 			<div style="display:none">

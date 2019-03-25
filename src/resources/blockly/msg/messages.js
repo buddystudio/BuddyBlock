@@ -53,7 +53,7 @@ Blockly.Msg.LOGIC_HUE = '210';
 /// {{Notranslate}} Hue value for all loop blocks.
 Blockly.Msg.LOOPS_HUE = '120';
 /// {{Notranslate}} Hue value for all math blocks.
-Blockly.Msg.MATH_HUE = '230';
+Blockly.Msg.MATH_HUE = '#9966ff';
 /// {{Notranslate}} Hue value for all text blocks.
 Blockly.Msg.TEXTS_HUE = '160';
 /// {{Notranslate}} Hue value for all list blocks.

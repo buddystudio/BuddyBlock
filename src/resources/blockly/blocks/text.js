@@ -35,7 +35,7 @@ goog.require('Blockly');
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['TEXTS_HUE']. (2018 April 5)
  */
-Blockly.Constants.Text.HUE = 160;
+Blockly.Constants.Text.HUE = "#ffab19";
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   // Block for text value

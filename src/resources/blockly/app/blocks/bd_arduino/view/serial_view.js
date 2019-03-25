@@ -3,7 +3,7 @@
 goog.provide('Blockly.Blocks.serial');
 
 goog.require('Blockly.Blocks');
-Blockly.Blocks.serial.HUE = 65;
+Blockly.Blocks.serial.HUE = "#006e90";
 Blockly.Blocks['serial_begin'] = {
   init: function() {
     this.setColour(Blockly.Blocks.serial.HUE);

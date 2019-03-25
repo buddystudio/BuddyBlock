@@ -3,7 +3,7 @@
 goog.provide('Blockly.Blocks.actuator');
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.actuator.HUE = 100;
+Blockly.Blocks.actuator.HUE = "#f55d3e";
 
 Blockly.Blocks.servo_move = {
   init: function() {

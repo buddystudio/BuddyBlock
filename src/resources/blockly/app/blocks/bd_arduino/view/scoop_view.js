@@ -4,7 +4,7 @@ goog.provide('Blockly.Blocks.SCoop');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.SCoop.HUE = 120;
+Blockly.Blocks.SCoop.HUE = "#40bf4a";
 
 Blockly.Blocks['SCoopTask'] = {
     init: function() {

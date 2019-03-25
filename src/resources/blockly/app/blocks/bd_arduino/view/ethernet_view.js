@@ -1,7 +1,7 @@
 'use strict';
 goog.provide('Blockly.Blocks.ethernet');
 goog.require('Blockly.Blocks');
-Blockly.Blocks.ethernet.HUE = 0;
+Blockly.Blocks.ethernet.HUE = "#e3008c";
 
 Blockly.Blocks['ethernet_init_begin'] = {
   init: function() {

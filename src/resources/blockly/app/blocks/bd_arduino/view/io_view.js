@@ -4,6 +4,7 @@ Blockly.Blocks['io_highlow'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendDummyInput("")
 			.appendField(new Blockly.FieldDropdown([[Blockly.BUDDY_HIGH, "HIGH"], [Blockly.BUDDY_LOW, "LOW"]]), 'BOOL')
 		this.setOutput(true, Boolean);
@@ -16,6 +17,7 @@ Blockly.Blocks['io_digital_write2'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_DIGITALWRITE_PIN)
 			.setCheck(Number);
@@ -34,6 +36,7 @@ Blockly.Blocks['io_digital_write3'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_DIGITALWRITE_PIN)
 			.setCheck("Number");
@@ -52,6 +55,7 @@ Blockly.Blocks['io_digital_read2'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_DIGITALREAD_PIN)
 			.setCheck(Number);
@@ -66,6 +70,7 @@ Blockly.Blocks['io_cap_read'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_CAPREAD_PIN)
 			.setCheck(Number);
@@ -80,6 +85,7 @@ Blockly.Blocks['io_analog_write'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
 			.setCheck(Number);
@@ -98,6 +104,7 @@ Blockly.Blocks['io_analog_write2'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
 			.setCheck("Number");
@@ -116,6 +123,7 @@ Blockly.Blocks['io_pwm_write'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
 			.setCheck(Number);
@@ -134,6 +142,7 @@ Blockly.Blocks['io_pwm_write2'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGWRITE_PIN)
 			.setCheck(Number);
@@ -152,6 +161,7 @@ Blockly.Blocks['io_analog_read'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_ANALOGREAD_PIN)
 			.setCheck(Number);
@@ -166,6 +176,7 @@ Blockly.Blocks['io_attachInterrupt'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendDummyInput()
 			.appendField(Blockly.BUDDY_ATTACHINTERRUPT_PIN + " PIN#")
 			.appendField(new Blockly.FieldDropdown(profile.default.dropdownInterrupt), 'PIN');
@@ -193,6 +204,7 @@ Blockly.Blocks['io_detachInterrupt'] =
 		this.setTooltip(Blockly.BUDDY_TOOLTIP_INOUT_DETACHINTERRUPT);
 		this.setHelpUrl('');
 		this.setColour(20);
+		this.setColour('#ef2d56');
 	}
 };
 
@@ -201,6 +213,7 @@ Blockly.Blocks['io_attachPinInterrupt'] =
     init: function () 
 	{
         this.setColour(20);
+		this.setColour('#ef2d56');
         this.appendValueInput("PIN", Number)
             .appendField(Blockly.BUDDY_ATTACHPININTERRUPT_PIN)
             .setCheck(Number);
@@ -220,6 +233,7 @@ Blockly.Blocks['io_detachPinInterrupt'] =
     init: function () 
 	{
         this.setColour(20);
+		this.setColour('#ef2d56');
         this.appendValueInput("PIN", Number)
             .appendField(Blockly.BUDDY_DETACHPININTERRUPT_PIN)
             .setCheck(Number);
@@ -234,6 +248,7 @@ Blockly.Blocks['io_pulseIn'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_PULSEIN)
 			.setCheck(Number);
@@ -249,6 +264,7 @@ Blockly.Blocks['io_pulseIn2'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendValueInput("PIN", Number)
 			.appendField(Blockly.BUDDY_PULSEIN)
 			.setCheck(Number);
@@ -277,6 +293,7 @@ Blockly.Blocks['io_pinMode'] =
 		this.setTooltip('Write digital value to a specific Port');
 		this.setHelpUrl('https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/');
 		this.setColour(20);
+		this.setColour('#ef2d56');
 	}
 };
 
@@ -295,6 +312,7 @@ Blockly.Blocks['io_pinMode2'] =
 		this.setTooltip('Write digital value to a specific Port');
 		this.setHelpUrl('https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/');
 		this.setColour(20);
+		this.setColour('#ef2d56');
 	}
 };
 
@@ -303,6 +321,7 @@ Blockly.Blocks['io_shiftout'] =
 	init: function() 
 	{
 		this.setColour(20);
+		this.setColour('#ef2d56');
 		this.appendDummyInput("")
 			.appendField("ShiftOut");
 		this.appendValueInput("PIN1", Number)
