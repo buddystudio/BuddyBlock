@@ -14,6 +14,7 @@ import java.util.Locale;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import model.BDBParameters;
+import model.BDLang;
 import view.BDSettingWindow;
 
 /**
@@ -126,7 +127,7 @@ public class BDSettingWindowCtrl
             	// 更新语言
             	String lang = settingWindow.langList.getSelectionModel().getSelectedItem().toString();
             	
-            	/*if(lang.equals("简体中文"))
+            	if(lang.equals("简体中文"))
             	{
             		BDLang.locale = new Locale("zh", "CN");
             	}
@@ -137,7 +138,7 @@ public class BDSettingWindowCtrl
             	else if(lang.equals("English"))
             	{
             		BDLang.locale = new Locale("en", "US");
-            	}*/
+            	}
             	
             	BDBParameters.langues = lang;
             	

@@ -26,7 +26,7 @@ Blockly.Msg.CAT_CONTROL = "Control";
 Blockly.Msg.CAT_LOGIC = "Logic";
 Blockly.Msg.CAT_SERIAL = "Serial";
 Blockly.Msg.CAT_STORAGE = "Storage";
-Blockly.Msg.CAT_COMMUNICATE = "Communicate";
+Blockly.Msg.CAT_COMMUNICATE = "Communic";
 Blockly.Msg.CAT_SENSOR = "Sensor";
 Blockly.Msg.CAT_ACTUATOR = "Actuator";
 Blockly.Msg.CAT_DISPLAY = "Display";
@@ -39,7 +39,7 @@ Blockly.Msg.CODE_BLOCKS = "Blocks";
 Blockly.Msg.CODE_ARDUINO = "Code";
 Blockly.Msg.CODE_FILE = "File";
 
-Blockly.Msg.TAB_OPEN = "NEW";
+Blockly.Msg.TAB_NEW = "New";
 Blockly.Msg.TAB_OPEN = "Open";
 Blockly.Msg.TAB_SAVE = "Save";
 Blockly.Msg.TAB_SAVEAS = "SaveAs";

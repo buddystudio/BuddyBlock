@@ -2,7 +2,6 @@ package view;
 
 import java.net.URL;
 
-import controller.BDExampleWindowCtrl;
 import controller.BDSettingWindowCtrl;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -71,9 +70,12 @@ public class BDBGUIView
         
         root.setStyle(panelStyle);
         workspace.setStyle(panelStyle2);
-		
-		//Scene scene = new Scene(root);
-		//Scene scene = new Scene(root, 1120, 640);
+        
+        if(BDBParameters.langues.equals("English"))
+    	{
+        	BDBParameters.minWidth += 80;
+    	}
+
 		Scene scene = new Scene(root, BDBParameters.minWidth, BDBParameters.minHeight);
 
 		// Set panel background transparent.
@@ -93,13 +95,30 @@ public class BDBGUIView
 	{
 		// Get current path.
 		String curPath = this.getClass().getResource("/").getPath();
-		
+
 		// 简体中文版
 		String pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
 		
 		// 英文版
 		//String pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=en_BD";
 		
+		if(BDBParameters.langues.equals("简体中文"))
+    	{
+			pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
+    	}
+    	else if(BDBParameters.langues.equals("繁體中文"))
+    	{
+    		pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
+    	}
+    	else if(BDBParameters.langues.equals("English"))
+    	{
+    		pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=en_BD";
+    	}
+    	else
+    	{
+    		pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
+    	}
+
 		return pageUrl;
 	}
 	

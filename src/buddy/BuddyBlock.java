@@ -14,16 +14,19 @@
  */
 package buddy;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /*import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;*/
 
 import controller.BDBGUICtrl;
 import view.BDBGUIView;
-import util.base.Base;
 import util.base.Preferences;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.BDBParameters;
+import model.BDLang;
 
 /**
  *
@@ -46,30 +49,20 @@ public class BuddyBlock extends Application
     {
     	// 获取配置信息
     	BDBParameters.getProfile();
-    	
-        // 判断系统类型
-        String arch = System.getProperty("os.arch");
-        String os   = System.getProperty("os.name");
-        
-        // 获取当前系统类型（Windows / Mac / Linux）
-        BDBParameters.os = os;
-        
-        // 获取操作系统指令长度（32bit/64bit）
-        BDBParameters.arch = arch;
         
         // 初始化基本配置参数
-        Base base = new Base(null);
-        
         Preferences.init(null);
-        Preferences.set("upload.verbose", "true");
-
-        // 初始化界面视图
-        //BDGUIView2 gui = new BDGUIView2(primaryStage);
+        
+        // 获取系统信息
+    	this.getSysInfo();
+        
+        // 设定界面语言
+    	this.setLanguage();
+        
+    	// 初始化界面视图
+        BDBGUIView gui = new BDBGUIView(primaryStage);
         
         // 初始化界面控制器
-        //BDGUICtrl2 guiCtrl = new BDGUICtrl2(gui);
-        
-        BDBGUIView gui = new BDBGUIView(primaryStage);
 		BDBGUICtrl guiCtrl = new BDBGUICtrl(gui);
     }
     
@@ -84,19 +77,40 @@ public class BuddyBlock extends Application
         
         // 获取操作系统指令长度（32bit/64bit）
         BDBParameters.arch = arch;
+    }
+    
+    private void setLanguage()
+    {
+    	// 返回Java所支持的全部国家和语言的数组
+    	Locale[] localeList = Locale.getAvailableLocales();
 
-        /*
-        System.out.println(arch);
-        System.out.println(os);
-        
-        if(arch.contains("64"))
-        {
-        	System.out.println("64 bit");
-        }
-        else
-        {
-        	System.out.println("32 bit");
-        }
-        */
+    	//遍历数组的每个元素，依次获取所支持的国家和语言
+    	for (int i = 0; i < localeList.length ; i++ )
+    	{
+    		//打印出所支持的国家和语言
+    		//System.out.println(localeList[i].getDisplayCountry() + "=" + localeList[i].getCountry()+ " " + localeList[i].getDisplayLanguage() + "=" + localeList[i].getLanguage());
+    	}
+    	
+    	// 取得系统默认的国家/语言环境
+    	//Locale myLocale = Locale.getDefault();
+
+    	BDLang.locale = new Locale("zh", "CN");
+    	//BDLang.locale = new Locale("en", "US");
+
+    	if(BDBParameters.langues.equals("简体中文"))
+    	{
+    		BDLang.locale = new Locale("zh", "CN");
+    	}
+    	else if(BDBParameters.langues.equals("繁體中文"))
+    	{
+    		BDLang.locale = new Locale("zh", "HK");
+    	}
+    	else if(BDBParameters.langues.equals("English"))
+    	{
+    		BDLang.locale = new Locale("en", "US");
+    	}
+
+    	// 绑定语言资源
+    	BDLang.rb = ResourceBundle.getBundle("resources.lang.lang", BDLang.locale);
     }
 }

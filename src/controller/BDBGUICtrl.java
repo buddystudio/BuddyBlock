@@ -1,7 +1,5 @@
 package controller;
 
-import util.base.Preferences;
-
 import model.BDBParameters;
 import view.BDialogWindow;
 import view.BDBGUIView;
@@ -94,8 +92,8 @@ public class BDBGUICtrl
 	            			
 	            			//set the board and com in webpage
 	            			
-	            			String board = Preferences.get("board");
-	            			String com = Preferences.get("serial.port");
+	            			//String board = Preferences.get("board");
+	            			//String com = Preferences.get("serial.port");
 	            			/*String cmd = String.format("setElementText('%s','%s')","lbl_board", board);
 	            			
 	            			BDBParameters.webView.getEngine().executeScript(cmd);

@@ -16,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import model.BDBParameters;
+import model.BDLang;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public final class BDAboutWindow extends BDSubWindow
         this.setScene(scene);
         
         // Set sub window title.
-        this.setNewTitle("关于");
+        this.setNewTitle(BDLang.rb.getString("关于"));
        
         VBox contain  = new VBox();
        
@@ -123,16 +124,16 @@ public final class BDAboutWindow extends BDSubWindow
             //linkTxt.setPadding(new Insets(10, 0, 0, 0));
         }
 
-        line01Txt.setText("本软件由 " + BDBParameters.organization + " 开发、调试及发布。");
-        line02Txt.setText("本软件遵从GPL协议开放源代码，在遵照指定约束条件下您");
-        line03Txt.setText("可以自由传播和修改。  当前版本：" + bitTxt + "-" + BDBParameters.version);
+        line01Txt.setText(BDLang.rb.getString("本软件由") + " " + BDBParameters.organization + " " + BDLang.rb.getString("开发、调试及发布。"));
+        line02Txt.setText(BDLang.rb.getString("本软件遵从GPL协议开放源代码，在遵照指定约束条件下您"));
+        line03Txt.setText(BDLang.rb.getString("可以自由传播和修改。当前版本：") + bitTxt + "-" + BDBParameters.version);
        
         contain.getChildren().add(line01Txt);
         //contain.getChildren().add(authorTxt);
         contain.getChildren().add(line02Txt);
         contain.getChildren().add(line03Txt);
         //contain.getChildren().add(linkTxt);
-        contain.setPadding(new Insets(0, 0, 300, 0));  // 设置边距
+        //contain.getChildren().add(linkTxt2);
         
         HBox links = new HBox();
         
@@ -141,9 +142,9 @@ public final class BDAboutWindow extends BDSubWindow
         links.getChildren().addAll(linkTxt, linkTxt2);
         
         contain.getChildren().add(links);
+        contain.setPadding(new Insets(0, 0, 300, 0));  // 设置边距
        
         rootPanel.getChildren().add(contain);
-        
         rootPanel.getStylesheets().add("resources/style/modena_dark.css");
     }
     

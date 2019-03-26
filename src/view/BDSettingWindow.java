@@ -23,6 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.StageStyle;
 
 import model.BDBParameters;
+import model.BDLang;
 
 /**
  *
@@ -36,8 +37,8 @@ public class BDSettingWindow extends BDSubWindow
     public ListView<String> themeList = new ListView<>(strList);
     public ListView<String> sizeList = new ListView<>(strList2);
     
-    public Button submitBtn = new Button("确定");
-    public Button cancelBtn = new Button("取消");
+    public Button submitBtn = new Button(BDLang.rb.getString("确定"));
+    public Button cancelBtn = new Button(BDLang.rb.getString("取消"));
     
     public ComboBox<String> langList;
     
@@ -57,20 +58,20 @@ public class BDSettingWindow extends BDSubWindow
         //this.initStyle(StageStyle.UTILITY);
         //this.setResizable(false);
        
-        this.setTitle("  " + "设置");
+        this.setTitle("  " + BDLang.rb.getString("设置"));
         this.setScene(scene);
         
-        this.setNewTitle("设置");
+        this.setNewTitle(BDLang.rb.getString("设置"));
         
         TabPane tabPane = new TabPane();
         
         //tabPane.setSide(Side.LEFT);
 
-        Tab tabBase 	= new Tab("  " + "通用" + "  ");
-        Tab tabEditor 	= new Tab("  " + "编辑器" + "  ");
-        Tab tabHotKey 	= new Tab("  " + "快捷键" + "  ");
-        Tab tabNetwork 	= new Tab("  " + "网络" + " ");
-        Tab tabUser 	= new Tab("  " + "账户" + "  ");
+        Tab tabBase 	= new Tab("  " + BDLang.rb.getString("通用") + "  ");
+        Tab tabEditor 	= new Tab("  " + BDLang.rb.getString("编辑器") + "  ");
+        Tab tabHotKey 	= new Tab("  " + BDLang.rb.getString("快捷键") + "  ");
+        Tab tabNetwork 	= new Tab("  " + BDLang.rb.getString("网络") + " ");
+        Tab tabUser 	= new Tab("  " + BDLang.rb.getString("账户") + "  ");
         
         tabBase.setClosable(false);
         tabEditor.setClosable(false);
@@ -121,7 +122,7 @@ public class BDSettingWindow extends BDSubWindow
     	HBox subContain02 	= new HBox();
     	HBox subContain03 	= new HBox();
     	
-    	Label lbl01 = new Label("选择语言");
+    	Label lbl01 = new Label(BDLang.rb.getString("选择语言"));
     	
     	langList = new ComboBox<String>(FXCollections.observableArrayList("简体中文", "繁體中文", "English"));
     	
@@ -145,9 +146,9 @@ public class BDSettingWindow extends BDSubWindow
     	}
     	
     	// Alpha版暂时屏蔽多国语言功能的设置
-    	langList.setDisable(true);
+    	//langList.setDisable(true);
     	
-    	Label lbl_lan = new Label("重启后生效");
+    	Label lbl_lan = new Label(BDLang.rb.getString("重启后生效"));
     	
     	lbl_lan.setStyle("-fx-text-fill: #777777;");
     	
@@ -157,13 +158,13 @@ public class BDSettingWindow extends BDSubWindow
     	
     	subContain01.getChildren().addAll(lbl01, langList, lbl_lan);
     	
-    	Label lbl02 = new Label("临时目录");
+    	Label lbl02 = new Label(BDLang.rb.getString("临时目录"));
     	
     	VBox pathContain = new VBox();
 
     	TextField pathTxt = new TextField();
-    	Button changeBtn	= new Button("更改目录");
-    	Label lbl = new Label("编译过程中所产生文件的放置目录");
+    	Button changeBtn	= new Button(BDLang.rb.getString("更改目录"));
+    	Label lbl = new Label(BDLang.rb.getString("编译过程中所产生文件的放置目录"));
     	
     	pathTxt.setText(BDBParameters.tempPath);
     	pathTxt.setPrefWidth(300);
@@ -179,9 +180,9 @@ public class BDSettingWindow extends BDSubWindow
     	subContain02.setPadding(new Insets(20, 0, 10, 50));  // 设置边距
     	subContain02.getChildren().addAll(lbl02, pathContain);
     	
-    	Label lbl03 = new Label("通用选项");
-    	isCustomChk = new CheckBox("启动时恢复上一次窗口状态");
-    	CheckBox isUpdateNoticeChk = new CheckBox("有版本更新时通知我");
+    	Label lbl03 = new Label(BDLang.rb.getString("通用选项"));
+    	isCustomChk = new CheckBox(BDLang.rb.getString("启动时恢复上一次窗口状态"));
+    	CheckBox isUpdateNoticeChk = new CheckBox(BDLang.rb.getString("有版本更新时通知我"));
     	
     	// 默认选项
     	isCustomChk.setSelected(true);
@@ -262,20 +263,20 @@ public class BDSettingWindow extends BDSubWindow
     	HBox subContain13 	= new HBox();
     	HBox subContain14 	= new HBox();
     	
-    	Label lbl01 = new Label("保存文件");
-    	Label lbl02 = new Label("文本搜索");
-    	Label lbl03 = new Label("搜索替换");
-    	Label lbl04 = new Label("复制文本");
-    	Label lbl05 = new Label("粘贴文本");
-    	Label lbl06 = new Label("剪切文本");
-    	Label lbl07 = new Label("全选文本");
-    	Label lbl08 = new Label("恢复操作");
-    	Label lbl09 = new Label("重复操作");
-    	Label lbl10 = new Label("整行删除");
-    	Label lbl11 = new Label("查找空格");
-    	Label lbl12 = new Label("当前参数");
-    	Label lbl13 = new Label("注释代码");
-    	Label lbl14 = new Label("解除注释");
+    	Label lbl01 = new Label(BDLang.rb.getString("保存文件"));
+    	Label lbl02 = new Label(BDLang.rb.getString("文本搜索"));
+    	Label lbl03 = new Label(BDLang.rb.getString("搜索替换"));
+    	Label lbl04 = new Label(BDLang.rb.getString("复制文本"));
+    	Label lbl05 = new Label(BDLang.rb.getString("粘贴文本"));
+    	Label lbl06 = new Label(BDLang.rb.getString("剪切文本"));
+    	Label lbl07 = new Label(BDLang.rb.getString("全选文本"));
+    	Label lbl08 = new Label(BDLang.rb.getString("恢复操作"));
+    	Label lbl09 = new Label(BDLang.rb.getString("重复操作"));
+    	Label lbl10 = new Label(BDLang.rb.getString("整行删除"));
+    	Label lbl11 = new Label(BDLang.rb.getString("查找空格"));
+    	Label lbl12 = new Label(BDLang.rb.getString("当前参数"));
+    	Label lbl13 = new Label(BDLang.rb.getString("注释代码"));
+    	Label lbl14 = new Label(BDLang.rb.getString("解除注释"));
     	
     	lbl01.setMinWidth(140);
     	lbl02.setMinWidth(140);
@@ -394,9 +395,7 @@ public class BDSettingWindow extends BDSubWindow
     		
     		c.setAlignment(Pos.CENTER_LEFT);
     	}
-    	
-    	
-    	
+
     	return scrollPane;
     }
 }
