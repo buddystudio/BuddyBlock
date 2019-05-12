@@ -118,6 +118,9 @@ public class BDBGUIView
     	{
     		pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
     	}
+		
+		// 临时处理新版目录
+		pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html";
 
 		return pageUrl;
 	}
