@@ -48,6 +48,8 @@ Blockly.Colours = {
   "highlightGlowSize": 1.1,
   "highlightGlowOpacity": 1,
   "selectedGlow": "#FFF200",
+  // 选择后边框的
+  //"selectedGlow": "#0000FF",
   "selectedGlowSize": 0.4,
   "warningGlow": "#E53D00",
   "warningGlowSize": 1.1,

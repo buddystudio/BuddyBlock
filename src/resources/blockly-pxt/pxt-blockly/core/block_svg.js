@@ -339,7 +339,9 @@ Blockly.BlockSvg.prototype.setSelectedBlock = function(isSelectingBlock) {
     Blockly.utils.removeClass(/** @type {!Element} */ (this.svgPathSelected_), 'hover-emphasis');
     this.svgPathSelected_.setAttribute('fill', 'none');
     this.svgPathSelected_.setAttribute('stroke', Blockly.Colours.selectedGlow);
-    this.svgPathSelected_.setAttribute('filter', 'url(#' + selectedGlowFilterId + ')');
+	//  不添加滤镜
+    //this.svgPathSelected_.setAttribute('filter', 'url(#' + selectedGlowFilterId + ')');
+	//this.svgPathSelected_.setAttribute('filter', 'grayscale(100%);');
     this.getSvgRoot().appendChild(this.svgPathSelected_);
   } else if (!this.isSelectingBlock_ && this.svgPathSelected_) {
     svg.removeChild(this.svgPathSelected_);

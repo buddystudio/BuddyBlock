@@ -283,14 +283,16 @@ Blockly.createDom_ = function(container, options) {
       {'in': 'outColor', 'in2': 'outBlur',
         'operator': 'in', 'result': 'outGlow'}, warningGlowFilter);
 
+  //  选择积木使用的滤镜
   var selectedGlowFilter = Blockly.utils.createSvgElement('filter',
-      {
+      {  
         'id': 'blocklySelectedGlowFilter' + rnd,
         'height': '160%',
         'width': '180%',
-        y: '-30%',
+		y: '-30%',
         x: '-40%',
         'color-interpolation-filters': 'sRGB'
+
       },
       defs);
   options.selectedGlowBlur = Blockly.utils.createSvgElement('feGaussianBlur',

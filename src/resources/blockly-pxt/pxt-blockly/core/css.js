@@ -386,11 +386,12 @@ Blockly.Css.CONTENT = [
     'stroke: white;',
   '}',
 
+	// 解决选择后出现色块（解除以下注释）
   '.blocklySelected>.blocklyPath {',
-     //'stroke: #FFF200;',
-     //'stroke-width: 1px;',
+     'stroke: #FFF200;',
+     'stroke-width: 2px;',
   '}',
-
+	// 解决选择后出现色块（解除以上注释）
   '.blocklyDraggable {',
     /* backup for browsers (e.g. IE11) that don't support grab */
     'cursor: url("<<<PATH>>>/handopen.cur"), auto;',
