@@ -573,14 +573,16 @@ Blockly.BlockSvg.prototype.highlightShapeForInput = function(conn, add) {
   if (add) {
     var replacementGlowFilterId = this.workspace.options.replacementGlowFilterId
       || 'blocklyReplacementGlowFilter';
-    input.outlinePath.setAttribute('filter',
-        'url(#' + replacementGlowFilterId + ')');
-    Blockly.utils.addClass(/** @type {!Element} */ (this.svgGroup_),
-        'blocklyReplaceable');
-  } else {
-    input.outlinePath.removeAttribute('filter');
-    Blockly.utils.removeClass(/** @type {!Element} */ (this.svgGroup_),
-        'blocklyReplaceable');
+	  
+		// 避免无效CSS效果暂时屏蔽以下两行代码
+		//input.outlinePath.setAttribute('filter', 'url(#' + replacementGlowFilterId + ')');
+		//Blockly.utils.addClass(/** @type {!Element} */ (this.svgGroup_), 'blocklyReplaceable');
+  } 
+  else 
+  {
+		// 避免无效CSS效果暂时屏蔽以下两行代码
+		//input.outlinePath.removeAttribute('filter');
+		//Blockly.utils.removeClass(/** @type {!Element} */ (this.svgGroup_), 'blocklyReplaceable');
   }
 };
 
