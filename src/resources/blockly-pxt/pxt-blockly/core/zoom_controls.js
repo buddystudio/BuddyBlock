@@ -115,15 +115,15 @@ Blockly.ZoomControls.prototype.createDom = function()
   </g>
   */
 
-    this.svgGroup_ = Blockly.utils.createSvgElement('g', {'class': 'blocklyZoom2'},null);
+    this.svgGroup_ = Blockly.utils.createSvgElement('g', {'class': 'blocklyZoom'},null);
     var clip;
     var rnd = String(Math.random()).substring(2);
-
+	
     clip = Blockly.utils.createSvgElement('clipPath', {
         'id': 'blocklyZoomoutClipPath' + rnd
     },
     this.svgGroup_);
-    //Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32, 'y': 77},clip);
+    Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32, 'y': 77},clip);
     var zoomoutSvg = Blockly.utils.createSvgElement('image', {
         'width': Blockly.SPRITE.width,
         'height': Blockly.SPRITE.height,
@@ -138,7 +138,7 @@ Blockly.ZoomControls.prototype.createDom = function()
         'id': 'blocklyZoominClipPath' + rnd
     },
     this.svgGroup_);
-    //Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32, 'y': 43},clip);
+    Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32, 'y': 43},clip);
     var zoominSvg = Blockly.utils.createSvgElement('image', {
         'width': Blockly.SPRITE.width,
         'height': Blockly.SPRITE.height,
@@ -153,7 +153,7 @@ Blockly.ZoomControls.prototype.createDom = function()
         'id': 'blocklyZoomresetClipPath' + rnd
     },
     this.svgGroup_);
-    //Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32},clip);
+    Blockly.utils.createSvgElement('rect',{'width': 32, 'height': 32},clip);
     var zoomresetSvg = Blockly.utils.createSvgElement('image', {
         'width': Blockly.SPRITE.width,
         'height': Blockly.SPRITE.height,

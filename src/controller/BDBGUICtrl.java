@@ -88,18 +88,7 @@ public class BDBGUICtrl
 	                {  
 	            		if (newState == Worker.State.SUCCEEDED) 
 	                    {
-	            			//BDBParameters.webView.setCache(false);
-	            			
-	            			//set the board and com in webpage
-	            			
-	            			//String board = Preferences.get("board");
-	            			//String com = Preferences.get("serial.port");
-	            			/*String cmd = String.format("setElementText('%s','%s')","lbl_board", board);
-	            			
-	            			BDBParameters.webView.getEngine().executeScript(cmd);
-	            			
-	            			cmd = String.format("setElementText('%s','%s')","lbl_port",com);
-	            			BDBParameters.webView.getEngine().executeScript(cmd);*/
+
 	                    }  
 	                    else if (newState == Worker.State.FAILED)
 	                    {
@@ -129,7 +118,7 @@ public class BDBGUICtrl
             public void handle(ActionEvent event) 
             {
             	BDialogWindow dialog = new BDialogWindow(" 关闭", "项目已修改，是否保存当前项目后关闭？", true, true, true, false);
-				
+            	
 				// Dialog cancle button on click.
 				dialog.cancleBtn.setOnAction(new EventHandler<ActionEvent>() 
 				{

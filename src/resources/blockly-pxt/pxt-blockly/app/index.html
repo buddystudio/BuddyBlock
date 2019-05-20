@@ -70,8 +70,6 @@
 			<script src="blocks/pxt_test_blocks.js"></script>
 
 			<!-- 一下是实验部分 -->
-			<script src="Code.js"></script>
-
 			<script src="../generators/arduino.js"></script>
 			<script src="../generators/arduino/arduino_base.js"></script>
 			<script src="../generators/arduino/procedures.js"></script>
@@ -125,6 +123,13 @@
 
 			<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 			<script src="ace/src-noconflict/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+			
+			<!-- BlocklyDuino specific, order is important -->
+			<script src="Code.js"></script>
+			<script src="BDB_helper.js"></script>
+			<script src="base64.js"></script>
+			<script src="blockly_helper.js"></script>
+			
 			<script>
 			'use strict';
 			var workspace = null;
@@ -478,6 +483,12 @@
 
 					toCode('Arduino');
 				}
+				
+				// updateFileName("新文件.xml");
+				function updateFileName(fileName) 
+				{
+					document.getElementById("file_info").innerText = fileName;				 
+				}
 			</script>
 
 			<!-- 这获取图标 -->
@@ -658,15 +669,16 @@
 		<div class="my-nav" style="background-color:#ffffff;width:100%;height:50px;">
 			<span id="tabBlock" class="tabSpanOn" onclick="btnBlockOnClick()">Block</span>
 			<span id="tabArduino" class="tabSpanOff" onclick="btnCodeOnClick()">Code</span>
+			<span id="file_info"></span>
 			<span class="btnMenu">
-				<span class="btnSpan">New</span>
-				<span class="btnSpan">Open</span>
-				<span class="btnSpan">Save</span>
-				<span class="btnSpan">SaveAs</span>
-				<span class="btnSpan">Discard</span>
-				<span class="btnSpan">Example</span>
-				<span class="btnSpan">Comm</span>
-				<span class="btnSpan">Upload</span>
+				<span class="btnSpan" onclick="createXML()"><script>document.write(Blockly.Msg.TAB_NEW);</script></span>
+				<span class="btnSpan" onclick="loadXML()"><script>document.write(Blockly.Msg.TAB_OPEN);</script></span>
+				<span class="btnSpan" onclick="saveXML()"><script>document.write(Blockly.Msg.TAB_SAVE);</script></span>
+				<span class="btnSpan" onclick="saveAs()"><script>document.write(Blockly.Msg.TAB_SAVEAS);</script></span>
+				<span class="btnSpan" onclick="discard()"><script>document.write(Blockly.Msg.TAB_DISCARD);</script></span>
+				<span class="btnSpan" onclick="example()"><script>document.write(Blockly.Msg.TAB_EXAMPLE);</script></span>
+				<span class="btnSpan" onclick="serial()"><script>document.write(Blockly.Msg.TAB_COMM);</script></span>
+				<span class="btnSpan" onclick="compile()"><script>document.write(Blockly.Msg.TAB_UPLOAD);</script></span>
 			</span>
 		</div>
 		<select style="display:none;" id="languageMenu"></select>
