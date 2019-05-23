@@ -458,6 +458,8 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
           'url(#' + this.grid_.getPatternId() + ')';
     }
   }
+  
+  
   /** @type {SVGElement} */
   this.svgBlockCanvas_ = Blockly.utils.createSvgElement('g',
       {'class': 'blocklyBlockCanvas'}, this.svgGroup_);
@@ -468,8 +470,10 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
   if (this.options.hasTrashcan) {
     bottom = this.addTrashcan_(bottom);
   }
-  if (this.options.zoomOptions && this.options.zoomOptions.controls) {
-    this.addZoomControls_(bottom);
+  if (this.options.zoomOptions && this.options.zoomOptions.controls) 
+  {
+		// 添加缩放按钮
+		this.addZoomControls_(bottom);
   }
 
   if (!this.isFlyout) {
@@ -495,6 +499,7 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
     this.grid_.update(this.scale);
   }
   this.recordDeleteAreas();
+
   return this.svgGroup_;
 };
 
