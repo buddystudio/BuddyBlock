@@ -21,7 +21,7 @@ public class BDBParameters
 
 	static public String os			 	= "";				// 操作系统类型
 	static public String arch			= "";				// 操作系统指令长度（32/64）
-	static public String version 		= "1.0.0-alpha"; 	// 软件版本号
+	static public String version 		= "1.1.0-alpha"; 	// 软件版本号
 	static public String langues 		= "zh-cn"; 			// 语言
 	static public String organization	= "BuddyStudio";	// 开发组织
     static public String author			= "李宝智、郭少豪";		// 开发者署名
