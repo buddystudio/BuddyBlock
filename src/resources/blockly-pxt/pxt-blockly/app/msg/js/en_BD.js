@@ -21,19 +21,23 @@ Blockly.Msg.CAT_GROVE_MOTOR = "Grove Motor";
 
 Blockly.Msg.CAT_BUDDY = "Buddy";
 
-Blockly.Msg.CAT_INOUT = "In / Out";
-Blockly.Msg.CAT_CONTROL = "Control";
-Blockly.Msg.CAT_LOGIC = "Logic";
-Blockly.Msg.CAT_SERIAL = "Serial";
-Blockly.Msg.CAT_STORAGE = "Storage";
-Blockly.Msg.CAT_COMMUNICATE = "Communic";
-Blockly.Msg.CAT_SENSOR = "Sensor";
-Blockly.Msg.CAT_ACTUATOR = "Actuator";
-Blockly.Msg.CAT_DISPLAY = "Display";
-Blockly.Msg.CAT_ETHERNET = "Ethernet";
-Blockly.Msg.CAT_VAR = "Variables";
-Blockly.Msg.CAT_FUNCTIONS = "Functions";
-Blockly.Msg.CAT_COLOUR = "Colour";
+Blockly.Msg.CAT_LOOPS = "LOOPS";
+Blockly.Msg.CAT_LIST = "LISTS";
+Blockly.Msg.CAT_TEXT = "TEXT";
+Blockly.Msg.CAT_MATH = "MATH";
+Blockly.Msg.CAT_INOUT = "IN / OUT";
+Blockly.Msg.CAT_CONTROL = "CONTROL";
+Blockly.Msg.CAT_LOGIC = "LOGIC";
+Blockly.Msg.CAT_SERIAL = "SERIAL";
+Blockly.Msg.CAT_STORAGE = "STORAGE";
+Blockly.Msg.CAT_COMMUNICATE = "COMMUNIC";
+Blockly.Msg.CAT_SENSOR = "SENSOR";
+Blockly.Msg.CAT_ACTUATOR = "ACTUATOR";
+Blockly.Msg.CAT_DISPLAY = "DISPLAY";
+Blockly.Msg.CAT_ETHERNET = "ETHERNET";
+Blockly.Msg.CAT_VAR = "VARIABLES";
+Blockly.Msg.CAT_FUNCTIONS = "FUNCTIONS";
+Blockly.Msg.CAT_COLOUR = "COLOUR";
 
 Blockly.Msg.CODE_BLOCKS = "Blocks";
 Blockly.Msg.CODE_ARDUINO = "Code";

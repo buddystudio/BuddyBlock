@@ -910,6 +910,7 @@ Blockly.Css.CONTENT = [
     'font-size: 16px;',
     'padding: 0 3px;',
     'vertical-align: middle;',
+	'font-weight:bold',
   '}',
 
   '.blocklyToolboxDelete .blocklyTreeLabel {',

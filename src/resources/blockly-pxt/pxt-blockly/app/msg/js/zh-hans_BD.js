@@ -40,6 +40,9 @@ Blockly.Msg.CAT_GROVE_MOTOR = "Grove Motor";
 
 Blockly.Msg.CAT_BUDDY = "模块工具"
 
+Blockly.Msg.CAT_LOOPS = "循环";
+Blockly.Msg.CAT_LIST = "数组";
+Blockly.Msg.CAT_TEXT = "文本";
 Blockly.Msg.CAT_INOUT = "输入 / 输出";
 Blockly.Msg.CAT_CONTROL = "控制";
 Blockly.Msg.CAT_LOGIC = "逻辑";

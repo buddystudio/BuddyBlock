@@ -91,6 +91,9 @@
 			<script src="base64.js"></script>
 			<script src="blockly_helper.js"></script>
 			
+			<!-- 这获取图标 -->
+			<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
+						
 			<script>
 			'use strict';
 			var workspace = null;
@@ -452,8 +455,6 @@
 				}
 			</script>
 
-			<!-- 这获取图标 -->
-			<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
 			<style>
 				html, body {
 				  height: 100%;
@@ -511,7 +512,7 @@
 				  background: none !important;
 				  font-family: 'Font Awesome\ 5 Free';
 				  font-weight: 900;
-				  font-size: 1.7rem;
+				  font-size: 1.5rem;
 				  <!-- margin: 0 .25em; -->
 				  margin: 0 .25em;
 				  margin-left:15px;
@@ -519,6 +520,8 @@
 				  height: 100% !important;
 				  line-height: 38px;
 				  min-height: 38px;
+				  min-width:63px;
+				  max-width:63px;
 				  vertical-align: middle;
 				}
 				.blocklyTreeIconCustom::before {
@@ -558,7 +561,7 @@
 					width:172px;
 					height:50px;
 					color:#ffffff;
-					user-select:none;
+					cursor:default; 
 				}
 				
 				.tabSpanOff
@@ -570,7 +573,7 @@
 					width:172px;
 					height:50px;
 					color:#000000;
-					user-select:none;
+					cursor:default; 
 				}
 				
 				.tabSpanOff:hover
@@ -582,14 +585,14 @@
 					width:172x;
 					height:50px;
 					color:#000000;
-					user-select:none;
+					cursor:default; 
 				}
 				
 				.btnMenu
 				{
 					float:right;
 					background-color:#eeeeee;
-					user-select:none;
+					cursor:default; 
 				}
 				
 				.btnSpan 
@@ -601,12 +604,14 @@
 					min-width:90px;
 					height:50px;
 					color:#000000;
+					cursor:default; 
 				}
 				
 				.btnSpan:hover
 				{
 					background-color:#42b2e4;
 					color:#ffffff;
+					cursor:default; 
 				}
 				
 				body 
@@ -632,7 +637,7 @@
 			<span id="tabArduino" class="tabSpanOff" onclick="btnCodeOnClick()">Code</span>
 			<span id="file_info"></span>
 			<span class="btnMenu">
-				<span class="btnSpan" onclick="createXML()"><script>document.write(Blockly.Msg.TAB_NEW);</script></span>
+				<span class="btnSpan" onclick="createXML()" onselectstart="return false;" ><script>document.write(Blockly.Msg.TAB_NEW);</script></span>
 				<span class="btnSpan" onclick="loadXML()"><script>document.write(Blockly.Msg.TAB_OPEN);</script></span>
 				<span class="btnSpan" onclick="saveXML()"><script>document.write(Blockly.Msg.TAB_SAVE);</script></span>
 				<span class="btnSpan" onclick="saveAs()"><script>document.write(Blockly.Msg.TAB_SAVEAS);</script></span>
@@ -687,7 +692,7 @@
 		Variables category uses untyped variable blocks.
 		See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
 		<xml id="toolbox-categories" style="display: none">
-			<category name="IN / OUT" colour="#ef2d56" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_INOUT}" colour="#ef2d56" iconclass="blocklyTreeIconCustom logic">
 				<label text="IN / OUT" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="io_highlow"></block>
 				<block type="io_pinMode"></block>
@@ -790,7 +795,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="CONTROL" colour="#40bf4a" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom logic">
 				<label text=" CONTROL" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="base_setup"></block>
 				<block type="controls_end_program"></block>
@@ -863,8 +868,8 @@
 					</value>
 				</block>
 			</category>
-			<category name="MATH" colour="230" iconclass="blocklyTreeIconCustom math">
-				<label text="Math" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_MATH}" colour="230" iconclass="blocklyTreeIconCustom math">
+				<label text="MATH" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="math_number" gap="32">
 					<field name="NUM">123</field>
 				</block>
@@ -960,8 +965,8 @@
 				<block type="arduino_base_map"></block>
 				<block type="math_random_float"></block>
 			</category>
-			<category name="TEXT" colour="#ffab19" iconclass="blocklyTreeIconCustom text">
-				<label text="Text" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_TEXT}" colour="#ffab19" iconclass="blocklyTreeIconCustom text">
+				<label text="TEXT" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="text"></block>
 				<block type="text_join"></block>
 				<!--<block type="text_append">
@@ -1064,8 +1069,8 @@
 					</value>
 				</block>
 			</category>
-			<category name="LISTS" colour="#8a1c7c" iconclass="blocklyTreeIconCustom lists">
-				<label text="Lists" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_LIST}" colour="#8a1c7c" iconclass="blocklyTreeIconCustom lists">
+				<label text="LISTS" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="lists_create_with_text2"></block>
 				<block type = "lists_create_empty_arduino">
 					<value name="LIST">
@@ -1160,8 +1165,8 @@
 				<block type="lists_sort"></block>
 				<block type="lists_reverse"></block>
 			</category>
-			<category name="COLOUR" colour="20" iconclass="blocklyTreeIconCustom colour">
-				<label text="Colour" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_COLOUR}" colour="20" iconclass="blocklyTreeIconCustom colour">
+				<label text="COLOUR" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="colour_picker"></block>
 				<block type="colour_random"></block>
 				<block type="colour_rgb">
@@ -1199,6 +1204,7 @@
 					</value>
 				</block>
 			</category>
+			<!--
 			<category name="LOGIC" colour="#4cbfe6" iconclass="blocklyTreeIconCustom logic">
 				<label text="Logic" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="logic_compare2"></block>
@@ -1208,10 +1214,11 @@
 				<block type="logic_null2"></block>
 				<block type="logic_true_or_false2"></block>
 			</category>
+			-->
 			<!-- <sep></sep> -->
 			<!-- Testing -->
-			<category name="LOGIC" colour="210" iconclass="blocklyTreeIconCustom logic">
-				<label text="Logic" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_LOGIC}" colour="210" iconclass="blocklyTreeIconCustom logic">
+				<label text="LOGIC" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="controls_if">
 					<value name="IF0">
 						<shadow type="logic_boolean"></shadow>
@@ -1241,8 +1248,8 @@
 				<block type="logic_null" disabled="true"></block>
 				<block type="logic_ternary"></block>
 			</category>
-			<category name="LOOPS" colour="#40bf4a" iconclass="blocklyTreeIconCustom loops">
-				<label text="Loops" web-icon="" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_LOOPS}" colour="#40bf4a" iconclass="blocklyTreeIconCustom loops">
+				<label text="LOOPS" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<label text="Basic" web-line="1.0"></label>
 				<block type="controls_repeat_ext">
 					<value name="TIMES">
@@ -1294,7 +1301,7 @@
 				</block>
 				<block type="controls_flow_statements"></block>
 			</category>
-			<category name="SERIAL" colour="#006e90" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_SERIAL}" colour="#006e90" iconclass="blocklyTreeIconCustom logic">
 				<label text="SERIAL" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="serial_begin">
 					<value name="CONTENT">
@@ -1326,7 +1333,7 @@
 				</block>
 				<block type="serial_event"></block>
 			</category>
-			<category name="STORAGE" colour="0" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_STORAGE}" colour="0" iconclass="blocklyTreeIconCustom logic">
 				<label text="STORAGE" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="store_sd_write">
 					<field name="FILE">file.txt</field>
@@ -1380,7 +1387,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="COMMUNICATE" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_COMMUNICATE}" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
 				<label text="COMMUNICATE" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="ir_recv">
 					<value name="PIN">
@@ -1456,7 +1463,7 @@
 				<block type="RFID_in"></block>
 				<!-- 如果卡号和XX一致，那么执行XXX-->
 			</category>
-			<category name="SENSOR" colour="#1b998b" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_SENSOR}" colour="#1b998b" iconclass="blocklyTreeIconCustom logic">
 				<label text="SENSOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="chaoshengbo2">
 					<value name="PIN1">
@@ -1604,7 +1611,7 @@
 							</statement>
 						</block> -->
 			</category>
-			<category name="ACTUATOR" colour="#f55d3e" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_ACTUATOR}" colour="#f55d3e" iconclass="blocklyTreeIconCustom logic">
 				<label text="ACTUATOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="servo_move">
 					<value name="PIN">
@@ -1727,7 +1734,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="DISPLAY" colour="#4c97ff" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_DISPLAY}" colour="#4c97ff" iconclass="blocklyTreeIconCustom logic">
 				<label text="DISPLAY" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="group_lcd_init">
 					<value name="device">
@@ -1986,7 +1993,7 @@
 					</block>
 					<block type="display_Matrix_CLEAR"></block>
 			 </category>
-			 <category name="ETHERNET" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
+			 <category name="%{BKY_CAT_ETHERNET}" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
 				<label text="ETHERNET" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="ethernet_init_begin">
 					<value name="MAC">
@@ -2021,8 +2028,8 @@
 				<block type="ethernet_client_get_request"></block>
 			</category>
 			<!-- <sep></sep> -->
-			<category name="VARIABLES" colour="330" custom="VARIABLE" iconclass="blocklyTreeIconCustom variables"></category>
-			<category name="FUNCTIONS" colour="290" custom="PROCEDURE" iconclass="blocklyTreeIconCustom functions"></category>
+			<category name="%{BKY_CAT_VAR}" colour="330" custom="VARIABLE" iconclass="blocklyTreeIconCustom variables"></category>
+			<category name="%{BKY_CAT_FUNCTIONS}" colour="290" custom="PROCEDURE" iconclass="blocklyTreeIconCustom functions"></category>
 		</xml>
 		<!-- 这个需要放在最后 -->
 		<script>
