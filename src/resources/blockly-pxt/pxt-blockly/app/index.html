@@ -634,8 +634,8 @@
 	<!-- <body onload="start()"> -->
 	<body onload="init()">
 		<div class="my-nav" style="background-color:#ffffff;width:100%;height:50px;">
-			<span id="tabBlock" class="tabSpanOn" onclick="btnBlockOnClick()">Block</span>
-			<span id="tabArduino" class="tabSpanOff" onclick="btnCodeOnClick()">Code</span>
+			<span id="tabBlock" class="tabSpanOn" onclick="btnBlockOnClick()"><script>document.write(Blockly.Msg.CODE_BLOCKS);</script></span>
+			<span id="tabArduino" class="tabSpanOff" onclick="btnCodeOnClick()"><script>document.write(Blockly.Msg.CODE_ARDUINO);</script></span>
 			<span id="file_info"></span>
 			<span class="btnMenu">
 				<span class="btnSpan" onclick="createXML()" onselectstart="return false;" ><script>document.write(Blockly.Msg.TAB_NEW);</script></span>
