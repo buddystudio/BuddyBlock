@@ -93,7 +93,7 @@
 			
 			<!-- 这获取图标 -->
 			<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
-						
+			<link href="fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet" >		
 			<script>
 			'use strict';
 			var workspace = null;
@@ -508,6 +508,12 @@
 				  height: 38px !important;
 				  min-width:164px;
 				  max-width:164px;
+				}
+				
+				#\:1>div>span.blocklyTreeIcon.blocklyTreeIconNone
+				{ 
+					background:url('img/io_icon.png') no-repeat;
+					background-size: 100% auto; 
 				}
 
 				.blocklyTreeIconCustom {
@@ -1493,7 +1499,8 @@
 						<shadow type="pins_digital"></shadow>
 					</value>
 				</block>
-				<block type="ADXL345"></block>
+				 
+				<!--<block type="ADXL345"></block>-->
 				<block type="DS1302_init">
 					<value name="RST">
 						<shadow type="pins_digital">
@@ -1523,7 +1530,7 @@
 						</shadow>
 					</value>
 				</block>
-				<block type="RTC_get_time"></block>
+				<!-- <block type="RTC_get_time"></block>-->
 				<block type="RTC_set_time">
 					<value name="hour">
 						<shadow type="math_number">
