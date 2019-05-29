@@ -1,0 +1,210 @@
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	background-color: #fff;
+	font-family: sans-serif;
+	overflow: hidden;
+	margin: 0;
+}
+
+h1
+{
+	font-weight: normal;
+	font-size: 140%;
+}
+
+#blocklyDiv
+{
+	height: 100%;
+	width: 100%;
+}
+
+#importExport
+{
+	font-family: monospace;
+}
+
+.ioLabel>.blocklyFlyoutLabelText
+{
+	font-style: italic;
+}
+
+.blocklyFlyoutLabelText
+{
+	fill: white !important;
+}
+
+.blocklyFlyoutHeading>.blocklyFlyoutLabelText
+{
+	font-size: 1.5rem;
+}
+
+line.blocklyFlyoutLine
+{
+	stroke: white;
+}
+
+.blocklyFlyoutLabelIcon
+{
+	font-family: 'Font Awesome\ 5 Free';
+	font-size: 3rem;
+	font-weight: 900;
+	fill: white;
+}
+
+.blocklyTreeRow
+{
+	height: 38px !important;
+	min-width: 164px;
+	max-width: 164px;
+}
+
+#\:1>div>span.blocklyTreeIcon.blocklyTreeIconNone
+{
+	background: url('img/io_icon.png') no-repeat;
+	background-size: 100% auto;
+}
+
+.blocklyTreeIconCustom
+{
+	background: none !important;
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 900;
+	font-size: 1.5rem;
+	<!-- margin: 0 .25em;
+	-->
+				  margin: 0 .25em;
+	margin-left: 25px;
+	margin-right: 5px;
+	width: 30px !important;
+	height: 100% !important;
+	line-height: 38px;
+	min-height: 38px;
+	vertical-align: middle;
+}
+
+.blocklyTreeIconCustom::before
+{
+	content: "\f12e";
+}
+
+.blocklyTreeIconCustom.logic::before
+{
+	content: "\f074";
+}
+
+.blocklyTreeIconCustom.loops::before
+{
+	content: "\f01e";
+}
+
+.blocklyTreeIconCustom.math::before
+{
+	content: "\f1ec";
+}
+
+.blocklyTreeIconCustom.text::before
+{
+	content: "\f031";
+}
+
+.blocklyTreeIconCustom.lists::before
+{
+	content: "\f0ca";
+}
+
+.blocklyTreeIconCustom.colour::before
+{
+	content: "\f53f";
+}
+
+.blocklyTreeIconCustom.variables::before
+{
+	content: "\f0c9";
+}
+
+.blocklyTreeIconCustom.functions::before
+{
+	content: "\f141";
+}
+
+.tabSpanOn
+{
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	background-color: #42b2e4;
+	width: 172px;
+	height: 50px;
+	color: #ffffff;
+	cursor: default;
+}
+
+.tabSpanOff
+{
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	background-color: #ffffff;
+	width: 172px;
+	height: 50px;
+	color: #000000;
+	cursor: default;
+}
+
+.tabSpanOff:hover
+{
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	background-color: #eeeeee;
+	width: 172x;
+	height: 50px;
+	color: #000000;
+	cursor: default;
+}
+
+.btnMenu
+{
+	float: right;
+	background-color: #eeeeee;
+	cursor: default;
+}
+
+.btnSpan
+{
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	background-color: #eeeeee;
+	min-width: 90px;
+	height: 50px;
+	color: #000000;
+	cursor: default;
+}
+
+.btnSpan:hover
+{
+	background-color: #42b2e4;
+	color: #ffffff;
+	cursor: default;
+}
+
+body
+{
+	overflow: hidden;
+}
+
+#editor
+{
+	margin: 0;
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
