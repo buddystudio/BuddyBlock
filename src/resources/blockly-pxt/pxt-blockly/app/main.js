@@ -53,7 +53,8 @@ var workspace = null;
 
 function start() 
 {
-	setBackgroundColor();
+	// 设置背景颜色
+	//setBackgroundColor();
 
 	// Parse the URL arguments.
 	var match = location.search.match(/dir=([^&]+)/);

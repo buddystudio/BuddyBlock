@@ -168,6 +168,7 @@ Blockly.FlyoutButton.prototype.createDom = function() {
 
   if (!this.isLabel_) {
     // Shadow rectangle (light source does not mirror in RTL).
+	
     var shadow = Blockly.utils.createSvgElement('rect',
         {
           'class': 'blocklyFlyoutButtonShadow',
@@ -251,15 +252,16 @@ Blockly.FlyoutButton.prototype.createDom = function() {
     shadow.setAttribute('width', this.width);
     shadow.setAttribute('height', this.height);
   }
-  rect.setAttribute('width', this.width);
-  rect.setAttribute('height', this.height);
+	rect.setAttribute('width', this.width);
+	rect.setAttribute('height', this.height);
 
-  svgText.setAttribute('text-anchor', 'middle');
-  svgText.setAttribute('dominant-baseline', 'central');
-  svgText.setAttribute('dy', goog.userAgent.EDGE_OR_IE ?
-    Blockly.Field.IE_TEXT_OFFSET : '0');
-  svgText.setAttribute('x', this.width / 2);
-  svgText.setAttribute('y', this.height / 2);
+	svgText.setAttribute('text-anchor', 'middle');
+	svgText.setAttribute('dominant-baseline', 'central');
+	svgText.setAttribute('dy', goog.userAgent.EDGE_OR_IE ?
+	Blockly.Field.IE_TEXT_OFFSET : '0');
+	// 菜单栏标题与图标的间距加20px
+	svgText.setAttribute('x', this.width / 2 + 20);
+	svgText.setAttribute('y', this.height / 2);
 
   var buttonHitTarget = this.helpButtonIcon_ && this.callback_ ?
       this.helpButtonImage_ : this.svgGroup_;

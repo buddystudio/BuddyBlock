@@ -163,7 +163,7 @@
 		See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
 		<xml id="toolbox-categories" style="display: none">
 			<category name="%{BKY_CAT_INOUT}" colour="#ef2d56" iconclass="blocklyTreeIconCustom inout">
-				<label text="IN / OUT" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="IN / OUT" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="io_highlow"></block>
 				<block type="io_pinMode"></block>
 				<block type="io_pinMode2"></block>
@@ -266,7 +266,7 @@
 				</block>
 			</category>
 			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom control">
-				<label text=" CONTROL" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text=" CONTROL" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="base_setup"></block>
 				<block type="controls_end_program"></block>
 				<block type="base_delay">
@@ -339,7 +339,7 @@
 				</block>
 			</category>
 			<category name="%{BKY_CAT_MATH}" colour="230" iconclass="blocklyTreeIconCustom math">
-				<label text="MATH" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="MATH" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="math_number" gap="32">
 					<field name="NUM">123</field>
 				</block>
@@ -436,7 +436,7 @@
 				<block type="math_random_float"></block>
 			</category>
 			<category name="%{BKY_CAT_TEXT}" colour="#ffab19" iconclass="blocklyTreeIconCustom text">
-				<label text="TEXT" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="TEXT" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="text"></block>
 				<block type="text_join"></block>
 				<!--<block type="text_append">
@@ -540,7 +540,7 @@
 				</block>
 			</category>
 			<category name="%{BKY_CAT_LIST}" colour="#8a1c7c" iconclass="blocklyTreeIconCustom lists">
-				<label text="LISTS" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="LISTS" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="lists_create_with_text2"></block>
 				<block type = "lists_create_empty_arduino">
 					<value name="LIST">
@@ -636,7 +636,7 @@
 				<block type="lists_reverse"></block>
 			</category>
 			<category name="%{BKY_CAT_COLOUR}" colour="20" iconclass="blocklyTreeIconCustom colour">
-				<label text="COLOUR" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="COLOUR" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="colour_picker"></block>
 				<block type="colour_random"></block>
 				<block type="colour_rgb">
@@ -688,7 +688,7 @@
 			<!-- <sep></sep> -->
 			<!-- Testing -->
 			<category name="%{BKY_CAT_LOGIC}" colour="210" iconclass="blocklyTreeIconCustom logic">
-				<label text="LOGIC" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="LOGIC" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="controls_if">
 					<value name="IF0">
 						<shadow type="logic_boolean"></shadow>
@@ -719,8 +719,8 @@
 				<block type="logic_ternary"></block>
 			</category>
 			<category name="%{BKY_CAT_LOOPS}" colour="#40bf4a" iconclass="blocklyTreeIconCustom loops">
-				<label text="LOOPS" web-icon="" web-class="blocklyFlyoutHeading"></label>
-				<label text="Basic" web-line="1.0"></label>
+				<!-- <label text="LOOPS" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
+				<!-- <label text="Basic" web-line="1.0"></label> -->
 				<block type="controls_repeat_ext">
 					<value name="TIMES">
 						<shadow type="math_number">
@@ -772,7 +772,7 @@
 				<block type="controls_flow_statements"></block>
 			</category>
 			<category name="%{BKY_CAT_SERIAL}" colour="#006e90" iconclass="blocklyTreeIconCustom serial">
-				<label text="SERIAL" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="SERIAL" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="serial_begin">
 					<value name="CONTENT">
 						<shadow type="math_number">
@@ -804,7 +804,7 @@
 				<block type="serial_event"></block>
 			</category>
 			<category name="%{BKY_CAT_STORAGE}" colour="0" iconclass="blocklyTreeIconCustom storage">
-				<label text="STORAGE" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="STORAGE" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="store_sd_write">
 					<field name="FILE">file.txt</field>
 						<value name="DATA">
@@ -858,7 +858,7 @@
 				</block>
 			</category>
 			<category name="%{BKY_CAT_COMMUNICATE}" colour="#e3008c" iconclass="blocklyTreeIconCustom communicate">
-				<label text="COMMUNICATE" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="COMMUNICATE" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="ir_recv">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -934,7 +934,7 @@
 				<!-- 如果卡号和XX一致，那么执行XXX-->
 			</category>
 			<category name="%{BKY_CAT_SENSOR}" colour="#1b998b" iconclass="blocklyTreeIconCustom sensor">
-				<label text="SENSOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="SENSOR" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="chaoshengbo2">
 					<value name="PIN1">
 						<shadow type="pins_digital">
@@ -1083,7 +1083,7 @@
 						</block> -->
 			</category>
 			<category name="%{BKY_CAT_ACTUATOR}" colour="#f55d3e" iconclass="blocklyTreeIconCustom actuator">
-				<label text="ACTUATOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="ACTUATOR" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="servo_move">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -1206,7 +1206,7 @@
 				</block>
 			</category>
 			<category name="%{BKY_CAT_DISPLAY}" colour="#4c97ff" iconclass="blocklyTreeIconCustom display">
-				<label text="DISPLAY" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="DISPLAY" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="group_lcd_init">
 					<value name="device">
 						<shadow type="math_number">
@@ -1465,7 +1465,7 @@
 					<block type="display_Matrix_CLEAR"></block>
 			 </category>
 			 <category name="%{BKY_CAT_ETHERNET}" colour="#e3008c" iconclass="blocklyTreeIconCustom ethernet">
-				<label text="ETHERNET" web-icon="" web-class="blocklyFlyoutHeading"></label>
+				<!-- <label text="ETHERNET" web-icon="" web-class="blocklyFlyoutHeading"></label> -->
 				<block type="ethernet_init_begin">
 					<value name="MAC">
 						<block type="ethernet_mac_address"></block>

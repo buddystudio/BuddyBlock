@@ -37,7 +37,9 @@ Blockly.Colours = {
   "textField": "#FFFFFF",
   "insertionMarker": "#000000",
   "insertionMarkerOpacity": 0.2,
-  "dragShadowOpacity": 0.4,
+  // 屏蔽阴影效果
+  //"dragShadowOpacity": 0.4,
+  "dragShadowOpacity": 0,
   "stackGlow": "#FFF200",
   "stackGlowSize": 4,
   "stackGlowOpacity": 1,
