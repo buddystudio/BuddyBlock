@@ -94,12 +94,14 @@ line.blocklyFlyoutLine
 
 .blocklyTreeIconCustom.logic::before
 {
-	content: "\f074";
+	//content: "\f074";
+	content: "\f205";
 }
 
 .blocklyTreeIconCustom.loops::before
 {
-	content: "\f01e";
+	//content: "\f01e";
+	content: "\f079";
 }
 
 .blocklyTreeIconCustom.math::before
@@ -129,7 +131,53 @@ line.blocklyFlyoutLine
 
 .blocklyTreeIconCustom.functions::before
 {
-	content: "\f141";
+	//content: "\f141";
+	content: "\f024";
+}
+
+.blocklyTreeIconCustom.actuator::before
+{
+	content: "\f085";
+}
+
+.blocklyTreeIconCustom.storage::before
+{
+	content: "\f1c0";
+}
+
+.blocklyTreeIconCustom.inout::before
+{
+	content: "\f362";
+}
+
+.blocklyTreeIconCustom.sensor::before
+{
+	content: "\f2ce";
+}
+
+.blocklyTreeIconCustom.communicate::before
+{
+	content: "\f086";
+}
+
+.blocklyTreeIconCustom.display::before
+{
+	content: "\f108";
+}
+
+.blocklyTreeIconCustom.control::before
+{
+	content: "\f11b";
+}
+
+.blocklyTreeIconCustom.ethernet::before
+{
+	content: "\f796";
+}
+
+.blocklyTreeIconCustom.serial::before
+{
+	content: "\f074";
 }
 
 .tabSpanOn

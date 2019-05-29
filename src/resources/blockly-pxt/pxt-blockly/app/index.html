@@ -162,7 +162,7 @@
 		Variables category uses untyped variable blocks.
 		See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
 		<xml id="toolbox-categories" style="display: none">
-			<category name="%{BKY_CAT_INOUT}" colour="#ef2d56" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_INOUT}" colour="#ef2d56" iconclass="blocklyTreeIconCustom inout">
 				<label text="IN / OUT" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="io_highlow"></block>
 				<block type="io_pinMode"></block>
@@ -265,7 +265,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom control">
 				<label text=" CONTROL" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="base_setup"></block>
 				<block type="controls_end_program"></block>
@@ -771,7 +771,7 @@
 				</block>
 				<block type="controls_flow_statements"></block>
 			</category>
-			<category name="%{BKY_CAT_SERIAL}" colour="#006e90" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_SERIAL}" colour="#006e90" iconclass="blocklyTreeIconCustom serial">
 				<label text="SERIAL" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="serial_begin">
 					<value name="CONTENT">
@@ -803,7 +803,7 @@
 				</block>
 				<block type="serial_event"></block>
 			</category>
-			<category name="%{BKY_CAT_STORAGE}" colour="0" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_STORAGE}" colour="0" iconclass="blocklyTreeIconCustom storage">
 				<label text="STORAGE" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="store_sd_write">
 					<field name="FILE">file.txt</field>
@@ -857,7 +857,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_COMMUNICATE}" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_COMMUNICATE}" colour="#e3008c" iconclass="blocklyTreeIconCustom communicate">
 				<label text="COMMUNICATE" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="ir_recv">
 					<value name="PIN">
@@ -933,7 +933,7 @@
 				<block type="RFID_in"></block>
 				<!-- 如果卡号和XX一致，那么执行XXX-->
 			</category>
-			<category name="%{BKY_CAT_SENSOR}" colour="#1b998b" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_SENSOR}" colour="#1b998b" iconclass="blocklyTreeIconCustom sensor">
 				<label text="SENSOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="chaoshengbo2">
 					<value name="PIN1">
@@ -1082,7 +1082,7 @@
 							</statement>
 						</block> -->
 			</category>
-			<category name="%{BKY_CAT_ACTUATOR}" colour="#f55d3e" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_ACTUATOR}" colour="#f55d3e" iconclass="blocklyTreeIconCustom actuator">
 				<label text="ACTUATOR" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="servo_move">
 					<value name="PIN">
@@ -1205,7 +1205,7 @@
 					</value>
 				</block>
 			</category>
-			<category name="%{BKY_CAT_DISPLAY}" colour="#4c97ff" iconclass="blocklyTreeIconCustom logic">
+			<category name="%{BKY_CAT_DISPLAY}" colour="#4c97ff" iconclass="blocklyTreeIconCustom display">
 				<label text="DISPLAY" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="group_lcd_init">
 					<value name="device">
@@ -1464,7 +1464,7 @@
 					</block>
 					<block type="display_Matrix_CLEAR"></block>
 			 </category>
-			 <category name="%{BKY_CAT_ETHERNET}" colour="#e3008c" iconclass="blocklyTreeIconCustom logic">
+			 <category name="%{BKY_CAT_ETHERNET}" colour="#e3008c" iconclass="blocklyTreeIconCustom ethernet">
 				<label text="ETHERNET" web-icon="" web-class="blocklyFlyoutHeading"></label>
 				<block type="ethernet_init_begin">
 					<value name="MAC">
