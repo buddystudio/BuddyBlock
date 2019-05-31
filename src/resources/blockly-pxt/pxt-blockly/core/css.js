@@ -688,9 +688,10 @@ Blockly.Css.CONTENT = [
     'stroke-width: 1;',
   '}',
 
+	// 积木菜单背景
   '.blocklyFlyoutBackground {',
     'fill: $colour_flyout;',
-    'fill-opacity: .8;',
+    'fill-opacity: .9;',
   '}',
 
   '.blocklyTransparentBackground {',

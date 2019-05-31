@@ -51,7 +51,7 @@ line.blocklyFlyoutLine
 .blocklyFlyoutLabelIcon
 {
 	font-family: 'Font Awesome\ 5 Free';
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: 900;
 	fill: white;
 }
@@ -75,9 +75,8 @@ line.blocklyFlyoutLine
 	font-family: 'Font Awesome\ 5 Free';
 	font-weight: 900;
 	font-size: 1.5rem;
-	<!-- margin: 0 .25em;
-	-->
-				  margin: 0 .25em;
+	/*margin: 0 .25em;*/
+	margin: 0 .25em;
 	margin-left: 25px;
 	margin-right: 5px;
 	width: 30px !important;
@@ -85,6 +84,8 @@ line.blocklyFlyoutLine
 	line-height: 39px;
 	min-height: 39px;
 	vertical-align: middle;
+	/* 图标水平居中 */
+	text-align: center;
 }
 
 .blocklyTreeIconCustom::before
