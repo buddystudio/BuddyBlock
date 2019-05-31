@@ -2,103 +2,104 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
-			<title>BuddyBlock</title>
-			<script src="../blockly_uncompressed.js"></script>
-			<script src="../generators/javascript.js"></script>
-			<script src="../generators/javascript/logic.js"></script>
-			<script src="../generators/javascript/loops.js"></script>
-			<script src="../generators/javascript/math.js"></script>
-			<script src="../generators/javascript/text.js"></script>
-			<script src="../generators/javascript/lists.js"></script>
-			<script src="../generators/javascript/colour.js"></script>
-			<script src="../generators/javascript/variables.js"></script>
-			<script src="../generators/javascript/variables_dynamic.js"></script>
-			<script src="../generators/javascript/procedures.js"></script>
+		<title>BuddyBlock</title>
+		
+		<!-- JavaScript代码生成器 -->
+		<script src="../blockly_uncompressed.js"></script>
+		<script src="../generators/javascript.js"></script>
+		<script src="../generators/javascript/logic.js"></script>
+		<script src="../generators/javascript/loops.js"></script>
+		<script src="../generators/javascript/math.js"></script>
+		<script src="../generators/javascript/text.js"></script>
+		<script src="../generators/javascript/lists.js"></script>
+		<script src="../generators/javascript/colour.js"></script>
+		<script src="../generators/javascript/variables.js"></script>
+		<script src="../generators/javascript/variables_dynamic.js"></script>
+		<script src="../generators/javascript/procedures.js"></script>
 
-			<script src="../msg/messages.js"></script>
-			<script src="../blocks/extensions.js"></script>
-			<script src="../blocks/logic.js"></script>
-			<script src="../blocks/loops.js"></script>
-			<script src="../blocks/math.js"></script>
-			<script src="../blocks/text.js"></script>
-			<script src="../blocks/lists.js"></script>
-			<script src="../blocks/colour.js"></script>
-			<script src="../blocks/variables.js"></script>
-			<script src="../blocks/variables_dynamic.js"></script>
-			<script src="../blocks/procedures.js"></script>
-			<script src="../blocks/pxt_blockly_functions.js"></script>
-			<!-- <script src="blocks/test_blocks.js"></script> -->
-			<!-- <script src="blocks/pxt_test_blocks.js"></script> -->
+		<script src="../msg/messages.js"></script>
+		<script src="../blocks/extensions.js"></script>
+		<script src="../blocks/logic.js"></script>
+		<script src="../blocks/loops.js"></script>
+		<script src="../blocks/math.js"></script>
+		<script src="../blocks/text.js"></script>
+		<script src="../blocks/lists.js"></script>
+		<script src="../blocks/colour.js"></script>
+		<script src="../blocks/variables.js"></script>
+		<script src="../blocks/variables_dynamic.js"></script>
+		<script src="../blocks/procedures.js"></script>
+		<script src="../blocks/pxt_blockly_functions.js"></script>
+		<!-- <script src="blocks/test_blocks.js"></script> -->
+		<!-- <script src="blocks/pxt_test_blocks.js"></script> -->
+		
+		<!-- Arduino代码生成器 -->
+		<script src="../generators/arduino.js"></script>
+		<script src="../generators/arduino/arduino_base.js"></script>
+		<script src="../generators/arduino/procedures.js"></script>
+		<script src="../generators/arduino/logic.js"></script>
+		<script src="../generators/arduino/loops.js"></script>
+		<script src="../generators/arduino/math.js"></script>
+		<script src="../generators/arduino/text.js"></script>
+		<script src="../generators/arduino/lists.js"></script>
+		<script src="../generators/arduino/colour.js"></script>
+		<script src="../generators/arduino/variables.js"></script>
+		<script src="../generators/arduino/variables_dynamic.js"></script>
+		<script src="../generators/arduino/procedures.js"></script>
 
-			<!-- 一下是实验部分 -->
-			<script src="../generators/arduino.js"></script>
-			<script src="../generators/arduino/arduino_base.js"></script>
-			<script src="../generators/arduino/procedures.js"></script>
-			<script src="../generators/arduino/logic.js"></script>
-			<script src="../generators/arduino/loops.js"></script>
-			<script src="../generators/arduino/math.js"></script>
-			<script src="../generators/arduino/text.js"></script>
-			<script src="../generators/arduino/lists.js"></script>
-			<script src="../generators/arduino/colour.js"></script>
-			<script src="../generators/arduino/variables.js"></script>
-			<script src="../generators/arduino/variables_dynamic.js"></script>
-			<script src="../generators/arduino/procedures.js"></script>
+		<!--<script type="text/javascript" src="blocks/bd_arduino/view/bd_arduino_view.js"></script>-->
+		<!--<script type="text/javascript" src="blocks/bd_arduino/code/bd_arduino_code.js"></script>-->
+			
+		<!-- View -->
+		<script type="text/javascript" src="blocks/arduino_base.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/pins_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/io_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/control_view2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/scoop_view.js"></script>
+		<!--<script type="text/javascript" src="blocks/bd_arduino/view/math_view2.js"></script>-->
+		<script type="text/javascript" src="blocks/bd_arduino/view/text_view2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/lists_view2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/logic_view2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/serial_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/storage_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/communicate_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/sensor_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/actuator_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/display_view.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/view/ethernet_view.js"></script>
+			
+		<!-- Code -->
+		<script type="text/javascript" src="blocks/bd_arduino/code/pins_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/io_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/control_code2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/scoop_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/math_code2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/text_code2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/lists_code2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/logic_code2.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/serial_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/storage_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/communicate_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/sensor_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/actuator_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/display_code.js"></script>
+		<script type="text/javascript" src="blocks/bd_arduino/code/ethernet_code.js"></script>
 
-			<script type="text/javascript" src="blocks/bd_arduino/view/bd_arduino_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/bd_arduino_code.js"></script>
+		<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="ace/src-noconflict/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
 			
-			<!-- View -->
-			<script type="text/javascript" src="blocks/arduino_base.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/pins_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/io_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/control_view2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/scoop_view.js"></script>
-			<!--<script type="text/javascript" src="blocks/bd_arduino/view/math_view2.js"></script>-->
-			<script type="text/javascript" src="blocks/bd_arduino/view/text_view2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/lists_view2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/logic_view2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/serial_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/storage_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/communicate_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/sensor_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/actuator_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/display_view.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/view/ethernet_view.js"></script>
+		<!-- 辅助功能脚本 -->
+		<script src="code.js"></script>
+		<script src="helper.js"></script>
+		<script src="base64.js"></script>
 			
-			<!-- Code -->
-			<script type="text/javascript" src="blocks/bd_arduino/code/pins_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/io_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/control_code2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/scoop_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/math_code2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/text_code2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/lists_code2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/logic_code2.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/serial_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/storage_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/communicate_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/sensor_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/actuator_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/display_code.js"></script>
-			<script type="text/javascript" src="blocks/bd_arduino/code/ethernet_code.js"></script>
-
-			<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-			<script src="ace/src-noconflict/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 主入口脚本 -->
+		<script src="main.js"></script>
 			
-			<!-- 辅助功能脚本 -->
-			<script src="code.js"></script>
-			<script src="helper.js"></script>
-			<script src="base64.js"></script>
-			
-			<!-- 主入口脚本 -->
-			<script src="main.js"></script>
-			
-			<!-- 这获取图标 -->
-			<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
-			<link href="fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet" >
-			<!-- 主界面样式 -->
-			<link href="style.css" rel="stylesheet" >			
-			
+		<!-- 这获取图标 -->
+		<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
+		<link href="fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet" >
+		<!-- 主界面样式 -->
+		<link href="style.css" rel="stylesheet" >				
 	</head>
 	<!-- <body onload="start()"> -->
 	<body onload="init()">
@@ -276,7 +277,8 @@
 						</shadow>
 					</value>
 				</block>
-				<block type="controls_switch_case"></block>
+				<!-- 暂时屏蔽Case语句 -->
+				<!-- <block type="controls_switch_case"></block> -->
 				<block type="controls_repeat_ext">
 					<value name="TIMES">
 					  <shadow type="math_number">
@@ -619,6 +621,7 @@
 						</shadow>
 					</value>
 				</block>
+				// 以下两行英文版会出错
 				<block type="lists_length"></block>
 				<block type="lists_isEmpty"></block>
 				<block type="lists_indexOf"></block>
