@@ -221,7 +221,9 @@ Blockly.Blocks.DS1307_init = {
   }*/
 
 };
+
 //传感器-实时时钟块_时间变量
+/*
 var RTC_TIME_TYPE = [
   [Blockly.BUDDY_YEAR, "getYear"],
   [Blockly.BUDDY_MONTH, "getMonth"],
@@ -230,6 +232,17 @@ var RTC_TIME_TYPE = [
   [Blockly.BUDDY_MINUTE, "getMinute"],
   [Blockly.BUDDY_SECOND, "getSecond"],
   [Blockly.BUDDY_WEEK, "getWeek"]
+];
+*/
+
+var RTC_TIME_TYPE = [
+  ["YEAR", "getYear"],
+  ["MONTH", "getMonth"],
+  ["DAY", "getDay"],
+  ["HOUR", "getHour"],
+  ["MINUTE", "getMinute"],
+  ["SECOND", "getSecond"],
+  ["WEEK", "getWeek"]
 ];
 
 
