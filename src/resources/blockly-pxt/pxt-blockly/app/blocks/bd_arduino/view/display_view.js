@@ -1,9 +1,7 @@
 'use strict';
 
 goog.provide('Blockly.Blocks.display');
-
 goog.require('Blockly.Blocks');
-
 
 Blockly.Blocks.display.HUE = "#4c97ff";
 
@@ -441,9 +439,16 @@ Blockly.Blocks.display_Matrix_Init = {
 };
 
 //执行器_点阵屏显示_画点变量
+/*
 var display_DrawPixel_NUM = [
   [Blockly.BUDDY_4DIGITDISPLAY_ON, "1"],
   [Blockly.BUDDY_4DIGITDISPLAY_OFF, "0"]
+];
+*/
+
+var display_DrawPixel_NUM = [
+  ["ON", "1"],
+  ["OFF", "0"]
 ];
 
 //执行器_点阵屏显示_画点显示
