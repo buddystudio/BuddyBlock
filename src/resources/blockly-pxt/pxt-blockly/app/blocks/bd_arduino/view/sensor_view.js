@@ -272,6 +272,7 @@ Blockly.Blocks.RTC_set_date = {
   }
 };
 
+/*
 var ADXL345_GETAB = [
   [Blockly.BUDDY_ADXL345_X, "x"],
   [Blockly.BUDDY_ADXL345_Y, "y"],
@@ -280,6 +281,17 @@ var ADXL345_GETAB = [
   [Blockly.BUDDY_ADXL345_YA, "ya"]
   //, [Blockly.BUDDY_ADXL345_ZA, "za"]
 ];
+*/
+
+var ADXL345_GETAB = [
+  ["X", "x"],
+  ["Y", "y"],
+  ["Z", "z"],
+  ["XA", "xa"],
+  ["YA", "ya"]
+  //, [Blockly.BUDDY_ADXL345_ZA, "za"]
+];
+
 //传感器-重力感应块-获取数据
 Blockly.Blocks.ADXL345 = {
   init: function() {
