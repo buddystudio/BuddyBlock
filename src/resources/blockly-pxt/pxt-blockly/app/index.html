@@ -168,6 +168,23 @@
 				<block type="io_highlow"></block>
 				<block type="io_pinMode"></block>
 				<block type="io_pinMode2"></block>
+				<label text=" Input" web-line="1.0"></label>
+				<block type="io_digital_read2">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<block type="io_analog_read">
+					<value name="PIN">
+						<shadow type="pins_analog"></shadow>
+					</value>
+				</block>
+				<block type="io_cap_read">
+					<value name="PIN">
+						<shadow type="pins_digital"></shadow>
+					</value>
+				</block>
+				<label text=" Output" web-line="1.0"></label>
 				<block type="io_digital_write2">
 					<value name="PIN">
 						<shadow type="pins_digital"></shadow>
@@ -182,11 +199,7 @@
 					</value>
 				</block>
 				<block type="io_digital_write3"></block>
-				<block type="io_digital_read2">
-					<value name="PIN">
-						<shadow type="pins_digital"></shadow>
-					</value>
-				</block>
+				
 				<block type="io_analog_write">
 					<value name="PIN">
 						<shadow type="pins_analog"></shadow>
@@ -202,11 +215,6 @@
 					</value>
 				</block>
 				<block type="io_analog_write2"></block>
-				<block type="io_analog_read">
-					<value name="PIN">
-						<shadow type="pins_analog"></shadow>
-					</value>
-				</block>
 				<block type="io_pwm_write">
 					<value name="PIN">
 						<shadow type="pins_pwm"></shadow>
@@ -221,11 +229,7 @@
 						<shadow type="pins_pwm"></shadow>
 					</value>	
 				</block>
-				<block type="io_cap_read">
-					<value name="PIN">
-						<shadow type="pins_digital"></shadow>
-					</value>
-				</block>
+				<label text=" Interrupt" web-line="1.0"></label>
 				<block type="io_attachInterrupt"></block>
 				<block type="io_detachInterrupt"></block>
 				<block type="io_attachPinInterrupt">
@@ -268,8 +272,8 @@
 				<!-- 占位标签 -->
 				<label web-icon=" "></label>
 			</category>
-			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom control">
-				<label text=" CONTROL" web-icon="&#xf11b" web-class="blocklyFlyoutHeading"></label>
+			<category name="%{BKY_CAT_CONTROL}" colour="#40bf4a" iconclass="blocklyTreeIconCustom loops">
+				<label text=" CONTROL" web-icon="&#xf079" web-class="blocklyFlyoutHeading"></label>
 				<block type="base_setup"></block>
 				<block type="controls_end_program"></block>
 				<block type="base_delay">
@@ -321,6 +325,8 @@
 						</shadow>
 					</value>
 				</block>
+				<!-- 暂时屏蔽 -->
+				<!--
 				<block type="controls_forEach">
 					<value name="VAR">
 						<shadow type="variables_get_reporter">
@@ -328,6 +334,7 @@
 						</shadow>
 					</value>
 				</block>
+				-->
 				<block type="controls_flow_statements"></block>
 				<block type="controls_millis"></block>
 				<block type="controls_interrupts"></block>
@@ -349,9 +356,12 @@
 				<block type="math_number" gap="32">
 					<field name="NUM">123</field>
 				</block>
+				<!-- 暂时屏蔽 -->
+				<!--
 				<block type="math_number_minmax" gap="32">
 					<mutation min="0" max="100"></mutation>
 				</block>
+				-->
 				<label text="Arithmetic" web-line="0.0"></label>
 				<block type="math_arithmetic">
 					<value name="A">
@@ -478,7 +488,7 @@
 						</shadow>
 					</value>
 				</block>
-				<label text="Group with help" web-help-button="true" callbackkey="GROUP_HELP" web-line="1.0"></label>
+				<label text="Group with help  " web-help-button="true" callbackkey="GROUP_HELP" web-line="1.0"></label>
 				<block type="text_charAt">
 					<value name="VALUE">
 						<block type="variables_get">
@@ -531,6 +541,8 @@
 						<shadow type="text"></shadow>
 					</value>
 				</block>
+				<!-- 暂时屏蔽 -->
+				<!--
 				<label text="Input/Output:" web-class="ioLabel"></label>
 				<block type="text_print">
 					<value name="TEXT">
@@ -546,6 +558,7 @@
 						</shadow>
 					</value>
 				</block>
+				-->
 				<!-- 占位标签 -->
 				<label web-icon=" "></label>
 			</category>
@@ -629,7 +642,6 @@
 						</shadow>
 					</value>
 				</block>
-				// 以下两行英文版会出错
 				<block type="lists_length"></block>
 				<block type="lists_isEmpty"></block>
 				<block type="lists_indexOf"></block>
@@ -704,17 +716,9 @@
 			<!-- Testing -->
 			<category name="%{BKY_CAT_LOGIC}" colour="210" iconclass="blocklyTreeIconCustom logic">
 				<label text="LOGIC" web-icon="&#xf205" web-class="blocklyFlyoutHeading"></label>
-				<block type="controls_if">
-					<value name="IF0">
-						<shadow type="logic_boolean"></shadow>
-					</value>
-				</block>
-				<block type="controls_if">
-					<mutation else="1"></mutation>
-					<value name="IF0">
-						<shadow type="logic_boolean"></shadow>
-					</value>
-				</block>
+				<block type="logic_boolean"></block>
+				<block type="logic_negate"></block>
+				<block type="logic_operation"></block>
 				<block type="logic_compare">
 					<value name="A">
 						<shadow type="math_number">
@@ -727,14 +731,23 @@
 						</shadow>
 					</value>
 				</block>
-				<block type="logic_operation"></block>
-				<block type="logic_negate"></block>
-				<block type="logic_boolean"></block>
-				<block type="logic_null" disabled="true"></block>
+				<!-- <block type="logic_null" disabled="true"></block> -->
+				<block type="controls_if">
+					<value name="IF0">
+						<shadow type="logic_boolean"></shadow>
+					</value>
+				</block>
+				<block type="controls_if">
+					<mutation else="1"></mutation>
+					<value name="IF0">
+						<shadow type="logic_boolean"></shadow>
+					</value>
+				</block>
 				<block type="logic_ternary"></block>
 				<!-- 占位标签 -->
 				<label web-icon=" "></label>
 			</category>
+			<!--
 			<category name="%{BKY_CAT_LOOPS}" colour="#40bf4a" iconclass="blocklyTreeIconCustom loops">
 				<label text="LOOPS" web-icon="&#xf079" web-class="blocklyFlyoutHeading"></label>
 				<label text="Basic" web-line="1.0"></label>
@@ -787,9 +800,8 @@
 					</value>
 				</block>
 				<block type="controls_flow_statements"></block>
-				<!-- 占位标签 -->
-				<label web-icon=" "></label>
 			</category>
+			-->
 			<category name="%{BKY_CAT_SERIAL}" colour="#006e90" iconclass="blocklyTreeIconCustom serial">
 				<label text="SERIAL" web-icon="&#xf074" web-class="blocklyFlyoutHeading"></label>
 				<block type="serial_begin">
