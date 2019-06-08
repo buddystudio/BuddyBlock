@@ -239,7 +239,8 @@ Blockly.Flyout.prototype.createDom = function(tagName) {
   this.svgGroup_.appendChild(this.workspace_.createDom());
   
   // 隐藏积木面板的缩放按钮
-  this.svgGroup_.getElementsByClassName('blocklyWorkspace')[0].getElementsByClassName('blocklyZoom')[0].style.visibility="hidden";;
+  if(this.svgGroup_.getElementsByClassName('blocklyWorkspace')[0].getElementsByClassName('blocklyZoom')[0]) 
+    this.svgGroup_.getElementsByClassName('blocklyWorkspace')[0].getElementsByClassName('blocklyZoom')[0].style.visibility="hidden";;
   return this.svgGroup_;
 };
 

@@ -168,6 +168,7 @@ Blockly.InsertionMarkerManager = function(block, handleXY) {
  */
 Blockly.InsertionMarkerManager.prototype.dispose = function() {
   // Unfade the dragging block.
+  
   this.workspace_.getBlockDragSurface().setOpacity(1);
 
   this.topBlock_ = null;

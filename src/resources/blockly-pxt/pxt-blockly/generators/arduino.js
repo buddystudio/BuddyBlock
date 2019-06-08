@@ -53,63 +53,63 @@ Blockly.Arduino.addReservedWords(
  * Order of operation ENUMs.
  *
  */
-Blockly.Arduino.ORDER_ATOMIC = 0;         // 0 "" ...
-Blockly.Arduino.ORDER_UNARY_POSTFIX = 1;  // expr++ expr-- () [] .
-Blockly.Arduino.ORDER_UNARY_PREFIX = 2;   // -expr !expr ~expr ++expr --expr
+Blockly.Arduino.ORDER_ATOMIC = 0; // 0 "" ...
+Blockly.Arduino.ORDER_UNARY_POSTFIX = 1; // expr++ expr-- () [] .
+Blockly.Arduino.ORDER_UNARY_PREFIX = 2; // -expr !expr ~expr ++expr --expr
 Blockly.Arduino.ORDER_MULTIPLICATIVE = 3; // * / % ~/
-Blockly.Arduino.ORDER_ADDITIVE = 4;       // + -
-Blockly.Arduino.ORDER_SHIFT = 5;          // << >>
-Blockly.Arduino.ORDER_RELATIONAL = 6;     // is is! >= > <= <
-Blockly.Arduino.ORDER_EQUALITY = 7;       // == != === !==
-Blockly.Arduino.ORDER_BITWISE_AND = 8;    // &
-Blockly.Arduino.ORDER_BITWISE_XOR = 9;    // ^
-Blockly.Arduino.ORDER_BITWISE_OR = 10;    // |
-Blockly.Arduino.ORDER_LOGICAL_AND = 11;   // &&
-Blockly.Arduino.ORDER_LOGICAL_OR = 12;    // ||
-Blockly.Arduino.ORDER_CONDITIONAL = 13;   // expr ? expr : expr
-Blockly.Arduino.ORDER_ASSIGNMENT = 14;    // = *= /= ~/= %= += -= <<= >>= &= ^= |=
-Blockly.Arduino.ORDER_NONE = 99;          // (...)
+Blockly.Arduino.ORDER_ADDITIVE = 4; // + -
+Blockly.Arduino.ORDER_SHIFT = 5; // << >>
+Blockly.Arduino.ORDER_RELATIONAL = 6; // is is! >= > <= <
+Blockly.Arduino.ORDER_EQUALITY = 7; // == != === !==
+Blockly.Arduino.ORDER_BITWISE_AND = 8; // &
+Blockly.Arduino.ORDER_BITWISE_XOR = 9; // ^
+Blockly.Arduino.ORDER_BITWISE_OR = 10; // |
+Blockly.Arduino.ORDER_LOGICAL_AND = 11; // &&
+Blockly.Arduino.ORDER_LOGICAL_OR = 12; // ||
+Blockly.Arduino.ORDER_CONDITIONAL = 13; // expr ? expr : expr
+Blockly.Arduino.ORDER_ASSIGNMENT = 14; // = *= /= ~/= %= += -= <<= >>= &= ^= |=
+Blockly.Arduino.ORDER_NONE = 99; // (...)
 
-Blockly.Arduino.ORDER_MEMBER = 1.2;       		// . []
-Blockly.Arduino.ORDER_COMMA = 18;         		// ,
-Blockly.Arduino.ORDER_LOGICAL_NOT = 4.4;    // !
-Blockly.Arduino.ORDER_FUNCTION_CALL = 2;    // ()
+Blockly.Arduino.ORDER_MEMBER = 1.2; // . []
+Blockly.Arduino.ORDER_COMMA = 18; // ,
+Blockly.Arduino.ORDER_LOGICAL_NOT = 4.4; // !
+Blockly.Arduino.ORDER_FUNCTION_CALL = 2; // ()
 
-Blockly.Arduino.ORDER_ATOMIC = 0;           // 0 "" ...
-Blockly.Arduino.ORDER_NEW = 1.1;            // new
-Blockly.Arduino.ORDER_MEMBER = 1.2;         // . []
-Blockly.Arduino.ORDER_FUNCTION_CALL = 2;    // ()
-Blockly.Arduino.ORDER_INCREMENT = 3;        // ++
-Blockly.Arduino.ORDER_DECREMENT = 3;        // --
-Blockly.Arduino.ORDER_BITWISE_NOT = 4.1;    // ~
-Blockly.Arduino.ORDER_UNARY_PLUS = 4.2;     // +
+Blockly.Arduino.ORDER_ATOMIC = 0; // 0 "" ...
+Blockly.Arduino.ORDER_NEW = 1.1; // new
+Blockly.Arduino.ORDER_MEMBER = 1.2; // . []
+Blockly.Arduino.ORDER_FUNCTION_CALL = 2; // ()
+Blockly.Arduino.ORDER_INCREMENT = 3; // ++
+Blockly.Arduino.ORDER_DECREMENT = 3; // --
+Blockly.Arduino.ORDER_BITWISE_NOT = 4.1; // ~
+Blockly.Arduino.ORDER_UNARY_PLUS = 4.2; // +
 Blockly.Arduino.ORDER_UNARY_NEGATION = 4.3; // -
-Blockly.Arduino.ORDER_LOGICAL_NOT = 4.4;    // !
-Blockly.Arduino.ORDER_TYPEOF = 4.5;         // typeof
-Blockly.Arduino.ORDER_VOID = 4.6;           // void
-Blockly.Arduino.ORDER_DELETE = 4.7;         // delete
-Blockly.Arduino.ORDER_AWAIT = 4.8;          // await
+Blockly.Arduino.ORDER_LOGICAL_NOT = 4.4; // !
+Blockly.Arduino.ORDER_TYPEOF = 4.5; // typeof
+Blockly.Arduino.ORDER_VOID = 4.6; // void
+Blockly.Arduino.ORDER_DELETE = 4.7; // delete
+Blockly.Arduino.ORDER_AWAIT = 4.8; // await
 Blockly.Arduino.ORDER_EXPONENTIATION = 5.0; // **
 Blockly.Arduino.ORDER_MULTIPLICATION = 5.1; // *
-Blockly.Arduino.ORDER_DIVISION = 5.2;       // /
-Blockly.Arduino.ORDER_MODULUS = 5.3;        // %
-Blockly.Arduino.ORDER_SUBTRACTION = 6.1;    // -
-Blockly.Arduino.ORDER_ADDITION = 6.2;       // +
-Blockly.Arduino.ORDER_BITWISE_SHIFT = 7;    // << >> >>>
-Blockly.Arduino.ORDER_RELATIONAL = 8;       // < <= > >=
-Blockly.Arduino.ORDER_IN = 8;               // in
-Blockly.Arduino.ORDER_INSTANCEOF = 8;       // instanceof
-Blockly.Arduino.ORDER_EQUALITY = 9;         // == != === !==
-Blockly.Arduino.ORDER_BITWISE_AND = 10;     // &
-Blockly.Arduino.ORDER_BITWISE_XOR = 11;     // ^
-Blockly.Arduino.ORDER_BITWISE_OR = 12;      // |
-Blockly.Arduino.ORDER_LOGICAL_AND = 13;     // &&
-Blockly.Arduino.ORDER_LOGICAL_OR = 14;      // ||
-Blockly.Arduino.ORDER_CONDITIONAL = 15;     // ?:
-Blockly.Arduino.ORDER_ASSIGNMENT = 16;      // = += -= **= *= /= %= <<= >>= ...
-Blockly.Arduino.ORDER_YIELD = 17;         // yield
-Blockly.Arduino.ORDER_COMMA = 18;           // ,
-Blockly.Arduino.ORDER_NONE = 99;            // (...)
+Blockly.Arduino.ORDER_DIVISION = 5.2; // /
+Blockly.Arduino.ORDER_MODULUS = 5.3; // %
+Blockly.Arduino.ORDER_SUBTRACTION = 6.1; // -
+Blockly.Arduino.ORDER_ADDITION = 6.2; // +
+Blockly.Arduino.ORDER_BITWISE_SHIFT = 7; // << >> >>>
+Blockly.Arduino.ORDER_RELATIONAL = 8; // < <= > >=
+Blockly.Arduino.ORDER_IN = 8; // in
+Blockly.Arduino.ORDER_INSTANCEOF = 8; // instanceof
+Blockly.Arduino.ORDER_EQUALITY = 9; // == != === !==
+Blockly.Arduino.ORDER_BITWISE_AND = 10; // &
+Blockly.Arduino.ORDER_BITWISE_XOR = 11; // ^
+Blockly.Arduino.ORDER_BITWISE_OR = 12; // |
+Blockly.Arduino.ORDER_LOGICAL_AND = 13; // &&
+Blockly.Arduino.ORDER_LOGICAL_OR = 14; // ||
+Blockly.Arduino.ORDER_CONDITIONAL = 15; // ?:
+Blockly.Arduino.ORDER_ASSIGNMENT = 16; // = += -= **= *= /= %= <<= >>= ...
+Blockly.Arduino.ORDER_YIELD = 17; // yield
+Blockly.Arduino.ORDER_COMMA = 18; // ,
+Blockly.Arduino.ORDER_NONE = 99; // (...)
 
 /**
  * List of outer-inner pairings that do NOT require parentheses.
@@ -146,57 +146,191 @@ Blockly.Arduino.ORDER_OVERRIDES = [
  *
  */
 var profile = {
-	softserial_select: [["SoftwareSerial", "mySerial"], ["SoftwareSerial1", "mySerial1"], ["SoftwareSeria2", "mySerial2"], ["SoftwareSerial3", "mySerial3"]],
-	arduino_uno: {
-	    description: "Arduino Uno",
-	    digital: ["0", "1",  "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
-		dropdownDigital: [["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]],
-		PWM : ["3", "5", "6", "9", "10", "11"],
-		dropdownPWM: [["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"], ["11", "11"]],
-		analog : ["A0", "A1", "A2", "A3", "A4", "A5"],
-		dropdownAnalog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
-		dropdownAll: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"]], 
-		/*irqonchange: [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"],["A0", "14"], ["A1", "15"], ["A2", "16"], ["A3", "17"], ["A4", "18"], ["A5", "19"]],*/
-		I2C: ["A4", "A5"],
-		SPI: [["10 (SS)", "10"], ["11 (MOSI)", "11"], ["12 (MISO)", "12"], ["13 (SCK)", "13"]],
-		interrupt: ["2", "3"],
-		dropdownInterrupt: [["2", "2"], ["3", "3"]],
-		picture : "media/Arduino-Uno-Pinout.jpg",
-		miniPicture : "media/Arduino-Uno-Pinout-mini.jpg",
-		miniPicture_hor : "media/Arduino-Leonardo-Pinout-mini_hor.jpg",
-		serial: [['300', '300'], ['600', '600'], ['1200', '1200'],
-                ['2400', '2400'], ['4800', '4800'], ['9600', '9600'],
-                ['14400', '14400'], ['19200', '19200'], ['28800', '28800'],
-                ['31250', '31250'], ['38400', '38400'], ['57600', '57600'],
-                ['115200', '115200']],
-		serialPin: [["0 (Rx) ; 1 (Tx)", "0"]],
-		upload_arg: "arduino:avr:uno",
-		serial_select: [["Serial", "Serial"], ["SoftwareSerial", "mySerial"], ["SoftwareSerial1", "mySerial1"], ["SoftwareSeria2", "mySerial2"], ["SoftwareSerial3", "mySerial3"]],
-		serial : 9600
-	},
-	arduino_mega:{
-		description: "Arduino Mega",
-		digital : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52"],
-		dropdownDigital: "attention",
-		PWM : ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "44", "45", "46"],
-		dropdownPWM: [["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["44", "44"], ["45", "45"], ["46", "46"]],
-		analog : ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"],
-		dropdownAnalog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"], ["A8", "A8"], ["A9", "A9"], ["A10", "A10"], ["A11", "A11"], ["A12", "A12"], ["A13", "A13"], ["A14", "A14"], ["A15", "A15"]],
-		/*irqonchange : [["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["50", "50"], ["51", "51"], ["52", "52"], ["53", "53"], ["A8", "62"], ["A9", "63"], ["A10", "64"], ["A11", "65"], ["A12", "66"], ["A13", "67"], ["A14", "68"], ["A15", "69"]],*/
-		I2C: ["20", "21"],
-		SPI: [["50 (SS)", "50"], ["51 (MOSI)", "51"], ["52 (MISO)", "52"], ["53 (SCK)", "53"]],
-		interrupt: ["2", "3", "21", "20", "19", "18"],
-		picture : "media/Arduino-Mega-2560-Pinout.jpg",
-		miniPicture : "media/Arduino-Mega-2560-Pinout-mini.jpg",
-		miniPicture_hor : "media/Arduino-Leonardo-Pinout-mini_hor.jpg",
-		serial: [['300', '300'], ['600', '600'], ['1200', '1200'],
-                ['2400', '2400'], ['4800', '4800'], ['9600', '9600'],
-                ['14400', '14400'], ['19200', '19200'], ['28800', '28800'],
-                ['31250', '31250'], ['38400', '38400'], ['57600', '57600'],
-                ['115200', '115200']],
-		serialPin: [["0 (Rx) ; 1 (Tx)", "0"], ["19 (Rx1) ; 18 (Tx1)", "19"], ["17 (Rx2) ; 16 (Tx2)", "17"], ["15 (Rx3) ; 14 (Tx3)", "15"]],
-		upload_arg: "arduino:avr:mega:cpu=atmega2560",
-	}
+  softserial_select: [
+    ["SoftwareSerial", "mySerial"],
+    ["SoftwareSerial1", "mySerial1"],
+    ["SoftwareSeria2", "mySerial2"],
+    ["SoftwareSerial3", "mySerial3"]
+  ],
+  arduino_uno: {
+    description: "Arduino Uno",
+    digital: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    dropdownDigital: [
+      ["0", "0"],
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"],
+      ["10", "10"],
+      ["11", "11"],
+      ["12", "12"],
+      ["13", "13"]
+    ],
+    PWM: ["3", "5", "6", "9", "10", "11"],
+    dropdownPWM: [
+      ["3", "3"],
+      ["5", "5"],
+      ["6", "6"],
+      ["9", "9"],
+      ["10", "10"],
+      ["11", "11"]
+    ],
+    analog: ["A0", "A1", "A2", "A3", "A4", "A5"],
+    dropdownAnalog: [
+      ["A0", "A0"],
+      ["A1", "A1"],
+      ["A2", "A2"],
+      ["A3", "A3"],
+      ["A4", "A4"],
+      ["A5", "A5"]
+    ],
+    dropdownAll: [
+      ["A0", "A0"],
+      ["A1", "A1"],
+      ["A2", "A2"],
+      ["A3", "A3"],
+      ["A4", "A4"],
+      ["A5", "A5"],
+      ["0", "0"],
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"],
+      ["10", "10"],
+      ["11", "11"],
+      ["12", "12"],
+      ["13", "13"]
+    ],
+    /*irqonchange: [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"],["A0", "14"], ["A1", "15"], ["A2", "16"], ["A3", "17"], ["A4", "18"], ["A5", "19"]],*/
+    I2C: ["A4", "A5"],
+    SPI: [
+      ["10 (SS)", "10"],
+      ["11 (MOSI)", "11"],
+      ["12 (MISO)", "12"],
+      ["13 (SCK)", "13"]
+    ],
+    interrupt: ["2", "3"],
+    dropdownInterrupt: [
+      ["2", "2"],
+      ["3", "3"]
+    ],
+    picture: "media/Arduino-Uno-Pinout.jpg",
+    miniPicture: "media/Arduino-Uno-Pinout-mini.jpg",
+    miniPicture_hor: "media/Arduino-Leonardo-Pinout-mini_hor.jpg",
+    serial: [
+      ['300', '300'],
+      ['600', '600'],
+      ['1200', '1200'],
+      ['2400', '2400'],
+      ['4800', '4800'],
+      ['9600', '9600'],
+      ['14400', '14400'],
+      ['19200', '19200'],
+      ['28800', '28800'],
+      ['31250', '31250'],
+      ['38400', '38400'],
+      ['57600', '57600'],
+      ['115200', '115200']
+    ],
+    serialPin: [
+      ["0 (Rx) ; 1 (Tx)", "0"]
+    ],
+    upload_arg: "arduino:avr:uno",
+    serial_select: [
+      ["Serial", "Serial"],
+      ["SoftwareSerial", "mySerial"],
+      ["SoftwareSerial1", "mySerial1"],
+      ["SoftwareSeria2", "mySerial2"],
+      ["SoftwareSerial3", "mySerial3"]
+    ],
+    serial: 9600
+  },
+  arduino_mega: {
+    description: "Arduino Mega",
+    digital: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52"],
+    dropdownDigital: "attention",
+    PWM: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "44", "45", "46"],
+    dropdownPWM: [
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"],
+      ["10", "10"],
+      ["11", "11"],
+      ["12", "12"],
+      ["13", "13"],
+      ["44", "44"],
+      ["45", "45"],
+      ["46", "46"]
+    ],
+    analog: ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"],
+    dropdownAnalog: [
+      ["A0", "A0"],
+      ["A1", "A1"],
+      ["A2", "A2"],
+      ["A3", "A3"],
+      ["A4", "A4"],
+      ["A5", "A5"],
+      ["A6", "A6"],
+      ["A7", "A7"],
+      ["A8", "A8"],
+      ["A9", "A9"],
+      ["A10", "A10"],
+      ["A11", "A11"],
+      ["A12", "A12"],
+      ["A13", "A13"],
+      ["A14", "A14"],
+      ["A15", "A15"]
+    ],
+    /*irqonchange : [["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["50", "50"], ["51", "51"], ["52", "52"], ["53", "53"], ["A8", "62"], ["A9", "63"], ["A10", "64"], ["A11", "65"], ["A12", "66"], ["A13", "67"], ["A14", "68"], ["A15", "69"]],*/
+    I2C: ["20", "21"],
+    SPI: [
+      ["50 (SS)", "50"],
+      ["51 (MOSI)", "51"],
+      ["52 (MISO)", "52"],
+      ["53 (SCK)", "53"]
+    ],
+    interrupt: ["2", "3", "21", "20", "19", "18"],
+    picture: "media/Arduino-Mega-2560-Pinout.jpg",
+    miniPicture: "media/Arduino-Mega-2560-Pinout-mini.jpg",
+    miniPicture_hor: "media/Arduino-Leonardo-Pinout-mini_hor.jpg",
+    serial: [
+      ['300', '300'],
+      ['600', '600'],
+      ['1200', '1200'],
+      ['2400', '2400'],
+      ['4800', '4800'],
+      ['9600', '9600'],
+      ['14400', '14400'],
+      ['19200', '19200'],
+      ['28800', '28800'],
+      ['31250', '31250'],
+      ['38400', '38400'],
+      ['57600', '57600'],
+      ['115200', '115200']
+    ],
+    serialPin: [
+      ["0 (Rx) ; 1 (Tx)", "0"],
+      ["19 (Rx1) ; 18 (Tx1)", "19"],
+      ["17 (Rx2) ; 16 (Tx2)", "17"],
+      ["15 (Rx3) ; 14 (Tx3)", "15"]
+    ],
+    upload_arg: "arduino:avr:mega:cpu=atmega2560",
+  }
 };
 //set default profile to arduino standard-compatible board
 profile["default"] = profile["arduino_uno"];
@@ -207,44 +341,44 @@ profile["default"] = profile["arduino_uno"];
  * Initialise the database of variable names.
  * @param {!Blockly.Workspace} workspace Workspace to generate code from.
  */
-Blockly.Arduino.init = function(workspace) {
-	// Create a dictionary of definitions to be printed before setups.
-	Blockly.Arduino.definitions_ = Object.create(null);
-	// Create a dictionary of setups to be printed before the code.
-	Blockly.Arduino.setups_ = Object.create(null);
-	// Create a dictionary mapping desired function names in definitions_
-	// to actual function names (to avoid collisions with user functions).
-	Blockly.Arduino.functionNames_ = Object.create(null);
+Blockly.Arduino.init = function (workspace) {
+  // Create a dictionary of definitions to be printed before setups.
+  Blockly.Arduino.definitions_ = Object.create(null);
+  // Create a dictionary of setups to be printed before the code.
+  Blockly.Arduino.setups_ = Object.create(null);
+  // Create a dictionary mapping desired function names in definitions_
+  // to actual function names (to avoid collisions with user functions).
+  Blockly.Arduino.functionNames_ = Object.create(null);
 
-	if (!Blockly.Arduino.variableDB_) {
-		Blockly.Arduino.variableDB_ =
-			new Blockly.Names(Blockly.Arduino.RESERVED_WORDS_);
-	} else {
-		Blockly.Arduino.variableDB_.reset();
-	}
+  if (!Blockly.Arduino.variableDB_) {
+    Blockly.Arduino.variableDB_ =
+      new Blockly.Names(Blockly.Arduino.RESERVED_WORDS_);
+  } else {
+    Blockly.Arduino.variableDB_.reset();
+  }
 
-	Blockly.Arduino.variableDB_.setVariableMap(workspace.getVariableMap());
+  Blockly.Arduino.variableDB_.setVariableMap(workspace.getVariableMap());
 
-	var defvars = [];
-	// Add developer variables (not created or named by the user).
-	var devVarList = Blockly.Variables.allDeveloperVariables(workspace);
-	for (var i = 0; i < devVarList.length; i++) {
-		defvars.push('int ' + Blockly.Arduino.variableDB_.getName(devVarList[i], Blockly.Names.DEVELOPER_VARIABLE_TYPE) + ';\n');
-	}
-		
-	// Add user variables, but only ones that are being used.	
-	var variables = Blockly.Variables.allUsedVarModels(workspace);
-	for (var i = 0; i < variables.length; i++) {
-		defvars.push(Blockly.Arduino.variableDB_.getName(variables[i].getId(), Blockly.Variables.NAME_TYPE));
-	}
+  var defvars = [];
+  // Add developer variables (not created or named by the user).
+  var devVarList = Blockly.Variables.allDeveloperVariables(workspace);
+  for (var i = 0; i < devVarList.length; i++) {
+    defvars.push('int ' + Blockly.Arduino.variableDB_.getName(devVarList[i], Blockly.Names.DEVELOPER_VARIABLE_TYPE) + ';\n');
+  }
 
-	Blockly.Arduino.definitions_['variables'] = defvars.join('\n');
+  // Add user variables, but only ones that are being used.	
+  var variables = Blockly.Variables.allUsedVarModels(workspace);
+  for (var i = 0; i < variables.length; i++) {
+    defvars.push(Blockly.Arduino.variableDB_.getName(variables[i].getId(), Blockly.Variables.NAME_TYPE));
+  }
 
-	// Declare all of the variables.
-	if (defvars.length) {
-	Blockly.Arduino.definitions_['variables'] =
-		'int ' + defvars.join(', ') + ';\n';
-	}
+  Blockly.Arduino.definitions_['variables'] = defvars.join('\n');
+
+  // Declare all of the variables.
+  if (defvars.length) {
+    Blockly.Arduino.definitions_['variables'] =
+      'int ' + defvars.join(', ') + ';\n';
+  }
 };
 
 /**
@@ -252,7 +386,7 @@ Blockly.Arduino.init = function(workspace) {
  * @param {string} code Generated code.
  * @return {string} Completed code.
  */
-Blockly.Arduino.finish = function(code) {
+Blockly.Arduino.finish = function (code) {
   // Indent every line.
   code = '  ' + code.replace(/\n/g, '\n  ');
   code = code.replace(/\n\s+$/, '\n');
@@ -280,7 +414,7 @@ Blockly.Arduino.finish = function(code) {
   delete Blockly.Arduino.functionNames_;
   Blockly.Arduino.variableDB_.reset();
 
-  var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\nvoid setup() \n{\n  ' + setups.join('\n  ') + '\n}'+ '\n\n';
+  var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\nvoid setup() \n{\n  ' + setups.join('\n  ') + '\n}' + '\n\n';
   return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
 };
 
@@ -290,7 +424,7 @@ Blockly.Arduino.finish = function(code) {
  * @param {string} line Line of generated code.
  * @return {string} Legal line of code.
  */
-Blockly.Arduino.scrubNakedValue = function(line) {
+Blockly.Arduino.scrubNakedValue = function (line) {
   return line + ';\n';
 };
 
@@ -300,12 +434,12 @@ Blockly.Arduino.scrubNakedValue = function(line) {
  * @return {string} Arduino string.
  * @private
  */
-Blockly.Arduino.quote_ = function(string) {
+Blockly.Arduino.quote_ = function (string) {
   // TODO: This is a quick hack.  Replace with goog.string.quote
   string = string.replace(/\\/g, '\\\\')
-                 .replace(/\n/g, '\\\n')
-                 .replace(/\$/g, '\\$')
-                 .replace(/'/g, '\\\'');
+    .replace(/\n/g, '\\\n')
+    .replace(/\$/g, '\\$')
+    .replace(/'/g, '\\\'');
   return '\"' + string + '\"';
 };
 
@@ -318,7 +452,7 @@ Blockly.Arduino.quote_ = function(string) {
  * @return {string} Arduino code with comments and subsequent blocks added.
  * @private
  */
-Blockly.Arduino.scrub_ = function(block, code) {
+Blockly.Arduino.scrub_ = function (block, code) {
   if (code === null) {
     // Block has handled code generation itself.
     return '';
@@ -350,3 +484,62 @@ Blockly.Arduino.scrub_ = function(block, code) {
   return commentCode + code + nextCode;
 };
 
+/**
+ * Gets a property and adjusts the value while taking into account indexing.
+ * @param {!Blockly.Block} block The block.
+ * @param {string} atId The property ID of the element to get.
+ * @param {number=} opt_delta Value to add.
+ * @param {boolean=} opt_negate Whether to negate the value.
+ * @param {number=} opt_order The highest order acting on this value.
+ * @return {string|number}
+ */
+Blockly.Arduino.getAdjusted = function (block, atId, opt_delta, opt_negate,
+  opt_order) {
+  var delta = opt_delta || 0;
+  var order = opt_order || Blockly.Arduino.ORDER_NONE;
+  if (block.workspace.options.oneBasedIndex) {
+    delta--;
+  }
+  var defaultAtIndex = block.workspace.options.oneBasedIndex ? '1' : '0';
+  if (delta) {
+    var at = Blockly.Arduino.valueToCode(block, atId,
+      Blockly.Arduino.ORDER_ADDITIVE) || defaultAtIndex;
+  } else if (opt_negate) {
+    var at = Blockly.Arduino.valueToCode(block, atId,
+      Blockly.Arduino.ORDER_UNARY_PREFIX) || defaultAtIndex;
+  } else {
+    var at = Blockly.Arduino.valueToCode(block, atId, order) ||
+      defaultAtIndex;
+  }
+
+  if (Blockly.isNumber(at)) {
+    // If the index is a naked number, adjust it right now.
+    at = parseInt(at, 10) + delta;
+    if (opt_negate) {
+      at = -at;
+    }
+  } else {
+    // If the index is dynamic, adjust it in code.
+    if (delta > 0) {
+      at = at + ' + ' + delta;
+      var innerOrder = Blockly.Arduino.ORDER_ADDITIVE;
+    } else if (delta < 0) {
+      at = at + ' - ' + -delta;
+      var innerOrder = Blockly.Arduino.ORDER_ADDITIVE;
+    }
+    if (opt_negate) {
+      if (delta) {
+        at = '-(' + at + ')';
+      } else {
+        at = '-' + at;
+      }
+      var innerOrder = Blockly.Arduino.RDER_UNARY_PREFIX;
+    }
+    innerOrder = Math.floor(innerOrder);
+    order = Math.floor(order);
+    if (innerOrder && order >= innerOrder) {
+      at = '(' + at + ')';
+    }
+  }
+  return at;
+};
