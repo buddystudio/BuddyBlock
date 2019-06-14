@@ -142,6 +142,7 @@ Blockly.Blocks.i2c_master_reader2 = {
         this.appendDummyInput()
             .appendField(Blockly.BUDDY_I2C_MASTER_READ2);
         this.setOutput(true, Number);
+        this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
     }
 };
 Blockly.Blocks.i2c_available = {
@@ -150,6 +151,7 @@ Blockly.Blocks.i2c_available = {
         this.appendDummyInput()
             .appendField(Blockly.BUDDY_I2C_AVAILABLE);
         this.setOutput(true, Boolean);
+        this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
     }
 };
 
@@ -228,7 +230,7 @@ Blockly.Blocks.RFID_readcardnum={
 	    .appendField(Blockly.BUDDY_COMMUNICATION_RFID_READ_CARDNUM)
 	this.setOutput(true, String);
 	var thisBlock = this;
-   
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
