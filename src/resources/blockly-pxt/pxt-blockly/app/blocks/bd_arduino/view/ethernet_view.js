@@ -14,6 +14,7 @@ Blockly.Blocks['ethernet_init_begin'] = {
 		.setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.BUDDY_ETHERNET_MAC_ADDRESS);
     this.setOutput(true, Number);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -47,6 +48,7 @@ Blockly.Blocks['ethernet_init_local_ip'] = {
     this.appendDummyInput()
         .appendField(Blockly.BUDDY_ETHERNET_LOCALIP);
     this.setOutput(true, 'IPAddress');
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -63,7 +65,8 @@ Blockly.Blocks['ethernet_client_connect_server']={
 		.setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.BUDDY_ETHERNET_CLINET_PORT);
     this.setOutput(true, 'Number');
-	this.setInputsInline(true);
+  this.setInputsInline(true);
+  this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   },
   newQuote_: function(open) {
     if (open == this.RTL) {
@@ -91,6 +94,7 @@ Blockly.Blocks['ethernet_client_connected'] = {
     this.appendDummyInput()
         .appendField(Blockly.BUDDY_ETHERNET_CLINET_CONNECTED);
     this.setOutput(true, Number);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -100,6 +104,7 @@ Blockly.Blocks['ethernet_client_available'] = {
     this.appendDummyInput()
         .appendField(Blockly.BUDDY_ETHERNET_CLINET_AVAILABLE);
     this.setOutput(true, Number);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -133,6 +138,7 @@ Blockly.Blocks['ethernet_client_read'] = {
     this.appendDummyInput()
         .appendField(Blockly.BUDDY_ETHERNET_CLINET_READ);
     this.setOutput(true, Number);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
