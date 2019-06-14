@@ -163,7 +163,9 @@ Blockly.Blocks['arduino_base_map'] = {
     this.setOutput(true);
     this.setTooltip('Re-maps a number from [0-1024] to another.');
     this.setHelpUrl('https://www.arduino.cc/reference/en/language/functions/math/map/');
-    this.setColour('#9966ff');
+    //this.setColour('#9966ff');
+    this.setColour(230);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 

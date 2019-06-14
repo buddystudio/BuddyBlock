@@ -29,6 +29,7 @@ Blockly.Blocks['math_max_min']=
 			.appendField(')');
 		this.setInputsInline(true);
 		this.setOutput(true, 'Number');
+		this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
 		
 		var thisBlock = this;
 		
@@ -44,5 +45,6 @@ Blockly.Blocks['math_max_min']=
 			
 			return TOOLTIPS[mode];
 		});
+		
 	}
 };
