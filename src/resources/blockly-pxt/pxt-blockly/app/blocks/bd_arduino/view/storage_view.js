@@ -57,6 +57,7 @@ Blockly.Blocks.store_eeprom_read_long = {
 		.setCheck('Number')
         .appendField(Blockly.BUDDY_EEPROM_READ_LONG);
     this.setOutput(true, 'Number');
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -83,5 +84,6 @@ Blockly.Blocks.store_eeprom_read_byte = {
 		.setCheck('Number')
         .appendField(Blockly.BUDDY_EEPROM_READ_BYTE);
     this.setOutput(true, 'Number');
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
