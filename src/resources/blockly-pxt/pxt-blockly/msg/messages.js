@@ -1328,7 +1328,7 @@ Blockly.Msg.TEXT_LENGTH_HELPURL = 'https://github.com/google/blockly/wiki/Text#t
  */
 /// block text - See [https://github.com/google/blockly/wiki/Text#text-length https://github.com/google/blockly/wiki/Text#text-length].
 /// \n\nParameters:\n* %1 - the piece of text to take the length of
-Blockly.Msg.TEXT_LENGTH_TITLE = 'length of %1';
+Blockly.Msg.TEXT_LENGTH_TITLE = 'length of';
 /**
  * @const
  */

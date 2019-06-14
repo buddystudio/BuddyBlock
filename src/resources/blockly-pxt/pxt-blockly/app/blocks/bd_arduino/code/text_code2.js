@@ -11,12 +11,12 @@ Blockly.Arduino.text_char = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino.text_join = function() {
-  // Text value.
-    var a = 'String(' + Blockly.Arduino.valueToCode(this, 'A', Blockly.Arduino.ORDER_ATOMIC) + ')';
-    var b = 'String(' + Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC) + ')';
-    return [a  + ' + ' + b , Blockly.Arduino.ORDER_ATOMIC];
-};
+// Blockly.Arduino.text_join = function() {
+//   // Text value.
+//     var a = 'String(' + Blockly.Arduino.valueToCode(this, 'A', Blockly.Arduino.ORDER_ATOMIC) + ')';
+//     var b = 'String(' + Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC) + ')';
+//     return [a  + ' + ' + b , Blockly.Arduino.ORDER_ATOMIC];
+// };
 
 Blockly.Arduino.text_to_number = function() {
   var towhat = this.getFieldValue('TOWHAT');
@@ -30,7 +30,8 @@ Blockly.Arduino.ascii_to_char = function () {
 };
 
 Blockly.Arduino.char_to_ascii = function () {
-    var charvalue = '\'' + this.getFieldValue('TEXT') + '\'';
+    //var charvalue = '\'' + this.getFieldValue('TEXT') + '\'';
+    var charvalue = Blockly.Arduino.valueToCode(this, 'VAR', Blockly.Arduino.ORDER_ATOMIC);
     return ['toascii(' + charvalue + ')', Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -40,10 +41,10 @@ Blockly.Arduino.number_to_text = function() {
   return ['String('+str+", "+towhat+")", Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino.text_length = function() {
-  var str = Blockly.Arduino.valueToCode(this, 'VAR', Blockly.Arduino.ORDER_ATOMIC) || '\"\"';
-  return ['String(' +str+')'+'.length()', Blockly.Arduino.ORDER_ATOMIC];
-};
+// Blockly.Arduino.text_length = function() {
+//   var str = Blockly.Arduino.valueToCode(this, 'VAR', Blockly.Arduino.ORDER_ATOMIC) || '\"\"';
+//   return ['String(' +str+')'+'.length()', Blockly.Arduino.ORDER_ATOMIC];
+// };
 
 Blockly.Arduino.text_char_at = function() {
   var str = Blockly.Arduino.valueToCode(this, 'VAR', Blockly.Arduino.ORDER_ATOMIC) || '\"\"';

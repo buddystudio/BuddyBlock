@@ -62,6 +62,26 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ]
   },
   {
+    "type": "text_char",
+    "message0": "%1",
+    "args0": [{
+      "type": "field_string",
+      "name": "TEXT",
+      "text": ""
+    }],
+    "output": "Number",
+    "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+    "colour": Blockly.Colours.textField,
+    "colourSecondary": Blockly.Colours.textField,
+    "colourTertiary": Blockly.Msg.TEXTS_HUE,
+    "helpUrl": "%{BKY_TEXT_TEXT_HELPURL}",
+    "tooltip": Blockly.Msg.TEXT_CHAR_TOOLTIP,
+    "extensions": [
+      //"text_quotes",
+      "parent_tooltip_when_inline"
+    ]
+  },
+  {
     "type": "text_join",
     "message0": "",
     "output": "String",
@@ -205,6 +225,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         ]
       }
     ],
+    
     "output": "String",
     "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
     "colour": Blockly.Msg.TEXTS_HUE,

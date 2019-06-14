@@ -76,7 +76,9 @@ Blockly.Arduino['text_length'] = function(block) {
   // String or array length.
   var text = Blockly.Arduino.valueToCode(block, 'VALUE',
       Blockly.Arduino.ORDER_FUNCTION_CALL) || '\'\'';
-  return [text + '.length', Blockly.Arduino.ORDER_MEMBER];
+  
+  //return [text + '.length', Blockly.Arduino.ORDER_MEMBER];
+  return 'String(' + text + ').length()';
 };
 
 Blockly.Arduino['text_isEmpty'] = function(block) {
