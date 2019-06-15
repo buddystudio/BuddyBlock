@@ -73,18 +73,20 @@ Blockly.Blocks['serial_available'] = {
 		.appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
         .appendField(Blockly.BUDDY_SERIAL_AVAILABLE);
 	this.setOutput(true, Boolean);
-	this.setTooltip(Blockly.BUDDY_TOOLTIP_BLOCKGROUP_SERIAL_AVAILABLE);
+  this.setTooltip(Blockly.BUDDY_TOOLTIP_BLOCKGROUP_SERIAL_AVAILABLE);
+  this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
 Blockly.Blocks['serial_readstr'] = {
   init: function() {
     this.setColour(Blockly.Blocks.serial.HUE);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
+	  this.appendDummyInput()
+		    .appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
         .appendField(Blockly.BUDDY_SERIAL_READSTR);
-	this.setOutput(true, 'String');
-	this.setTooltip(Blockly.BUDDY_TOOLTIP_BLOCKGROUP_SERIAL_READ_STR);
+	  this.setOutput(true, 'String');
+    this.setTooltip(Blockly.BUDDY_TOOLTIP_BLOCKGROUP_SERIAL_READ_STR);
+    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -96,7 +98,8 @@ Blockly.Blocks['serial_readstr_until'] = {
         .appendField(Blockly.BUDDY_SERIAL_READSTR_UNTIL)
 		.setCheck('Number');
 	this.setInputsInline(true);
-	this.setOutput(true, 'String');
+  this.setOutput(true, 'String');
+  this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
   }
 };
 
@@ -107,7 +110,8 @@ Blockly.Blocks['serial_parseInt_Float'] = {
 		.appendField(new Blockly.FieldDropdown(profile.default.serial_select), "serial_select")
         //.appendField(Blockly.BUDDY_SERIAL_READ)
 		.appendField(new Blockly.FieldDropdown([["read", "read"],["peek", "peek"],["parseInt", "parseInt"], ["parseFloat", "parseFloat"]]), "STAT");
-	this.setOutput(true, 'Number');
+  this.setOutput(true, 'Number');
+  this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
 	var thisBlock = this;
     this.setTooltip(function() {
       var op = thisBlock.getFieldValue('STAT');
