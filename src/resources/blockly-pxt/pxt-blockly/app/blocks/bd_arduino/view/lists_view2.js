@@ -7,6 +7,18 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.lists.HUE = "#8a1c7c";
 
+Blockly.Blocks['lists_size'] = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+      this.appendValueInput('VAR')
+          .setCheck('String')
+		      .appendField(Blockly.BUDDY_LENGTH, 'TEXT');
+	    this.setOutput(true,  'String');
+      this.setTooltip(Blockly.BUDDY_TOOLTIP_TEXT_TOCHAR);
+      this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
+  }
+};
+
 Blockly.Blocks['lists_create_with2'] = {
   /**
    * Block for creating a list with any number of elements of any type.
@@ -14,7 +26,7 @@ Blockly.Blocks['lists_create_with2'] = {
    */
   init: function() {
     this.setColour(Blockly.Blocks.lists.HUE);
-	this.appendDummyInput("")
+	  this.appendDummyInput("")
         .appendField(new Blockly.FieldDropdown([[Blockly.LANG_MATH_INT, 'int'],[Blockly.LANG_MATH_LONG, 'long'],[Blockly.LANG_MATH_FLOAT, 'float'],[Blockly.LANG_MATH_CHAR, 'char'],[Blockly.LANG_MATH_BYTE, 'byte'], [Blockly.LANG_MATH_STRING, 'char *']]), "TYPE")
         .appendField(' ')
         .appendField(new Blockly.FieldTextInput('mylist'), 'VAR')

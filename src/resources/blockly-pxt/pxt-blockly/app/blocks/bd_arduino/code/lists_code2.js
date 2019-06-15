@@ -1,4 +1,9 @@
 
+Blockly.Arduino.lists_size = function () {
+  var charvalue = Blockly.Arduino.valueToCode(this, 'VAR', Blockly.Arduino.ORDER_ATOMIC);
+  return ["sizeof(" + charvalue.replace(/\"/g, "") + ")/sizeof(" +charvalue.replace(/\"/g, "") + "[0])", Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.lists_create_with2 = function() {
   // Create a list with any number of elements of any type.
   var dropdown_type = this.getFieldValue('TYPE');
