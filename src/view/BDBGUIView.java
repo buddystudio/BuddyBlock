@@ -96,31 +96,28 @@ public class BDBGUIView
 		// Get current path.
 		String curPath = this.getClass().getResource("/").getPath();
 
-		// 简体中文版
-		String pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
+		// 默认版本
+		//blockly
+		//String pageUrl = "file://" + curPath + "resources/blockly/app/index.html";
+		//pxt-blockly
+		String pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html";
 		
-		// 英文版
-		//String pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=en_BD";
+		
 		
 		if(BDBParameters.langues.equals("简体中文"))
     	{
-			//pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
-			pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html?lang=zh-hans";
+			pageUrl+="?lang=zh-hans";
     	}
     	else if(BDBParameters.langues.equals("繁體中文"))
     	{
-    		//pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
-    		pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html?lang=zh-hans";
     	}
     	else if(BDBParameters.langues.equals("English"))
-    	{
-    		//pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=en_BD";
-    		pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html?lang=en_BD";
+    	{ 
+    		pageUrl+="?lang=en_BD";
     	}
     	else
     	{
-    		//pageUrl = "file://" + curPath + "resources/blockly/app/index.html?lang=zh-hans";
-    		pageUrl = "file://" + curPath + "resources/blockly-pxt/pxt-blockly/app/index.html?lang=zh-hans";
+    		
     	}
 		
 		// 临时处理新版目录

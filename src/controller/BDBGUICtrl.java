@@ -272,6 +272,9 @@ public class BDBGUICtrl
 
 	boolean isCodeChange() 
 	{
+		if(BDBParameters.code.getXmlCode()==null) {
+			return false;
+		}
 		String newXMLCode = BDBParameters.webView.getEngine().executeScript("getXML()").toString();
 		String xmlCode = BDBParameters.code.getXmlCode();
 		
