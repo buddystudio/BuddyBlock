@@ -66,7 +66,7 @@
     "unused": true
   },
   "dependencies": {
-    "jsdom": "^12.0.0",
+    "jsdom": "^16.5.0",
     "exports-loader": "0.6.3",
     "imports-loader": "0.6.5"
   }
