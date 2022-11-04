@@ -40,7 +40,7 @@
     "google-closure-compiler": "^20180805.0.0",
     "google-closure-library": "^20180805.0.0",
     "graceful-fs": "4.1.11",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-bump": "^2.7.0",
     "jshint": "^2.9.5",
     "rimraf": "2.6.2",
