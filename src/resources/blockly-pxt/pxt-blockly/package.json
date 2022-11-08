@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "jsdom": "^12.0.0",
-    "exports-loader": "0.6.3",
-    "imports-loader": "0.6.5"
+    "exports-loader": "0.6.4",
+    "imports-loader": "4.0.1"
   }
 }
